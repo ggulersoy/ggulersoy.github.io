@@ -35,7 +35,7 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        My research interests lie in the intricate dynamics of shock transmission and spillovers within the Turkish production network, with a particular focus on the pivotal role of large firms. 
+        My current research interests lie in the intricate dynamics of shock transmission and spillovers within the Turkish production network, with a particular focus on the pivotal role of large firms. 
         
         My doctoral thesis, structured into three comprehensive essays, delves into supply chain, financial and regulatory, and technological and informational shocks. 
         
