@@ -59,7 +59,7 @@ url_slides: 'https://wwfint.awsassets.panda.org/downloads/webinar-4-presentation
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects:
-  - example
+#projects:
+#  - example
 ---
 {{< youtube id=8a4YjUJ7KxU start=3806 >}}
