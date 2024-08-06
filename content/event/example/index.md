@@ -12,7 +12,7 @@ location: Online
 #  postcode: '94305'
 #  country: United States
 
-summary: Webinar 4) How to approach and assess nature-related risks (part 2)
+summary: "Webinar 4: How to approach and assess nature-related risks (Part 2)"
 abstract: "WWF's Greening Financial Regulation Initiative and the Network for Greening the Financial System (NGFS) are enabling a series of webinars on nature-related risks for central banks and financial supervisors staff. The webinars aim to provide an understanding of what nature-related financial risks are and how they might impact our financial system to help central banks and financial supervisors navigate the complexities and challenges with assessing and addressing these risks. After the course, attendants should be able to answer the following questions:Why should central banks care about the health and integrity of nature? How might measures like species & habitat loss and ecosystem degradation impact the financial system? What are the steps central banks should take to begin understanding nature-related financial risks in their jurisdicions?"
 
 # Talk start and end times.
