@@ -164,13 +164,13 @@ skills:
     color_border: '#f0bf23'
     items:
       - name: Sailing
-        description: Sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. Raced in and worked as an instructor for both dinghies and yachts.
+        description: I'm a sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. I've raced in and worked as an instructor for both dinghies and yachts.
         percent: 100
         icon: custom/sailboat-solid
-      #- name: Cats
-      #  description: ''
-      #  percent: 100
-      #  icon: cat
+      - name: Hot Peppers
+        description: I have an insatiable love for hot peppers and spicy foods.
+        percent: 100
+        icon: custom/pepper-hot-solid
       #- name: Photography
       #  description: ''
       #  percent: 80
