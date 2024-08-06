@@ -45,7 +45,6 @@ featured: false
 url_pdf: ''
 url_slides: 'https://wwfint.awsassets.panda.org/downloads/webinar-4-presentation-3-ngfs.pdf'
 #url_video: 'https://youtu.be/8a4YjUJ7KxU?si=X46F8tsz9qgeb_8m&t=3806'
-{{< youtube id=8a4YjUJ7KxU start=3806 >}}
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
