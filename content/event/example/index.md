@@ -18,7 +18,7 @@ abstract: "WWF's Greening Financial Regulation Initiative and the Network for Gr
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
 date: '2024-06-12T12:00:00Z'
-date_end: '2024-06-13T30:00:00Z'
+date_end: '2024-06-12T13:30:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
