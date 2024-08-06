@@ -141,7 +141,7 @@ skills:
       - name: Stata
         description: ''
         percent: 100
-        icon: stata-wordmark
+        icon: devicon/stata-wordmark
       - name: Python
         description: ''
         percent: 100
@@ -149,15 +149,15 @@ skills:
       - name: MATLAB
         description: ''
         percent: 010
-        icon: matlab
+        icon: devicon/matlab
       - name: SAS
         description: ''
         percent: 100
-        icon: sass
+        icon: custom/sas
       - name: LATEX
         description: ''
         percent: 100
-        icon: latex
+        icon: devicon/latex
       
   - name: Hobbies
     color: '#eeac02'
@@ -166,7 +166,7 @@ skills:
       - name: Sailing
         description: Sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. Raced in and worked as an instructor for both dinghies and yachts.
         percent: 100
-        icon: sailboat-solid
+        icon: custom/sailboat-solid
       #- name: Cats
       #  description: ''
       #  percent: 100
