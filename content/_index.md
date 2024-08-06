@@ -35,11 +35,9 @@ sections:
       title: '📚 My Research'
       subtitle: ''
       text: |-
-        Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.
+        My research interests lie in the intricate dynamics of shock transmission and spillovers within the Turkish production network, with a particular focus on the pivotal role of large firms. My doctoral thesis, structured into three comprehensive essays, delves into supply chain, financial and regulatory, and technological and informational shocks. A key innovation of my research is the development of a monthly firm-level input-output matrix for Turkey, offering unprecedented granularity in tracing goods and services flows among industries. This bottom-up approach not only enriches existing literature but also provides valuable insights for policymakers, emphasizing the necessity of tailored strategies to enhance economic resilience and stability.
 
-        I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy.
-        
-        Please reach out to collaborate 😃
+        Don’t hesitate to reach out if you’d like to discuss further!
     design:
       columns: '1'
   - block: collection
@@ -73,35 +71,35 @@ sections:
     design:
       view: article-grid
       columns: 1
-  - block: collection
-    id: news
-    content:
-      title: Recent News
-      subtitle: ''
-      text: ''
-      # Page type to display. E.g. post, talk, publication...
-      page_type: post
-      # Choose how many pages you would like to display (0 = all pages)
-      count: 5
-      # Filter on criteria
-      filters:
-        author: ""
-        category: ""
-        tag: ""
-        exclude_featured: false
-        exclude_future: false
-        exclude_past: false
-        publication_type: ""
-      # Choose how many pages you would like to offset by
-      offset: 0
-      # Page order: descending (desc) or ascending (asc) date.
-      order: desc
-    design:
-      # Choose a layout view
-      view: date-title-summary
-      # Reduce spacing
-      spacing:
-        padding: [0, 0, 0, 0]
+  #- block: collection
+  #  id: news
+  #  content:
+  #    title: Recent News
+  #    subtitle: ''
+  #    text: ''
+  #    # Page type to display. E.g. post, talk, publication...
+  #    page_type: post
+  #    # Choose how many pages you would like to display (0 = all pages)
+  #    count: 5
+  #    # Filter on criteria
+  #    filters:
+  #      author: ""
+  #      category: ""
+  #      tag: ""
+  #      exclude_featured: false
+  #      exclude_future: false
+  #      exclude_past: false
+  #      publication_type: ""
+  #    # Choose how many pages you would like to offset by
+  #    offset: 0
+  #    # Page order: descending (desc) or ascending (asc) date.
+  #    order: desc
+  #  design:
+  #    # Choose a layout view
+  #    view: date-title-summary
+  #    # Reduce spacing
+  #    spacing:
+  #      padding: [0, 0, 0, 0]
   - block: cta-card
     demo: true # Only display this section in the Hugo Blox Builder demo site
     content:
