@@ -49,8 +49,8 @@ footer:
 
 # Localization
 locale:
-  date_format: 'D MMM YYYY'
-  time_format: 'HH:mm'
+  date_format: 'Monday, 02 Jan 2006'
+  time_format: '15:04'
 
 # Site features
 features:
