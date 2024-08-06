@@ -32,9 +32,9 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: false
 
-image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-  focal_point: Right
+#image:
+#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
+#  focal_point: Right
 
 #links:
 #  - icon: twitter
@@ -44,14 +44,15 @@ image:
 #url_code: 'https://github.com'
 url_pdf: ''
 url_slides: 'https://wwfint.awsassets.panda.org/downloads/webinar-4-presentation-3-ngfs.pdf'
-url_video: 'https://youtu.be/8a4YjUJ7KxU?si=X46F8tsz9qgeb_8m&t=3806'
+#url_video: 'https://youtu.be/8a4YjUJ7KxU?si=X46F8tsz9qgeb_8m&t=3806'
+{{< youtube id=8a4YjUJ7KxU start=3806 >}}
 
 # Markdown Slides (optional).
 #   Associate this talk with Markdown slides.
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: ""
+#slides: ""
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
