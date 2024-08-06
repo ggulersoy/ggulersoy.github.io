@@ -222,8 +222,8 @@ languages:
 
 ## About Me
 
-Gürcan Zeren Gülersoy is a PhD candidate at King’s Business School. Prior to joining King’s he worked as a policy analyst at the Directorate for Financial and Enterprise Affairs of the OECD, and as a research associate at the Economics & Political Science department of INSEAD. 
+I am a PhD candidate at King’s Business School. Prior to joining King’s I worked as a policy analyst at the Directorate for Financial and Enterprise Affairs of the OECD, and as a research associate at the Economics & Political Science department of INSEAD. 
 
-He holds a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy from Sciences Po Paris. His master’s thesis was on the topic of empirically estimating intergenerational cultural transmission, and studied more specifically the persistence of far-right political preferences in France since the late 19th century.
+I hold a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy from Sciences Po Paris. My master’s thesis was on the topic of empirically estimating intergenerational cultural transmission, and studied more specifically the persistence of far-right political preferences in France since the late 19th century.
 
-His primary research areas of interest are public, urban, and input-output economics with a focus on trade, and he makes use of microdata as well as randomized controlled trials with the aim of contributing to evidence-based policymaking.
+My primary research areas of interest are public, urban, and input-output economics with a focus on trade, and I make use of microdata as well as randomized controlled trials with the aim of contributing to evidence-based policymaking.
