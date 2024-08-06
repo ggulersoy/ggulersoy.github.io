@@ -7,7 +7,7 @@ authors:
 - Hugh Miller
 - Gabriel Santos Carneiro
 date: '2024-06-01'
-publishDate: '2024-08-06T11:48:47.121076Z'
+publishDate: '2024-06-30T10:00:00Z'
 publication_types:
 - report
 doi: 10.1787/24fd70e3-en
@@ -21,6 +21,14 @@ abstract: This paper presents a technical assessment of nature-related risks wit
   the different financial risk channels through which economic risks stemming from
   nature-related losses may be transmitted within the Hungarian financial system;
   and (iv) provide supervisory recommendations based on the results.
+# Display this page in the Featured widget?
+featured: true
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
 links:
 - name: URL
   url: 
