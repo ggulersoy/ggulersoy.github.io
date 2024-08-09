@@ -1,10 +1,15 @@
-# This is for the bio text on the landing page.
+/* This is for the bio text on the landing page. */
 .bio-text {
     max-width: 680px;
     text-align: justify;
 }
 
-# This is for the "my research" section.
+/* This is for the "my research" section. /
 .blox-markdown .prose {
+    text-align: justify;
+}
+
+/* This is for the abstracts of events. */
+.max-w-prose.grid.grid-cols-1.md\:grid-cols-\[200px_auto\].gap-4.my-6 {
     text-align: justify;
 }
