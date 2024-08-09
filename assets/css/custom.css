@@ -2,3 +2,7 @@
     max-width: 680px;
     text-align: justify;
 }
+
+.blox-markdown .prose {
+    text-align: justify;
+}
