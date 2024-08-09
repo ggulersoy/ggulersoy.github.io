@@ -12,12 +12,12 @@ address:
   postcode: '1013'
   country: Hungary
 
-summary: Implementing the Supervisory Framework for Assessing Nature-related Financial Risks to the Hungarian Financial Sector
+summary: Launch event of the joint biodiversity project between the OECD and the MNB with the support of the European Commission
 abstract: "Biodiversity loss poses significant risks to the economy and financial sector, which are largely mispriced and poorly understood. To address this, the European Commission, OECD, and Magyar Nemzeti Bank (MNB) launched a project to develop a Supervisory Framework for assessing biodiversity-related financial risks. This framework, implemented in Hungary, helps central banks and retail banks better understand and manage these risks. A June 2024 event shared key findings and lessons from applying this framework to the Hungarian financial system and other Central and Eastern European institutions."
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2024-06-7T09:00:00Z'
+date: '2024-06-12T09:00:00Z'
 date_end: '2024-06-12T14:00:00Z'
 all_day: false
 
@@ -37,8 +37,8 @@ featured: true
 #  focal_point: Right
 
 links:
-  - icon: custom/clipboard-list-solid
-    #icon_pack: custom
+  - icon: clipboard-list-solid
+    icon_pack: custom
     name: Agenda
     url: https://www.oecd.org/content/dam/oecd/en/about/projects/biodiversity-related-risks-to-the-financial-sector/Taiex-Agenda-7-June-2024-MNB-OECD-Commission-Biodiversity-Launch-Event.pdf/_jcr_content/renditions/original./Taiex-Agenda-7-June-2024-MNB-OECD-Commission-Biodiversity-Launch-Event.pdf
 #url_code: 'https://github.com'
@@ -61,4 +61,3 @@ url_slides: https://www.slideshare.net/slideshow/ppts-taiex-tsi-mnb-oecd-ec-laun
 #projects:
 #  - example
 ---
-{{< youtube id=8a4YjUJ7KxU start=3806 >}}
