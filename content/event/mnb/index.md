@@ -37,8 +37,7 @@ featured: true
 #  focal_point: Right
 
 links:
-  - icon: clipboard-list-solid
-    icon_pack: fab
+  - icon: "custom/clipboard-list-solid.svg"
     name: Agenda
     url: https://www.oecd.org/content/dam/oecd/en/about/projects/biodiversity-related-risks-to-the-financial-sector/Taiex-Agenda-7-June-2024-MNB-OECD-Commission-Biodiversity-Launch-Event.pdf/_jcr_content/renditions/original./Taiex-Agenda-7-June-2024-MNB-OECD-Commission-Biodiversity-Launch-Event.pdf
 
