@@ -90,8 +90,8 @@
     {{/* Only display widget title in explicit instances of about widget, not in author pages. */}}
     {{ if and $block.Params.widget $block.Title }}<h1>{{ $block.Title | markdownify | emojify }}</h1>{{ end }}
 
-    <div class="article-style" style="text-align: justify;">
-        {{ $person_page.Content }}
+    <div class="article-style text-justify">
+      {{ $person_page.Content }}
     </div>
 
     <div class="row">
