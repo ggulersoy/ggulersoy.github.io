@@ -1,6 +1,5 @@
 .resume-biography {
   #profile {
-    text-align: justify;
     padding: 30px 10px;
     position: relative;
   }
@@ -92,7 +91,6 @@
 
   .bio-text {
     max-width: 680px;
-    text-align: justify;
   }
 }
 
