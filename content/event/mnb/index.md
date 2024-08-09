@@ -17,8 +17,8 @@ abstract: "Biodiversity loss poses significant risks to the economy and financia
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2024-06-12T09:00:00Z'
-date_end: '2024-06-12T14:00:00Z'
+date: '2024-06-07T09:00:00Z'
+date_end: '2024-06-07T14:00:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
@@ -37,10 +37,11 @@ featured: true
 #  focal_point: Right
 
 links:
-  - icon: "custom/clipboard-list-solid"
-    icon_pack: custom
+  - icon: clipboard-list-solid
+    icon_pack: fab
     name: Agenda
     url: https://www.oecd.org/content/dam/oecd/en/about/projects/biodiversity-related-risks-to-the-financial-sector/Taiex-Agenda-7-June-2024-MNB-OECD-Commission-Biodiversity-Launch-Event.pdf/_jcr_content/renditions/original./Taiex-Agenda-7-June-2024-MNB-OECD-Commission-Biodiversity-Launch-Event.pdf
+
 url_code: https://github.com/NatureFinanceOECD/Biodiversity_HUN
 url_pdf: 'https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/06/assessing-nature-related-risks-in-the-hungarian-financial-system_d47a0450/24fd70e3-en.pdf'
 url_slides: https://www.slideshare.net/slideshow/ppts-taiex-tsi-mnb-oecd-ec-launch-event-technical-implementation-of-the-supervisory-framework-for-assessing-nature-related-financial-risks-to-the-hungarian-financial-sector-june-2024/269687109
