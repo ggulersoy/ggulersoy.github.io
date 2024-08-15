@@ -13,6 +13,10 @@ sections:
   - block: resume-experience
     content:
       username: admin
+    # Show a call-to-action button under your biography? (optional)
+      button:
+        text: Download CV
+        url: uploads/resume.pdf
     design:
       # Hugo date format
       date_format: 'January 2006'
@@ -24,10 +28,10 @@ sections:
       username: admin
     design:
       show_skill_percentage: false
-  - block: resume-awards
-    content:
-      title: Awards
-      username: admin
+  #- block: resume-awards
+  #  content:
+  #    title: Awards
+  #    username: admin
   - block: resume-languages
     content:
       title: Languages
