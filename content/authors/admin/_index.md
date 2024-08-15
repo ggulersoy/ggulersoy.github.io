@@ -166,7 +166,7 @@ skills:
         percent: 100
         icon: custom/scale-balanced-solid
       - name: Trade
-        description: 'for data analysis and natural language processing.'
+        description: ''
         percent: 100
         icon: custom/handshake-solid
       - name: Input - output economics
