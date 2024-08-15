@@ -148,7 +148,7 @@ skills:
         icon: python
       - name: MATLAB
         description: ''
-        percent: 010
+        percent: 100
         icon: devicon/matlab
       - name: SAS
         description: ''
@@ -158,6 +158,25 @@ skills:
         description: ''
         percent: 100
         icon: devicon/latex
+
+  - name: Research Interests
+    items:
+      - name: Public economics
+        description: ''
+        percent: 100
+        icon: custom/scale-balanced-solid
+      - name: Trade
+        description: 'for data analysis and natural language processing.'
+        percent: 100
+        icon: custom/handshake-solid
+      - name: Input - output economics
+        description: ''
+        percent: 100
+        icon: custom/diagram-project-solid
+      - name: Urban economics
+        description: ''
+        percent: 100
+        icon: custom/city-solid
       
   - name: Hobbies
     color: '#eeac02'
