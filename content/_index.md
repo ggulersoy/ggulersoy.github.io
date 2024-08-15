@@ -32,7 +32,7 @@ sections:
           parallax: false
   - block: markdown
     content:
-      title: '📚 My Research'
+      title: 'My Research'
       subtitle: ''
       text: |-
         My current research interests lie in the intricate dynamics of shock transmission and spillovers within the Turkish production network, with a particular focus on the pivotal role of large firms. 
@@ -57,7 +57,7 @@ sections:
       columns: 2
   - block: collection
     content:
-      title: Recent Publications
+      title: All Publications
       text: ""
       filters:
         folders:
@@ -74,7 +74,7 @@ sections:
           - event
     design:
       view: article-grid
-      columns: 1
+      columns: 2
   #- block: collection
   #  id: news
   #  content:
