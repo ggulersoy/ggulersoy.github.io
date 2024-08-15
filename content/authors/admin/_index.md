@@ -56,19 +56,19 @@ interests:
   - Urban economics
 
 education:
-  #- area: PhD Artificial Intelligence
-  #  institution: Stanford University
-  #  date_start: 2016-01-01
-  #  date_end: 2020-12-31
-  #  summary: |
-  #    Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
+  - area: PhD in Economics
+    institution: King's College London
+    date_start: 2024-09-01
+    date_end: ''
+    summary: |
+      Awarded the [King’s Business School Doctoral Studentship](https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new) for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of [Seyhun Orcan Sakallı](https://sites.google.com/site/sosakalli/), [John Morrow](https://johnmorrow.info), and [Pierre-Louis Vézina](https://pierrelouisvezina.weebly.com).
   #  button:
   #    text: 'Read Thesis'
   #    url: 'https://example.com'
   - area: Master of Economics and Public Policy
     institution: Sciences Po Paris, School of Public Affairs
-    date_start: 2017
-    date_end: 2019
+    date_start: 2017-01-09
+    date_end: 2019-01-06
     #summary: |
     #  GPA: 3.8/4.0
 
