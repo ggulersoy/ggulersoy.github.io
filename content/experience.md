@@ -16,8 +16,8 @@ sections:
       # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
       buttons:
         - text: Download CV
-          icon: academicons/cv
-          url: uploads/resume.pdf
+          icon: ''
+          url: static/uploads/resume.pdf
   - block: resume-experience
     content:
       username: admin
