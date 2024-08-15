@@ -190,7 +190,7 @@ skills:
         description: ''
         percent: 100
         icon: custom/utensils-solid  
-      - name: Hot Peppers
+      - name: Hot peppers
         description: ''
         percent: 100
         icon: custom/pepper-hot-solid
