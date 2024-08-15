@@ -61,7 +61,7 @@ education:
     date_start: 2024-09-01
     date_end: ''
     summary: |
-      Awarded the [King’s Business School Doctoral Studentship](https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new) for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of [Seyhun Orcan Sakallı](https://sites.google.com/site/sosakalli/), [John Morrow](https://johnmorrow.info), and [Pierre-Louis Vézina](https://pierrelouisvezina.weebly.com).
+      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of [Seyhun Orcan Sakallı](https://sites.google.com/site/sosakalli/), [John Morrow](https://johnmorrow.info), and [Pierre-Louis Vézina](https://pierrelouisvezina.weebly.com).
   #  button:
   #    text: 'Read Thesis'
   #    url: 'https://example.com'
