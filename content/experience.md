@@ -10,13 +10,17 @@ design:
 
 # Page sections
 sections:
+  - block: cta-button-list
+    content:
+      # Need a custom icon?
+      # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
+      buttons:
+        - text: Download CV
+          icon: academicons/cv
+          url: uploads/resume.pdf
   - block: resume-experience
     content:
       username: admin
-    # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
     design:
       # Hugo date format
       date_format: 'January 2006'
