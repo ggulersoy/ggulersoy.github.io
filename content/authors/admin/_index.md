@@ -61,7 +61,7 @@ education:
     date_start: 2024-09-01
     date_end: ''
     summary: |
-      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of [Seyhun Orcan Sakallı](https://sites.google.com/site/sosakalli/), [John Morrow](https://johnmorrow.info), and [Pierre-Louis Vézina](https://pierrelouisvezina.weebly.com).
+      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of <a href="https://sites.google.com/site/sosakalli/">Seyhun Orcan Sakallı</a>, <a href="https://johnmorrow.info">John Morrow</a>, and <a href="https://pierrelouisvezina.weebly.com">Pierre-Louis Vézina</a>.
   #  button:
   #    text: 'Read Thesis'
   #    url: 'https://example.com'
@@ -95,7 +95,7 @@ work:
     date_start: 2023-09-01
     date_end: 2024-09-01
     summary: |
-      Contributing to the project on [“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”](https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html), as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the [Directorate for Financial and Enterprise Affairs](https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html).
+      Contributing to the project on <a href="https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html">“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”</a>, as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the <a href="https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html">“Directorate for Financial and Enterprise Affairs”</a>.
 
   - position: Research Associate
     company_name: INSEAD
@@ -113,23 +113,23 @@ work:
     date_start: 2018-09-01
     date_end: 2019-06-01
     summary: |
-     Assisted Professors Roberto Galbiati and Quoc-Anh Do and in the research for the project entitled [“J’Accuse! Antisemitism and Financial Markets in the time of the Dreyfus Affair”](https://doi.org/10.1016/j.jfineco.2024.103809).
+     Assisted Professors Roberto Galbiati and Quoc-Anh Do and in the research for the project entitled <a href="https://doi.org/10.1016/j.jfineco.2024.103809">“J’Accuse! Antisemitism and Financial Markets in the time of the Dreyfus Affair”</a>.
 
   - position: Research Intern
     company_name: BBVA Research, Garanti Bank
     company_url: https://www.bbvaresearch.com/en/
     #company_logo: ''
-    date_start: 2018
-    date_end: 2018
+    date_start: 2018-06-01
+    date_end: 2018-09-01
     summary: |
-      Interned at BBVA Research’s Economic Research Division of Garanti Bank and worked on macroeconomic modeling of Turkey as well as on economic and geopolitical research on the broader Middle East.
+      Interned at <a href="https://www.bbvaresearch.com/en/">BBVA Research</a>’s Economic Research Division of Garanti Bank and worked on macroeconomic modeling of Turkey as well as on economic and geopolitical research on the broader Middle East.
 
   - position: Teaching Assistant
     company_name: Sciences Po Paris
     company_url: https://www.sciencespo.fr/en/
     #company_logo: ''
-    date_start: 2015
-    date_end: 2016
+    date_start: 2015-09-01
+    date_end: 2016-06-01
     summary: |
       Worked as the coordinator of the Turkish language course and tutored students.
 
@@ -143,7 +143,7 @@ skills:
         percent: 100
         icon: devicon/stata-wordmark
       - name: Python
-        description: ''
+        description: 'for data analysis and natural language processing.'
         percent: 100
         icon: python
       - name: MATLAB
@@ -167,8 +167,12 @@ skills:
         description: I'm a sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. I've raced in and worked as an instructor for both dinghies and yachts.
         percent: 100
         icon: custom/sailboat-solid
+      - name: Cooking
+        description: ''
+        percent: 100
+        icon: custom/utensils-solid  
       - name: Hot Peppers
-        description: I have an insatiable love for hot peppers and spicy foods.
+        description: ''
         percent: 100
         icon: custom/pepper-hot-solid
       #- name: Photography
@@ -178,15 +182,15 @@ skills:
 
 languages:
   - name: Turkish
-    percent: 100
+    #percent: 100
   - name: English
-    percent: 100 
+    #percent: 100 
   - name: French
-    percent: 100
+    #percent: 100
   - name: Spanish
-    percent: 75
+    #percent: 75
   - name: Arabic
-    percent: 50
+    #percent: 50
 
 # Awards.
 #   Add/remove as many awards below as you like.
