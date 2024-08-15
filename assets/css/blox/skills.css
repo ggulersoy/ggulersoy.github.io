@@ -24,7 +24,7 @@
   /* color: #888; */ /* Inaccessible */
   font-size: 1rem;
   letter-spacing: 1px;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
 }
 
 /* .dark .skills-name { */
