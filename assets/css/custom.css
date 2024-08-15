@@ -13,3 +13,12 @@
 .max-w-prose.grid.grid-cols-1.md\:grid-cols-\[200px_auto\].gap-4.my-6 {
     text-align: justify;
 }
+
+/* This is to make the skills capitalized and not uppercased. */
+.skills-name {
+    margin-bottom: 6px;
+    /* color: #888; */ /* Inaccessible */
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
