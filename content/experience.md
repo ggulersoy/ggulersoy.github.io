@@ -10,14 +10,6 @@ design:
 
 # Page sections
 sections:
-  - block: cta-button-list
-    content:
-      # Need a custom icon?
-      # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
-      buttons:
-        - text: Download CV
-          icon: ''
-          url: static/uploads/resume.pdf
   - block: resume-experience
     content:
       username: admin

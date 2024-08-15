@@ -182,15 +182,15 @@ skills:
 
 languages:
   - name: Turkish
-    #percent: 100
+    percent: 100
   - name: English
-    #percent: 100 
+    percent: 100 
   - name: French
-    #percent: 100
+    percent: 100
   - name: Spanish
-    #percent: 75
+    percent: 100
   - name: Arabic
-    #percent: 50
+    percent: 50
 
 # Awards.
 #   Add/remove as many awards below as you like.
