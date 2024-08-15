@@ -67,8 +67,8 @@ education:
   #    url: 'https://example.com'
   - area: Master of Economics and Public Policy
     institution: Sciences Po Paris, School of Public Affairs
-    date_start: 2017-01-09
-    date_end: 2019-01-06
+    date_start: 2017-09-01
+    date_end: 2019-06-01
     #summary: |
     #  GPA: 3.8/4.0
 
@@ -78,8 +78,8 @@ education:
     #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: Bachelor of Political Sciences
     institution: Sciences Po Paris, Menton campus
-    date_start: 2014
-    date_end: 2017
+    date_start: 2014-09-01
+    date_end: 2017-06-01
     #summary: |
     #  GPA: 3.4/4.0
       
@@ -92,17 +92,17 @@ work:
     company_name: OECD
     company_url: https://www.oecd.org/en.html
     #company_logo: ''
-    date_start: 2023
-    date_end: 2024
+    date_start: 2023-09-01
+    date_end: 2024-09-01
     summary: |
-      Contributing to the project on “Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”, as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the Directorate for Financial and Enterprise Affairs.
+      Contributing to the project on [“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”](https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html), as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the [Directorate for Financial and Enterprise Affairs](https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html).
 
   - position: Research Associate
     company_name: INSEAD
     company_url: https://www.insead.edu
     #company_logo: ''
-    date_start: 2020
-    date_end: 2023
+    date_start: 2020-09-01
+    date_end: 2023-09-01
     summary: |
       Worked as a research associate at the Economics and Political Science Department, and the teaching assistant for the intermediate microeconomics course “Prices & Markets”.
 
@@ -110,10 +110,10 @@ work:
     company_name: Sciences Po Paris
     company_url: https://www.sciencespo.fr/en/
     #company_logo: ''
-    date_start: 2018
-    date_end: 2019
+    date_start: 2018-09-01
+    date_end: 2019-06-01
     summary: |
-     Assisted Professors Roberto Galbiati and Quoc-Anh Do and in the research for the project entitled “J’Accuse! Antisemitism and Financial Markets in the time of the Dreyfus Affair”.
+     Assisted Professors Roberto Galbiati and Quoc-Anh Do and in the research for the project entitled [“J’Accuse! Antisemitism and Financial Markets in the time of the Dreyfus Affair”](https://doi.org/10.1016/j.jfineco.2024.103809).
 
   - position: Research Intern
     company_name: BBVA Research, Garanti Bank
