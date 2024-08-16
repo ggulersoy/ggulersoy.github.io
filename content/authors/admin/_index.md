@@ -61,7 +61,7 @@ education:
     date_start: 2024-09-01
     date_end: ''
     summary: |
-      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of <a href="https://sites.google.com/site/sosakalli/">Seyhun Orcan Sakallı</a>, <a href="https://johnmorrow.info">John Morrow</a>, and <a href="https://pierrelouisvezina.weebly.com">Pierre-Louis Vézina</a>.
+      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new" target="_blank" rel="noopener noreferrer">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of <a href="https://sites.google.com/site/sosakalli/" target="_blank" rel="noopener noreferrer">Seyhun Orcan Sakallı</a>, <a href="https://johnmorrow.info" target="_blank" rel="noopener noreferrer">John Morrow</a>, and <a href="https://pierrelouisvezina.weebly.com" target="_blank" rel="noopener noreferrer">Pierre-Louis Vézina</a>.
   #  button:
   #    text: 'Read Thesis'
   #    url: 'https://example.com'
@@ -95,7 +95,7 @@ work:
     date_start: 2023-09-01
     date_end: 2024-09-01
     summary: |
-      Contributing to the project on <a href="https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html">“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”</a>, as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the <a href="https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html">“Directorate for Financial and Enterprise Affairs”</a>.
+      Contributing to the project on <a href="https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html" target="_blank" rel="noopener noreferrer">“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”</a>, as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the <a href="https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html" target="_blank" rel="noopener noreferrer">“Directorate for Financial and Enterprise Affairs”</a>.
 
   - position: Research Associate
     company_name: INSEAD
@@ -104,7 +104,7 @@ work:
     date_start: 2020-09-01
     date_end: 2023-09-01
     summary: |
-      Worked as a research associate at the Economics and Political Science Department, and the teaching assistant for the intermediate microeconomics course “Prices & Markets”.
+      Worked as a research associate at the <a href="https://www.insead.edu/faculty-research/academic-areas/economics-political-science" target="_blank" rel="noopener noreferrer">Economics and Political Science Department</a>, and the teaching assistant for the intermediate microeconomics course “Prices & Markets”.
 
   - position: Research Assistant
     company_name: Sciences Po Paris
@@ -122,7 +122,7 @@ work:
     date_start: 2018-06-01
     date_end: 2018-09-01
     summary: |
-      Interned at <a href="https://www.bbvaresearch.com/en/">BBVA Research</a>’s Economic Research Division of Garanti Bank and worked on macroeconomic modeling of Turkey as well as on economic and geopolitical research on the broader Middle East.
+      Interned at <a href="https://www.bbvaresearch.com/en/" target="_blank" rel="noopener noreferrer">BBVA Research</a>’s Economic Research Division of Garanti Bank and worked on macroeconomic modeling of Turkey as well as on economic and geopolitical research on the broader Middle East.
 
   - position: Teaching Assistant
     company_name: Sciences Po Paris
