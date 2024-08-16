@@ -113,7 +113,7 @@ work:
     date_start: 2018-09-01
     date_end: 2019-06-01
     summary: |
-     Assisted Professors Roberto Galbiati and Quoc-Anh Do and in the research for the project entitled <a href="https://doi.org/10.1016/j.jfineco.2024.103809">“J’Accuse! Antisemitism and Financial Markets in the time of the Dreyfus Affair”</a>.
+     Assisted Professors Roberto Galbiati and Quoc-Anh Do and in the research for the project entitled <a href="https://doi.org/10.1016/j.jfineco.2024.103809" target="_blank" rel="noopener noreferrer">“J’Accuse! Antisemitism and Financial Markets in the time of the Dreyfus Affair”</a>.
 
   - position: Research Intern
     company_name: BBVA Research, Garanti Bank
