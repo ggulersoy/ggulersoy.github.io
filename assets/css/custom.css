@@ -2,7 +2,7 @@
 .bio-text {
     max-width: 680px;
     text-align: justify;
-    text-indent: 10%;
+    /*text-indent: 10%;*/
 }
 
 /* This is for the "my research" section. */
