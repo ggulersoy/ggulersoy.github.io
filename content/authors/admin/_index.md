@@ -186,14 +186,14 @@ skills:
         description: I'm a sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. I've raced in and worked as an instructor for both dinghies and yachts.
         percent: 100
         icon: custom/sailboat-solid
-      - name: Cooking
-        description: ''
-        percent: 100
-        icon: custom/utensils-solid  
-      - name: Hot peppers
-        description: ''
-        percent: 100
-        icon: custom/pepper-hot-solid
+      #- name: Cooking
+      #  description: ''
+      #  percent: 100
+      #  icon: custom/utensils-solid  
+      #- name: Hot peppers
+      #  description: ''
+      #  percent: 100
+      #  icon: custom/pepper-hot-solid
       #- name: Photography
       #  description: ''
       #  percent: 80
