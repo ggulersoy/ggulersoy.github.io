@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Gürcan Zeren Gülersoy</title>
-    <link>http://localhost:1313/tags/</link>
-      <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:54804/tags/</link>
+      <atom:link href="http://localhost:54804/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language>
     <image>
-      <url>http://localhost:1313/media/icon_hu12295218262180416154.png</url>
+      <url>http://localhost:54804/media/icon_hu7620412459668841951.png</url>
       <title>Tags</title>
-      <link>http://localhost:1313/tags/</link>
+      <link>http://localhost:54804/tags/</link>
     </image>
     
   </channel>
