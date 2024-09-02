@@ -17,7 +17,7 @@ sections:
       buttons:
         - text: Download my CV
           icon: hero/arrow-down-tray
-          url: /resume.pdf
+          url: /uploads/resume.pdf
   - block: resume-experience
     content:
       username: admin
