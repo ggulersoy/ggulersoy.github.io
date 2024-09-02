@@ -8,6 +8,7 @@
 /* This is for the "my research" section. */
 .blox-markdown .prose {
     text-align: justify;
+    font-size: 1rem;
 }
 
 /* This is for the abstracts of events. */
