@@ -245,8 +245,8 @@ languages:
 
 ## About Me
 
-I am a PhD candidate at King’s Business School. Prior to joining King’s I worked as a policy analyst at the Directorate for Financial and Enterprise Affairs of the OECD, and as a research associate at the Economics & Political Science department of INSEAD. 
+I am a PhD candidate at King’s Business School, focusing on the role of large firms in the transmission of shocks and spillovers within the Turkish production network. My research employs a novel firm-level input-output matrix to analyze various types of shocks—supply chain, financial, regulatory, technological, and informational—to provide valuable insights for economic policy.
 
-I hold a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy from Sciences Po Paris. My master’s thesis was on the topic of empirically estimating intergenerational cultural transmission, and studied more specifically the persistence of far-right political preferences in France since the late 19th century.
+Before joining King’s, I worked as a policy analyst at the OECD and as a research associate at INSEAD. I hold a bachelor’s degree in Political Sciences, with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy from Sciences Po Paris.
 
-My primary research areas of interest are public, urban, and input-output economics with a focus on trade, and I make use of microdata as well as randomized controlled trials with the aim of contributing to evidence-based policymaking.
+My primary research interests include public, urban, and input-output economics, particularly in the context of trade, and I use microdata to support evidence-based policymaking.
