@@ -245,7 +245,9 @@ languages:
 
 ## About Me
 
-I am a PhD candidate at King’s Business School, focusing on the role of large firms in the transmission of shocks and spillovers within the Turkish production network. My research employs a novel firm-level input-output matrix to analyze various types of shocks—supply chain, financial, regulatory, technological, and informational—to provide valuable insights for economic policy.
+I am a PhD candidate at King’s Business School, focusing on the role of large firms in the transmission of shocks and spillovers within the Turkish production network. 
+
+My research employs a novel firm-level input-output matrix to analyze various types of shocks —supply chain, financial, regulatory, technological, and informational— to provide valuable insights for economic policy.
 
 Before joining King’s, I worked as a policy analyst at the OECD and as a research associate at INSEAD. I hold a bachelor’s degree in Political Sciences, with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy from Sciences Po Paris.
 
