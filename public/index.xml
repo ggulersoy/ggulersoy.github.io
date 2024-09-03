@@ -2,21 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gürcan Zeren Gülersoy</title>
-    <link>http://localhost:59756/</link>
-      <atom:link href="http://localhost:59756/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/</link>
+      <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <description>Gürcan Zeren Gülersoy</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:59756/media/icon_hu7620412459668841951.png</url>
+      <url>http://localhost:1313/media/icon_hu7620412459668841951.png</url>
       <title>Gürcan Zeren Gülersoy</title>
-      <link>http://localhost:59756/</link>
+      <link>http://localhost:1313/</link>
     </image>
     
     <item>
+      <title>Bank of England, Climate and Nature Seminars</title>
+      <link>http://localhost:1313/event/boe/</link>
+      <pubDate>Thu, 19 Sep 2024 16:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/event/boe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Use of Input-Output Models in Assessing Nature-Related Financial Risks</title>
-      <link>http://localhost:59756/event/ngfs-wwf/</link>
+      <link>http://localhost:1313/event/ngfs-wwf/</link>
       <pubDate>Wed, 12 Jun 2024 12:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/event/ngfs-wwf/</guid>
+      <guid>http://localhost:1313/event/ngfs-wwf/</guid>
       <description>
 
     
@@ -30,49 +38,65 @@
     
     <item>
       <title>Implementing the Supervisory Framework for Assessing Nature-related Financial Risks to the Hungarian Financial Sector</title>
-      <link>http://localhost:59756/event/mnb/</link>
+      <link>http://localhost:1313/event/mnb/</link>
       <pubDate>Fri, 07 Jun 2024 09:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/event/mnb/</guid>
+      <guid>http://localhost:1313/event/mnb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Assessing nature-related risks in the Hungarian financial system: Charting the impact of nature&#39;s financial echo</title>
-      <link>http://localhost:59756/publication/gulersoy-assessing-2024/</link>
+      <link>http://localhost:1313/publication/gulersoy-assessing-2024/</link>
       <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/publication/gulersoy-assessing-2024/</guid>
+      <guid>http://localhost:1313/publication/gulersoy-assessing-2024/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>http://localhost:59756/projects/</link>
+      <link>http://localhost:1313/projects/</link>
       <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/projects/</guid>
+      <guid>http://localhost:1313/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CV</title>
-      <link>http://localhost:59756/experience/</link>
+      <link>http://localhost:1313/experience/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/experience/</guid>
+      <guid>http://localhost:1313/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>http://localhost:1313/publications/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>http://localhost:1313/talks/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/talks/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Persistence of Right-Wing Ideology in France, from the Dreyfus Affair to Front National</title>
-      <link>http://localhost:59756/publication/gulersoy-persistence-2019/</link>
+      <link>http://localhost:1313/publication/gulersoy-persistence-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/publication/gulersoy-persistence-2019/</guid>
+      <guid>http://localhost:1313/publication/gulersoy-persistence-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Customs Union Negotiations: Start of Something New for Turkey and the European Union?</title>
-      <link>http://localhost:59756/publication/gulersoy-customs-2017/</link>
+      <link>http://localhost:1313/publication/gulersoy-customs-2017/</link>
       <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:59756/publication/gulersoy-customs-2017/</guid>
+      <guid>http://localhost:1313/publication/gulersoy-customs-2017/</guid>
       <description></description>
     </item>
     

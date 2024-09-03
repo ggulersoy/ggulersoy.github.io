@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Publications | Gürcan Zeren Gülersoy</title>
-    <link>http://localhost:54573/publication/</link>
-      <atom:link href="http://localhost:54573/publication/index.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:1313/publication/</link>
+      <atom:link href="http://localhost:1313/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
     <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>http://localhost:54573/media/icon_hu7620412459668841951.png</url>
+      <url>http://localhost:1313/media/icon_hu7620412459668841951.png</url>
       <title>Publications</title>
-      <link>http://localhost:54573/publication/</link>
+      <link>http://localhost:1313/publication/</link>
     </image>
     
     <item>
       <title>Assessing nature-related risks in the Hungarian financial system: Charting the impact of nature&#39;s financial echo</title>
-      <link>http://localhost:54573/publication/gulersoy-assessing-2024/</link>
+      <link>http://localhost:1313/publication/gulersoy-assessing-2024/</link>
       <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54573/publication/gulersoy-assessing-2024/</guid>
+      <guid>http://localhost:1313/publication/gulersoy-assessing-2024/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Persistence of Right-Wing Ideology in France, from the Dreyfus Affair to Front National</title>
-      <link>http://localhost:54573/publication/gulersoy-persistence-2019/</link>
+      <link>http://localhost:1313/publication/gulersoy-persistence-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54573/publication/gulersoy-persistence-2019/</guid>
+      <guid>http://localhost:1313/publication/gulersoy-persistence-2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Customs Union Negotiations: Start of Something New for Turkey and the European Union?</title>
-      <link>http://localhost:54573/publication/gulersoy-customs-2017/</link>
+      <link>http://localhost:1313/publication/gulersoy-customs-2017/</link>
       <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:54573/publication/gulersoy-customs-2017/</guid>
+      <guid>http://localhost:1313/publication/gulersoy-customs-2017/</guid>
       <description></description>
     </item>
     
