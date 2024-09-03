@@ -1,7 +1,7 @@
 ---
-title: Bank of England, Climate and Nature Seminars
+title: Assessing nature-related risks in the Hungarian financial system
 
-event: Assessing nature-related risks in the Hungarian financial system
+event: Bank of England, Climate and Nature Seminars
 event_url: 
 
 location: Bank of England
