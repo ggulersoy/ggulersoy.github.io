@@ -10,7 +10,7 @@
 {{ $items_offset := $block.content.offset | default 0 }}
 {{ $items_count := $block.content.count }}
 {{ if eq $items_count 0 }}
-  {{ $items_count = 65535 }} <!-- This number ensures all items will be shown -->
+  {{ $items_count = 65535 }}
 {{ else }}
   {{ $items_count = $items_count | default 65535 }}
 {{ end }}
@@ -71,9 +71,6 @@
 {{ $sort_ascending := $block.content.sort_ascending | default (eq $block.content.order "asc") | default false }}
 {{ $sort_order := cond $sort_ascending "asc" "desc" }}
 {{ $query = sort $query $sort_by $sort_order }}
-
-{{/* Second sorting by Author after sorting by Date */}}
-{{ $query = sort $query "Params.authors" $sort_order }}
 
 {{/* Offset and Limit */}}
 {{ if gt $items_offset 0 }}
