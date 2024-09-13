@@ -19,8 +19,6 @@ sections:
         exclude_featured: false
     design:
       view: citation
-
-sections:
   - block: collection
     content:
       title: Research Contributions
