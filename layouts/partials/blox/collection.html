@@ -8,12 +8,7 @@
 {{ $view := $block.design.view | default "card" }}
 
 {{ $items_offset := $block.content.offset | default 0 }}
-{{ $items_count := $block.content.count }}
-{{ if eq $items_count 0 }}
-  {{ $items_count = 65535 }}
-{{ else }}
-  {{ $items_count = $items_count | default 5 }}
-{{ end }}
+{{ $items_count = 65535 }} <!-- Set a high number to display all items -->
 
 {{/* Query */}}
 {{ $query := site.RegularPages }}
