@@ -5,7 +5,7 @@ authors:
 - Alexandra Roulet
 - Johanna Roth
 date: -01-01
-publishDate: '2024-09-13T09:20:49.766574Z'
+publishDate: '2023-04-13T09:20:49.766574Z'
 publication_types:
 - manuscript
 doi: 10.1257/rct.11190-1.0
