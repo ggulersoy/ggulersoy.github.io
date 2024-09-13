@@ -11,7 +11,7 @@ design:
 sections:
   - block: collection
     content:
-      title: All Publications
+      title: Authored Publications
       text: ""
       filters:
         folders:
@@ -19,4 +19,16 @@ sections:
         exclude_featured: false
     design:
       view: citation
+
+sections:
+  - block: collection
+    content:
+      title: Research Contributions
+      text: ""
+      filters:
+        folders:
+          - contribution
+        exclude_featured: false
+    design:
+      view: citation      
 ---
