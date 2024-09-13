@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Contributed | Gürcan Zeren Gülersoy</title>
+    <link>http://localhost:1313/tags/contributed/</link>
+      <atom:link href="http://localhost:1313/tags/contributed/index.xml" rel="self" type="application/rss+xml" />
+    <description>Contributed</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu7620412459668841951.png</url>
+      <title>Contributed</title>
+      <link>http://localhost:1313/tags/contributed/</link>
+    </image>
+    
+    <item>
+      <title>Using Divide-and-Conquer to Improve Tax Collection</title>
+      <link>http://localhost:1313/contribution/kapon-using-2024/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/kapon-using-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>J&#39;Accuse! Antisemitism and financial markets in the time of the Dreyfus Affair</title>
+      <link>http://localhost:1313/contribution/do-jaccuse-2024/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/do-jaccuse-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Factor Bias of External Inputs: Implications for Substitution between Capital and Labor</title>
+      <link>http://localhost:1313/contribution/ruzic-factor-2024/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/ruzic-factor-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Do Gender-Neutral Job Ads Promote Diversity? Experimental Evidence from Latin America’s Tech Sector</title>
+      <link>http://localhost:1313/contribution/del-carpio-gender-neutral-2023/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/del-carpio-gender-neutral-2023/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soft Skills for the Unemployed</title>
+      <link>http://localhost:1313/contribution/guadalupe-soft-nodate/</link>
+      <pubDate>Thu, 13 Apr 2023 09:20:49 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/guadalupe-soft-nodate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>More Women in Tech? Evidence from a Field Experiment Addressing Social Identity</title>
+      <link>http://localhost:1313/contribution/del-carpio-more-2022/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/del-carpio-more-2022/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

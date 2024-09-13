@@ -53,10 +53,26 @@
     </item>
     
     <item>
-      <title>Projects</title>
-      <link>http://localhost:1313/projects/</link>
-      <pubDate>Sun, 19 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/</guid>
+      <title>Using Divide-and-Conquer to Improve Tax Collection</title>
+      <link>http://localhost:1313/contribution/kapon-using-2024/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/kapon-using-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>J&#39;Accuse! Antisemitism and financial markets in the time of the Dreyfus Affair</title>
+      <link>http://localhost:1313/contribution/do-jaccuse-2024/</link>
+      <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/do-jaccuse-2024/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Factor Bias of External Inputs: Implications for Substitution between Capital and Labor</title>
+      <link>http://localhost:1313/contribution/ruzic-factor-2024/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/ruzic-factor-2024/</guid>
       <description></description>
     </item>
     
@@ -65,6 +81,22 @@
       <link>http://localhost:1313/experience/</link>
       <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/experience/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Do Gender-Neutral Job Ads Promote Diversity? Experimental Evidence from Latin America’s Tech Sector</title>
+      <link>http://localhost:1313/contribution/del-carpio-gender-neutral-2023/</link>
+      <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/del-carpio-gender-neutral-2023/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soft Skills for the Unemployed</title>
+      <link>http://localhost:1313/contribution/guadalupe-soft-nodate/</link>
+      <pubDate>Thu, 13 Apr 2023 09:20:49 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/guadalupe-soft-nodate/</guid>
       <description></description>
     </item>
     
@@ -85,6 +117,14 @@
     </item>
     
     <item>
+      <title>More Women in Tech? Evidence from a Field Experiment Addressing Social Identity</title>
+      <link>http://localhost:1313/contribution/del-carpio-more-2022/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contribution/del-carpio-more-2022/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Persistence of Right-Wing Ideology in France, from the Dreyfus Affair to Front National</title>
       <link>http://localhost:1313/publication/gulersoy-persistence-2019/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
@@ -97,6 +137,14 @@
       <link>http://localhost:1313/publication/gulersoy-customs-2017/</link>
       <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/publication/gulersoy-customs-2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/</guid>
       <description></description>
     </item>
     
