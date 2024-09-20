@@ -1,5 +1,5 @@
 ---
-title: Assessing nature-related risks in the Hungarian financial system
+title: Assessing Nature-related Risks in the Hungarian Financial System
 
 event: Bank of England, Climate and Nature Seminars
 event_url: 
@@ -12,7 +12,7 @@ address:
   postcode: 'EC2R 8AH'
   country: United Kingdom
 
-summary: Presentation of the assessment on the nature-related risks in the Hungarian financial system, as part of the Bank of England's Climate and Nature Seminars
+summary: Bank of England's Climate and Nature Seminars
 abstract:
 
 # Talk start and end times.
