@@ -10,7 +10,7 @@ publication_types:
 - article-journal
 publication: '*The Quarterly Journal of Economics*'
 doi: 10.1093/qje/qjae018
-abstract: 'Abstract Tax collection with limited enforcement capacity may be consistent
+abstract: 'Tax collection with limited enforcement capacity may be consistent
   with both high- and low-delinquency regimes: high delinquency reduces the effectiveness
   of threats, thereby reinforcing high delinquency. We explore the practical challenges
   of unraveling the high-delinquency equilibrium using a mechanism design insight
