@@ -42,8 +42,6 @@ sections:
         A key innovation of my research is the development of a monthly firm-level input-output matrix for Turkey, offering unprecedented granularity in tracing goods and services flows among industries. 
         
         This bottom-up approach not only enriches existing literature but also provides valuable insights for policymakers, emphasizing the necessity of tailored strategies to enhance economic resilience and stability.
-
-        Don’t hesitate to reach out if you’d like to discuss further!
     design:
       columns: '1'
   - block: collection
