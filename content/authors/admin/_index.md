@@ -251,4 +251,4 @@ My research employs a novel firm-level input-output matrix to analyze various ty
 
 Before joining King’s, I worked as a policy analyst at the OECD and as a research associate at INSEAD. I hold a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy, both from Sciences Po Paris.
 
-My primary research interests include public, urban, and input-output economics, particularly in the context of trade, and I use microdata to support evidence-based policymaking.
+My primary research interests include public, urban, and input-output economics, with a particular focus on trade, where I use microdata to support evidence-based policymaking.
