@@ -95,6 +95,8 @@
       "container",
       "cursor-default",
       "cursor-pointer",
+      "custom",
+      "custom-zoom-svgrepo-com",
       "dark",
       "dark:[&.active]:text-white",
       "dark:bg-gray-800",
