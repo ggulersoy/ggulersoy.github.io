@@ -28,7 +28,7 @@ organizations:
     url: https://www.kcl.ac.uk
 
 # Short bio (displayed in user profile at end of posts)
-bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King’s College London, specializing in trade and input-output economics.
+bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King's College London, specializing in international trade with a focus on production networks.
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
