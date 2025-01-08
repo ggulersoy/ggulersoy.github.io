@@ -25,7 +25,7 @@ role: PhD candidate in Economics
 # Organizations/Affiliations to display in Biography blox
 organizations:
   - name: King's College London
-    url: https://www.kcl.ac.uk
+    url: https://www.kcl.ac.uk/people/gurcan-zeren-gulersoy
 
 # Short bio (displayed in user profile at end of posts)
 bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King's College London, specializing in international trade with a focus on production networks.
