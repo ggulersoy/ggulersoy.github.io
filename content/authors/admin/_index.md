@@ -44,8 +44,8 @@ profiles:
   #  url: https://github.com/gcushen
   - icon: brands/linkedin
     url: https://www.linkedin.com/in/ggulersoy/
-  #- icon: academicons/google-scholar
-  #  url: https://scholar.google.com/
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?user=5Qr7Ld0AAAAJ&hl=en&oi=ao
   #- icon: academicons/orcid
   #  url: https://orcid.org/
 
