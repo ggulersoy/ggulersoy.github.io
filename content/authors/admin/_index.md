@@ -88,6 +88,15 @@ education:
     #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
     #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
 work:
+  - position: Research Economist
+    company_name: OECD
+    company_url: https://www.oecd.org/en.html
+    #company_logo: ''
+    date_start: 2025-02-17
+    date_end: 
+    summary: |
+      Working in the Productivity, Innovation and Entrepreneurship (PIE) Division within the <a href="https://www.oecd.org/sti/" target="_blank" rel="noopener noreferrer">Directorate for Science, Technology and Innovation (STI)</a>. Contributing to the <a href="https://www.oecd.org/en/about/projects/leveraging-inter-firm-transactions.html" target="_blank" rel="noopener noreferrer">"Leveraging Inter-Firm Transactions (LIFT)"</a> project, using firm-to-firm transaction data to analyze supply chain resilience, industrial policy spillovers, and productivity dynamics, with the aim of generating policy-relevant insights.
+
   - position: Policy Analyst
     company_name: OECD
     company_url: https://www.oecd.org/en.html
@@ -95,7 +104,7 @@ work:
     date_start: 2023-09-01
     date_end: 2024-09-01
     summary: |
-      Contributing to the project on <a href="https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html" target="_blank" rel="noopener noreferrer">“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”</a>, as well as other sustainable finance projects in the Capital Markets and Financial Institutions Division of the <a href="https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html" target="_blank" rel="noopener noreferrer">“Directorate for Financial and Enterprise Affairs”</a>.
+      Contributed to the project on <a href="https://www.oecd.org/en/about/projects/biodiversity-related-risks-to-the-financial-sector.html" target="_blank" rel="noopener noreferrer">“Developing a Supervisory Framework for Financial Risks Stemming from Biodiversity-related Losses”</a>, as well as other sustainable finance projects in the Capital Markets and Financial Institutions (CM) Division of the <a href="https://www.oecd.org/en/about/directorates/directorate-for-financial-and-enterprise-affairs.html" target="_blank" rel="noopener noreferrer">Directorate for Financial and Enterprise Affairs (DAF)</a>.
 
   - position: Research Associate
     company_name: INSEAD
