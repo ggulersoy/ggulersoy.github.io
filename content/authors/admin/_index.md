@@ -91,7 +91,7 @@ work:
   - position: Research Economist
     company_name: OECD
     company_url: https://www.oecd.org/en.html
-    #company_logo: ''
+    #company_logo: oecd.png
     date_start: 2025-02-17
     date_end: 
     summary: |
