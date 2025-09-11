@@ -28,7 +28,7 @@ organizations:
     url: https://www.kcl.ac.uk/people/gurcan-zeren-gulersoy
 
 # Short bio (displayed in user profile at end of posts)
-bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King's College London, specializing in international trade with a focus on production networks.
+bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King's College London, specializing in trade with a focus on production networks.
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -254,9 +254,9 @@ languages:
 
 ## About Me
 
-I am a PhD candidate in Economics at King’s Business School. I focus on the role of large firms in the transmission of shocks and spillovers within the Turkish production network. 
+I am a PhD candidate in Economics at King’s College London. 
 
-My research employs a novel firm-level input-output matrix to analyze various types of shocks —supply chain, financial, regulatory, technological, and informational— to provide valuable insights for economic policy.
+My research focuses on the role of large firms in the transmission of shocks and spillovers within production networks. Using novel firm-level input-output data, I study how disruptions spread through the economy, with the aim of providing valuable insights for economic policy.
 
 Before joining King’s, I worked as a policy analyst at the OECD and as a research associate at INSEAD. I hold a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy, both from Sciences Po Paris.
 
