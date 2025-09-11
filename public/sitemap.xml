@@ -124,11 +124,5 @@
   </url><url>
     <loc>http://localhost:1313/projects/</loc>
     <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/post/</loc>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/teaching/</loc>
-    <changefreq>weekly</changefreq>
   </url>
 </urlset>
