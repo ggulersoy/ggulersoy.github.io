@@ -95,7 +95,7 @@ work:
     date_start: 2026-01-01
     date_end: 
     summary: |
-      Supporting the Finance, Investment and Global Relations Division (FIG) of the <a href="https://www.oecd.org/env/" target="_blank" rel="noopener noreferrer">Environment Directorate (ENV)</a> as well as the <a href="https://nbg.gov.ge/en" target="_blank" rel="noopener noreferrer">National Bank of Georgia</a> with an econometric assessment of nature-related financial risks in Georgia.
+      Supporting the Finance, Investment and Global Relations Division (FIG) of the <a href="https://www.oecd.org/env/" target="_blank" rel="noopener noreferrer">Environment Directorate (ENV)</a>, as well as the <a href="https://nbg.gov.ge/en" target="_blank" rel="noopener noreferrer">National Bank of Georgia</a>, with an econometric assessment of nature-related financial risks.
   - position: Research Economist
     company_name: OECD
     company_url: https://www.oecd.org/en.html
