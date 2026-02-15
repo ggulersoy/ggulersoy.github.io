@@ -10,7 +10,7 @@ publication_types:
 url_pdf: 
   https://www.institut-bosphore.org/wp-content/uploads/2019/04/gurcan-sceincepo-2017.pdf
 # Display this page in the Featured widget?
-featured: true
+featured: false
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:

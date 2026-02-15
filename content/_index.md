@@ -51,6 +51,7 @@ sections:
       filters:
         folders:
           - publication
+          - working-paper
         featured_only: true
     design:
       view: article-grid
