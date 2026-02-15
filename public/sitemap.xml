@@ -2,6 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/publication_types/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/working-paper/gulersoy-tax-2026/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/publication_types/working-paper/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>http://localhost:1313/working-paper/</loc>
+    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>http://localhost:1313/event/isik/</loc>
     <lastmod>2024-11-20T10:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -35,10 +51,6 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>http://localhost:1313/contribution/</loc>
-    <lastmod>2024-06-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/publication_types/</loc>
     <lastmod>2024-06-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -120,9 +132,6 @@
   </url><url>
     <loc>http://localhost:1313/publication/gulersoy-customs-2017/</loc>
     <lastmod>2017-04-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>http://localhost:1313/projects/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

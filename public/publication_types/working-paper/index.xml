@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Working-Paper | Gürcan Zeren Gülersoy</title>
+    <link>http://localhost:1313/publication_types/working-paper/</link>
+      <atom:link href="http://localhost:1313/publication_types/working-paper/index.xml" rel="self" type="application/rss+xml" />
+    <description>Working-Paper</description>
+    <generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Sun, 15 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>http://localhost:1313/media/icon_hu_776fd4f4a06d2772.png</url>
+      <title>Working-Paper</title>
+      <link>http://localhost:1313/publication_types/working-paper/</link>
+    </image>
+    
+    <item>
+      <title>Tax Policy at the Threshold: A Network Perspective on Uganda’s 2015 VAT Reform</title>
+      <link>http://localhost:1313/working-paper/gulersoy-tax-2026/</link>
+      <pubDate>Sun, 15 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/working-paper/gulersoy-tax-2026/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

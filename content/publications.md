@@ -19,6 +19,7 @@ sections:
         exclude_featured: false
     design:
       view: citation
+
   - block: collection
     content:
       title: Research Contributions
@@ -28,5 +29,16 @@ sections:
           - contribution
         exclude_featured: false
     design:
-      view: citation      
+      view: citation
+
+  - block: collection
+    content:
+      title: Working Papers
+      text: ""
+      filters:
+        folders:
+          - working-paper
+        exclude_featured: false
+    design:
+      view: citation
 ---
