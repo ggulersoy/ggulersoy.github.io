@@ -58,6 +58,7 @@ interests:
 education:
   - area: PhD in Economics
     institution: King's College London
+    institution_logo: kcl.png
     date_start: 2024-09-01
     date_end: ''
     summary: |
@@ -67,6 +68,7 @@ education:
   #    url: 'https://example.com'
   - area: Master of Economics and Public Policy
     institution: Sciences Po Paris, School of Public Affairs
+    institution_logo: scpo.png
     date_start: 2017-09-01
     date_end: 2019-06-01
     #summary: |
@@ -78,6 +80,7 @@ education:
     #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
   - area: Bachelor of Political Sciences
     institution: Sciences Po Paris, Menton campus
+    institution_logo: scpo.png
     date_start: 2014-09-01
     date_end: 2017-06-01
     #summary: |
