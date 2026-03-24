@@ -104,7 +104,7 @@ work:
     company_url: https://www.oecd.org/en.html
     company_logo: oecd.png
     date_start: 2025-02-17
-    date_end: 
+    date_end: 2025-12-31
     summary: |
       Worked in the Productivity, Innovation and Entrepreneurship (PIE) Division within the <a href="https://www.oecd.org/sti/" target="_blank" rel="noopener noreferrer">Directorate for Science, Technology and Innovation (STI)</a>. Contributed to the <a href="https://www.oecd.org/en/about/projects/leveraging-inter-firm-transactions.html" target="_blank" rel="noopener noreferrer">"Leveraging Inter-Firm Transactions (LIFT)"</a> project, using firm-to-firm transaction data to analyze supply chain resilience, industrial policy spillovers, and productivity dynamics, with the aim of generating policy-relevant insights.
 
