@@ -91,7 +91,7 @@ work:
   - position: Economic Consultant
     company_name: OECD
     company_url: https://www.oecd.org/en.html
-    #company_logo: oecd.png
+    company_logo: oecd.png
     date_start: 2026-01-01
     date_end: 
     summary: |
@@ -99,7 +99,7 @@ work:
   - position: Research Economist
     company_name: OECD
     company_url: https://www.oecd.org/en.html
-    #company_logo: oecd.png
+    company_logo: oecd.png
     date_start: 2025-02-17
     date_end: 
     summary: |
@@ -108,7 +108,7 @@ work:
   - position: Policy Analyst
     company_name: OECD
     company_url: https://www.oecd.org/en.html
-    #company_logo: ''
+    company_logo: oecd.png
     date_start: 2023-09-01
     date_end: 2024-09-01
     summary: |
@@ -117,7 +117,7 @@ work:
   - position: Research Associate
     company_name: INSEAD
     company_url: https://www.insead.edu
-    #company_logo: ''
+    company_logo: insead.png
     date_start: 2020-09-01
     date_end: 2023-09-01
     summary: |
@@ -126,7 +126,7 @@ work:
   - position: Research Assistant
     company_name: Sciences Po Paris
     company_url: https://www.sciencespo.fr/en/
-    #company_logo: ''
+    company_logo: scpo.png
     date_start: 2018-09-01
     date_end: 2019-06-01
     summary: |
@@ -135,7 +135,7 @@ work:
   - position: Research Intern
     company_name: BBVA Research, Garanti Bank
     company_url: https://www.bbvaresearch.com/en/
-    #company_logo: ''
+    company_logo: bbva.png
     date_start: 2018-06-01
     date_end: 2018-09-01
     summary: |
@@ -144,7 +144,7 @@ work:
   - position: Teaching Assistant
     company_name: Sciences Po Paris
     company_url: https://www.sciencespo.fr/en/
-    #company_logo: ''
+    company_logo: scpo.png
     date_start: 2015-09-01
     date_end: 2016-06-01
     summary: |
