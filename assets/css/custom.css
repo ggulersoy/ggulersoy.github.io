@@ -40,4 +40,8 @@
     margin-left: auto;
     margin-right: auto;
 }
-  
+
+/* Make skill icons white in dark mode. */
+.dark .skills-icon svg {
+    filter: brightness(0) invert(1);
+}
