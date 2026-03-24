@@ -259,7 +259,6 @@
       "max-lg:[transform:translate3d(0,-100%,0)]",
       "max-w-3xl",
       "max-w-6xl",
-      "max-w-[500px]",
       "max-w-[65ch]",
       "max-w-none",
       "max-w-prose",
