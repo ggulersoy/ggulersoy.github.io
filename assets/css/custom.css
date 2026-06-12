@@ -46,14 +46,13 @@
     filter: brightness(0) invert(1);
 }
 
-/* Warm near-white body text for all dark-mode prose sections.
-   Replaces the default cool slate-300 (#cbd5e1) with a warm tone
-   that sits naturally on the brownish-red hero and stays clean elsewhere.
-   Target .dark .prose directly — dark:prose-invert compiles to
-   .dark .dark\:prose-invert, so a plain .prose-invert selector matches nothing. */
-.dark .prose p,
-.dark .prose li,
-.dark .prose strong,
-.dark .prose td {
+/* Warm near-white body text for the biography block only.
+   The bio sits on the warm brownish-red hero, where the default cool
+   slate-300 (#cbd5e1) clashes. Scoped to .blox-resume-biography-3 so other
+   dark sections (e.g. "My Research") keep their default prose color. */
+.blox-resume-biography-3 .prose p,
+.blox-resume-biography-3 .prose li,
+.blox-resume-biography-3 .prose strong,
+.blox-resume-biography-3 .prose td {
     color: #FFE8DF;
 }
