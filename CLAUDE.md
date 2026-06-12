@@ -145,6 +145,40 @@ Each entry is a subfolder with an `index.md`. Featured images go in the same fol
 
 ---
 
+## Color Palette & Hero (warm brown/red theme)
+
+The site uses a **warm brownish-red palette** (matching the avatar photo's backdrop), replacing the original teal/green. Reference palette: Black Bean `#461910`, Liver `#6F281A`, Chinese Red `#993623`, Dark Coral `#D6634C`, plus warm amber/mustard accents.
+
+**Hero background** is the dotted world map SVG at `assets/media/world-map-lived.svg`. It has three meaningful `rgba()` fills (edit with `sed`):
+- Ocean (background rect): `rgba(153, 54, 35, 1)` — Chinese Red `#993623`
+- Land/continent dots: `rgba(115, 41, 26, 1)` — subtly darker than ocean (texture, must not compete with text)
+- Visited-country highlights: `rgba(214, 99, 76, 1)` — Dark Coral
+- (also contains `#ffffff` and `none` fills — leave those alone)
+
+The hero block's background color is set separately in `content/_index.md` under the `resume-biography-3` block's `design.background.color` — keep it in sync with the ocean color (`#993623`).
+
+**Design rule learned**: ocean must be *lighter* than the land dots (lighter water, darker continents) — mirrors the original teal version and keeps the page feeling light. Keep land-dot contrast subtle or it competes with body text.
+
+## Avatar
+
+- **`content/authors/admin/avatar.png`** — a **pre-cropped square PNG**. The Hugo template does `$avatar.Fill "300x300 Center"`, which just 1:1 resizes a square source, so all framing is baked into the PNG itself.
+- Current crop: `850×850` from source `/Users/ggulersoy/Downloads/5307161A-...PNG` (box `86,140,936,990`) — full hair at top, chin + neck + turtleneck/shoulders visible, head ~70% of circle (LinkedIn-style).
+- **When re-cropping, ALWAYS view the result with the Read tool before committing** — pixel-value scans are unreliable (a dark beard reads as "chin" too early). Clear `resources/_gen/images/` after replacing the file.
+- Avatar ring: set in `layouts/partials/blox/resume-biography-3.html` as inline `style="background-color: #2C0E07;"` (dark warm brown — not pure black, which is too harsh).
+
+## Custom CSS (`assets/css/custom.css`)
+
+Natively loaded by the vendor `site_head.html` if it exists (no config needed). Use this for global style overrides instead of inline styles where possible.
+
+- **Bio body text** is recolored to warm near-white `#FFE8DF` via `.blox-resume-biography-3 .prose p, li, strong, td`. **Scoped to the bio block only** — a global `.dark .prose` rule wrongly recolored "My Research" and other dark sections.
+- **Tailwind gotcha**: `dark:prose-invert` compiles to `.dark .dark\:prose-invert`, NOT `.prose-invert`. The `.dark` class lives on the *section container*, not `<html>` (except in dark theme mode, where JS also adds it to `<html>`). Target `.<block-class> .prose <tag>` directly.
+
+## CV Page Header (`content/experience.md`)
+
+The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title, a subtitle `<p>`, and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks.
+
+---
+
 ## Notes for Common Tasks
 
 **Add a new job entry**: edit `content/authors/admin/_index.md`, add entry under `work:`, add logo to `static/media/icons/companies/` if needed, run `hugo --minify`, commit & push.
