@@ -21,7 +21,7 @@ sections:
     design:
       css_class: dark
       background:
-        color: "#280E07"
+        color: "#6F281A"
         image:
           # Add your image background to `assets/media/`.
           filename: world-map-lived.svg
