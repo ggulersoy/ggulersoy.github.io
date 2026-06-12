@@ -10,14 +10,17 @@ design:
 
 # Page sections
 sections:
-  - block: cta-button-list
+  - block: markdown
     content:
-      # Need a custom icon?
-      # Add an SVG image to the `assets/media/icons/` folder and reference it in the `icon` field below
-      buttons:
-        - text: Download my CV
-          icon: hero/arrow-down-tray
-          url: /uploads/resume.pdf
+      title: 'Curriculum Vitae'
+      text: |-
+        <p style="font-size:1.1rem;color:#6b7280;margin-bottom:1.5rem;">PhD Candidate in Economics · King's College London</p>
+        <a href="/uploads/resume.pdf" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.4rem;font-size:0.875rem;font-weight:500;color:white;background-color:#2563eb;border-radius:0.5rem;text-decoration:none;" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" style="width:1rem;height:1rem;flex-shrink:0;" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download PDF
+        </a>
+    design:
+      columns: '1'
   - block: resume-experience
     content:
       username: admin
@@ -36,8 +39,4 @@ sections:
   #  content:
   #    title: Awards
   #    username: admin
-  - block: resume-languages
-    content:
-      title: Languages
-      username: admin
 ---

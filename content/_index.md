@@ -35,13 +35,11 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        My current research interests lie in the dynamics of shock transmission and spillovers within the Turkish production network, with a particular focus on the pivotal role of large firms. 
-        
-        My doctoral thesis, structured into three comprehensive essays, delves into supply chain, financial and regulatory, and technological and informational shocks. 
-        
-        A key innovation of my research is the development of a monthly firm-level input-output matrix for Turkey, offering unprecedented granularity in tracing goods and services flows among industries. 
-        
-        This bottom-up approach not only enriches existing literature but also provides valuable insights for policymakers, emphasizing the necessity of tailored strategies to enhance economic resilience and stability.
+        My research lies at the intersection of trade, production networks, and public economics. I study how disruptions — supply chain shocks, fiscal policy changes, and technology adoption — propagate through firm-to-firm transaction networks, with a focus on the amplifying role of large firms.
+
+        A central contribution of my doctoral thesis is the construction of a monthly firm-level input-output matrix for Turkey, derived from novel administrative transaction data. This granular dataset allows me to trace how shocks originate and travel through the economy — generating insights with direct implications for industrial policy design and economic resilience.
+
+        Before joining King's, I worked on production network data as part of the OECD's [LIFT project](https://www.oecd.org/en/about/projects/leveraging-inter-firm-transactions.html), and led econometric work on nature-related financial risks for the Environment Directorate and the National Bank of Georgia — connecting microeconometric rigour with applied policy questions.
     design:
       columns: '1'
   - block: collection

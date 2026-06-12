@@ -62,7 +62,7 @@ education:
     date_start: 2024-09-01
     date_end: ''
     summary: |
-      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new" target="_blank" rel="noopener noreferrer">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of <a href="https://sites.google.com/site/sosakalli/" target="_blank" rel="noopener noreferrer">Seyhun Orcan Sakallı</a>, <a href="https://johnmorrow.info" target="_blank" rel="noopener noreferrer">John Morrow</a>, and <a href="https://pierrelouisvezina.weebly.com" target="_blank" rel="noopener noreferrer">Pierre-Louis Vézina</a>.
+      Awarded the <a href="https://www.kcl.ac.uk/business/research/phd-pages/doctoral-research-studentships-new" target="_blank" rel="noopener noreferrer">King’s Business School Doctoral Studentship</a> for the project entitled "Three Essays on the role of Large Firms in the Transmission of Shocks and Spillovers", conducted under the supervision of <a href="https://sites.google.com/site/sosakalli/" target="_blank" rel="noopener noreferrer">Seyhun Orcan Sakallı</a>, <a href="https://johnmorrow.info" target="_blank" rel="noopener noreferrer">John Morrow</a>, and <a href="https://pierrelouisvezina.weebly.com" target="_blank" rel="noopener noreferrer">Pierre-Louis Vézina</a>. Recipient of the <strong>People’s Choice Gold Award</strong> at the <em>King’s Business School Doctoral Research Symposium 2025</em> (First Year Doctoral Poster Session).
   #  button:
   #    text: 'Read Thesis'
   #    url: 'https://example.com'
@@ -71,25 +71,15 @@ education:
     institution_logo: scpo.png
     date_start: 2017-09-01
     date_end: 2019-06-01
-    #summary: |
-    #  GPA: 3.8/4.0
-
-    #  Courses included:
-    #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    summary: |
+      Specialised in applied microeconomics, public finance, and quantitative policy evaluation within Sciences Po's School of Public Affairs. The programme combined rigorous economic theory with empirical methods, bridging academic research and public institutions. Worked as a research assistant in the Economics department during the programme.
   - area: Bachelor of Political Sciences
     institution: Sciences Po Paris, Menton campus
     institution_logo: scpo.png
     date_start: 2014-09-01
     date_end: 2017-06-01
-    #summary: |
-    #  GPA: 3.4/4.0
-      
-    #  Courses included:
-    #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
-    #  - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    summary: |
+      Completed Sciences Po's bachelor's programme at the Menton campus, which specialises in the geopolitics and political economy of the Middle East and Mediterranean. The interdisciplinary curriculum spanned political science, history, economics, and international relations, with coursework in Arabic alongside French and English.
 work:
   - position: Economic Consultant
     company_name: OECD
@@ -198,38 +188,37 @@ skills:
         percent: 100
         icon: custom/city-solid
       
-  - name: Hobbies
-    color: '#eeac02'
-    color_border: '#f0bf23'
+  - name: Languages
+    items:
+      - name: Turkish
+        description: Native
+        percent: 100
+        icon: hero/language
+      - name: English
+        description: Fluent
+        percent: 100
+        icon: hero/language
+      - name: French
+        description: Fluent
+        percent: 100
+        icon: hero/language
+      - name: Spanish
+        description: Fluent
+        percent: 100
+        icon: hero/language
+      - name: Arabic
+        description: Intermediate
+        percent: 50
+        icon: hero/language
+
+  - name: Beyond Research
+    color: '#0ea5e9'
+    color_border: '#38bdf8'
     items:
       - name: Sailing
-        description: I'm a sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. I've raced in and worked as an instructor for both dinghies and yachts.
+        description: Competitive racer and certified instructor, registered with the Turkish (TYF), French (FFV), and World Sailing (ISAF/WS) federations. I have competed in and coached both dinghy and yacht racing across national and international circuits — a defining passion outside academia that I continue to pursue seriously.
         percent: 100
         icon: custom/sailboat-solid
-      #- name: Cooking
-      #  description: ''
-      #  percent: 100
-      #  icon: custom/utensils-solid  
-      #- name: Hot peppers
-      #  description: ''
-      #  percent: 100
-      #  icon: custom/pepper-hot-solid
-      #- name: Photography
-      #  description: ''
-      #  percent: 80
-      #  icon: camera
-
-languages:
-  - name: Turkish
-    percent: 100
-  - name: English
-    percent: 100 
-  - name: French
-    percent: 100
-  - name: Spanish
-    percent: 100
-  - name: Arabic
-    percent: 50
 
 # Awards.
 #   Add/remove as many awards below as you like.
@@ -272,3 +261,5 @@ My research focuses on the role of large firms in the transmission of shocks and
 Before joining King’s, I worked as a policy analyst at the OECD and as a research associate at INSEAD. I hold a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy, both from Sciences Po Paris.
 
 My primary research interests include public, urban, and input-output economics, with a particular focus on trade, where I use microdata to support evidence-based policymaking.
+
+Outside research, I am a competitive sailor and certified instructor — registered with the Turkish (TYF), French (FFV), and World Sailing (ISAF/WS) federations — having raced and coached in both dinghy and yacht sailing.
