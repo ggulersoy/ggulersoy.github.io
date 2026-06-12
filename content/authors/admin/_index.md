@@ -216,7 +216,7 @@ skills:
     color_border: '#38bdf8'
     items:
       - name: Sailing
-        description: Competitive racer and certified instructor, registered with the Turkish (TYF), French (FFV), and World Sailing (ISAF/WS) federations. I have competed in and coached both dinghy and yacht racing across national and international circuits — a defining passion outside academia that I continue to pursue seriously.
+        description: One of my deepest interests outside academia. I have raced across national and international circuits and worked as a coach and instructor in both dinghy and yacht sailing — registered with the Turkish (TYF), French (FFV), and World Sailing (ISAF/WS) federations.
         percent: 100
         icon: custom/sailboat-solid
 
@@ -262,4 +262,4 @@ Before joining King’s, I worked as a policy analyst at the OECD and as a resea
 
 My primary research interests include public, urban, and input-output economics, with a particular focus on trade, where I use microdata to support evidence-based policymaking.
 
-Outside research, I am a competitive sailor and certified instructor — registered with the Turkish (TYF), French (FFV), and World Sailing (ISAF/WS) federations — having raced and coached in both dinghy and yacht sailing.
+Outside research, sailing is one of my longest-standing passions — I have raced and worked as a coach and instructor in both dinghy and yacht sailing, and remain registered with the Turkish (TYF), French (FFV), and World Sailing (ISAF/WS) federations.
