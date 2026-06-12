@@ -46,11 +46,14 @@
     filter: brightness(0) invert(1);
 }
 
-/* Warm near-white body text for all dark/inverted prose sections.
+/* Warm near-white body text for all dark-mode prose sections.
    Replaces the default cool slate-300 (#cbd5e1) with a warm tone
-   that sits naturally on the brownish-red hero and stays clean elsewhere. */
-.prose-invert {
-    --tw-prose-invert-body: #FFE8DF;
-    --tw-prose-invert-bold: #FFE8DF;
-    --tw-prose-invert-lead: #FFE8DF;
+   that sits naturally on the brownish-red hero and stays clean elsewhere.
+   Target .dark .prose directly — dark:prose-invert compiles to
+   .dark .dark\:prose-invert, so a plain .prose-invert selector matches nothing. */
+.dark .prose p,
+.dark .prose li,
+.dark .prose strong,
+.dark .prose td {
+    color: #FFE8DF;
 }
