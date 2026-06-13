@@ -9,3 +9,6 @@
 
 # Node (pagefind, if run locally)
 /node_modules/
+
+# Local Claude Code settings (machine-specific permissions)
+.claude/settings.local.json
