@@ -8,9 +8,9 @@
 - **Static site generator**: Hugo (v0.126.3 per hugoblox.yaml, but locally v0.143.1 is installed)
 - **Theme**: [Hugo Blox](https://hugoblox.com) (`blox-tailwind` module), vendored into `_vendor/`
 - **CSS**: Tailwind CSS, but processed through Hugo's asset pipeline using the vendor's `tailwind.config.js`
-- **Deployment**: Netlify — auto-deploys on every push to `main`. Build command: `hugo --gc --minify -b $URL && npx pagefind --source 'public'`
+- **Deployment**: **GitHub Pages** via GitHub Actions (`.github/workflows/publish.yaml`) — builds with Hugo + Pagefind and deploys on every push to `main`. (Netlify is NOT used; confirmed via the repo's deployment environments, commit statuses, and webhooks. The old `netlify.toml` was removed; the inert `blox-plugin-netlify` Hugo module remains in `module.yaml`/`go.mod` and could be dropped later with `hugo mod` tooling.)
 - **Repo**: `ggulersoy/ggulersoy.github.io` on GitHub, branch `main`
-- **Live URL**: https://www.gurcangulersoy.com
+- **Live URL**: https://www.gurcangulersoy.com (apex + www both served by GitHub Pages)
 
 ### Key build commands
 ```bash
@@ -20,7 +20,7 @@ hugo server --port 1314              # local dev server (port 1313 may be in use
 git add <files> && git commit && git push origin main  # deploy
 ```
 
-> **Do NOT commit the `public/` directory** — Netlify builds it on their end. Only commit source files.
+> **Do NOT commit the `public/` or `resources/` directories** — GitHub Actions rebuilds them on deploy. Both are now in `.gitignore`. Only commit source files.
 
 ---
 
@@ -148,6 +148,8 @@ Each entry is a subfolder with an `index.md`. Featured images go in the same fol
 ## Color Palette & Hero (warm brown/red theme)
 
 The site uses a **warm brownish-red palette** (matching the avatar photo's backdrop), replacing the original teal/green. Reference palette: Black Bean `#461910`, Liver `#6F281A`, Chinese Red `#993623`, Dark Coral `#D6634C`, plus warm amber/mustard accents.
+
+**Accent/theme color**: `appearance.color: red` in `params.yaml` (switched from `emerald`). This drives links, buttons, navbar, and focus rings site-wide via the vendored theme `assets/css/themes/red.css`; the `red` preset's dark shades (red-800 `#991B1B`, red-950) closely match the palette. Valid presets live in `_vendor/.../blox-tailwind/assets/css/themes/`; a fully custom theme would require adding `assets/css/themes/<name>.css`.
 
 **Hero background** is the dotted world map SVG at `assets/media/world-map-lived.svg`. It has three meaningful `rgba()` fills (edit with `sed`):
 - Ocean (background rect): `rgba(153, 54, 35, 1)` — Chinese Red `#993623`
