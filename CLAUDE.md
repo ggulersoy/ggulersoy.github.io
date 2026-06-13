@@ -205,6 +205,16 @@ The CV page leads with a `markdown` block (not `cta-button-list`): centered "Cur
 
 **Build output is gitignored** (`public/`, `resources/`, `.hugo_build.lock`). Never re-add it. GitHub Actions rebuilds on deploy. (History was rewritten once to purge previously-committed build output.)
 
+**Never modify user-facing copy/prose without explicit approval.** Bio, "My Research", abstracts, descriptions, CV text — the user drafts these carefully. Technical/design/structural changes are fine in scope, but propose wording changes and wait, or only edit copy when explicitly asked.
+
+**Avoid em dashes (`—`) in any drafted copy.** The user is reticent to use them. Prefer commas, parentheses, or separate sentences.
+
+---
+
+## Gotchas
+
+**Markdown links don't render inside `markdown` blocks.** In a `block: markdown` section (e.g. "My Research" on the homepage), `[text](url)` silently renders to *nothing* — the text and href both vanish. This is a Hugo Blox quirk (the vendor's own render-link hook drops it too; affects every markdown link in these blocks, not the project's `render-link.html` override). **Workaround:** use a raw HTML `<a href="…" target="_blank" rel="noopener">text</a>` (goldmark `unsafe: true` is enabled). Links in other contexts (bio, page content) render normally.
+
 ---
 
 ## The CV (LaTeX) — separate repo, kept in sync
