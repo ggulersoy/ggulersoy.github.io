@@ -164,7 +164,7 @@ The hero block's background color is set separately in `content/_index.md` under
 ## Avatar
 
 - **`content/authors/admin/avatar.png`** — a **pre-cropped square PNG**. The Hugo template does `$avatar.Fill "300x300 Center"`, which just 1:1 resizes a square source, so all framing is baked into the PNG itself.
-- Current crop: `850×850` from source `/Users/ggulersoy/Downloads/5307161A-...PNG` (box `86,140,936,990`) — full hair at top, chin + neck + turtleneck/shoulders visible, head ~70% of circle (LinkedIn-style).
+- Current crop: a square box from the source headshot, framed with full hair at top and chin, neck, and shoulders visible (head about 70% of the circle, LinkedIn style). Keep the high-res source headshot somewhere outside the repo for re-cropping.
 - **When re-cropping, ALWAYS view the result with the Read tool before committing** — pixel-value scans are unreliable (a dark beard reads as "chin" too early). Clear `resources/_gen/images/` after replacing the file.
 - Avatar ring: set in `layouts/partials/blox/resume-biography-3.html` as inline `style="background-color: #2C0E07;"` (dark warm brown — not pure black, which is too harsh).
 
@@ -197,30 +197,8 @@ The CV page leads with a `markdown` block (not `cta-button-list`): centered "Cur
 
 ---
 
-## Conventions
-
-**Commit messages — keep them neutral (the repo is PUBLIC).** State *what* changed and *where*, never the personal reasoning behind a change, and don't quote the content being edited. The repo must stay public (GitHub Free → Pages only deploys from public repos), so every commit message is world-readable. E.g. write "Update sailing description in bio and CV", not an explanation of *why* the wording changed. Keep the `Co-Authored-By` trailer. Applies to this repo and `Gulersoy-CV-2024`.
-
-**Never `git push` (or force-push) without explicit user instruction.** The user reviews changes locally first. Stop at commit and say it's ready.
-
-**Build output is gitignored** (`public/`, `resources/`, `.hugo_build.lock`). Never re-add it. GitHub Actions rebuilds on deploy. (History was rewritten once to purge previously-committed build output.)
-
-**Never modify user-facing copy/prose without explicit approval.** Bio, "My Research", abstracts, descriptions, CV text — the user drafts these carefully. Technical/design/structural changes are fine in scope, but propose wording changes and wait, or only edit copy when explicitly asked.
-
-**Avoid em dashes (`—`) in any drafted copy.** The user is reticent to use them. Prefer commas, parentheses, or separate sentences.
-
----
-
 ## Gotchas
 
-**Markdown links don't render inside `markdown` blocks.** In a `block: markdown` section (e.g. "My Research" on the homepage), `[text](url)` silently renders to *nothing* — the text and href both vanish. This is a Hugo Blox quirk (the vendor's own render-link hook drops it too; affects every markdown link in these blocks, not the project's `render-link.html` override). **Workaround:** use a raw HTML `<a href="…" target="_blank" rel="noopener">text</a>` (goldmark `unsafe: true` is enabled). Links in other contexts (bio, page content) render normally.
+**Markdown links don't render inside `markdown` blocks.** In a `block: markdown` section (e.g. "My Research" on the homepage), `[text](url)` silently renders to *nothing*: the text and href both vanish. This is a Hugo Blox quirk (the vendor's own render-link hook drops it too; affects every markdown link in these blocks, not the project's `render-link.html` override). **Workaround:** use a raw HTML `<a href="…" target="_blank" rel="noopener">text</a>` (goldmark `unsafe: true` is enabled). Links in other contexts (bio, page content) render normally.
 
----
-
-## The CV (LaTeX) — separate repo, kept in sync
-
-The downloadable CV (`static/uploads/resume.pdf`) is compiled from **`/Users/ggulersoy/Documents/GitHub/Gulersoy-CV-2024`** (`cv.tex`; `publications.tex` is an abandoned partial — ignore it).
-
-- **No CI in that repo** (the README mentions an autoCV action, but there's no `.github/` in the fork). Compile locally: `pdflatex -interaction=nonstopmode -output-directory=build cv.tex` (no `biber` needed — no `\cite`/`\printbibliography`).
-- Then copy `build/cv.pdf` → this site's `static/uploads/resume.pdf`, commit & push both repos.
-- **Research-contribution and publication entries must stay in sync** between the website (`content/contribution/`, `content/publication/`, `content/working-paper/`) and `cv.tex`'s Publications section. When one changes, update the other.
+**Downloadable CV** (`static/uploads/resume.pdf`) is built from a separate LaTeX project and copied in. Its publication list must stay in sync with `content/contribution/`, `content/publication/`, and `content/working-paper/`.
