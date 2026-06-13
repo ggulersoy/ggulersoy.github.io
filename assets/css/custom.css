@@ -56,3 +56,11 @@
 .blox-resume-biography-3 .prose td {
     color: #FFE8DF;
 }
+
+/* Give markdown blocks (e.g. "My Research") the same 0.75rem horizontal
+   padding as the bio block (px-3), so text doesn't touch the screen edge
+   on mobile. The vendor markdown block ships with no horizontal padding. */
+.blox-markdown .max-w-prose.mx-auto {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
