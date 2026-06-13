@@ -1,34 +1,10 @@
 <a
-
-	{{ if or (strings.HasPrefix .Destination `http`) (strings.HasPrefix .Destination `#`) (strings.HasPrefix .Destination `/`) }}
-	
-		href = "{{ .Destination | safeURL }}"
-
-		{{ else if strings.HasPrefix .Destination `mailto` }}
-
-			href = "mailto:{{ .Text }}"
-
-	{{ end }}
-
-	{{ with .Title}}
-		
-		title = "{{ . }}"
-	
-	{{ end }}
-
-	{{ if strings.HasPrefix .Destination "http" }}
-
-		target = "_blank"
-		rel = "nofollow noopener noreferrer"
-
-		{{ else if strings.HasPrefix .Destination "mailto" }}
-
-			onClick = "javascript:window.open('mailto:{{ .Text }}', 'mail'); event.preventDefault()"
-
-	{{ end }}>
-	
-	<span>
-		{{ .Text }}
-	</span>
-
+	{{- if strings.HasPrefix .Destination "mailto" }}
+		href="{{ .Destination | safeURL }}"
+	{{- else if or (strings.HasPrefix .Destination "http") (strings.HasPrefix .Destination "#") (strings.HasPrefix .Destination "/") }}
+		href="{{ .Destination | safeURL }}"
+	{{- end }}
+	{{- with .Title }} title="{{ . }}"{{ end }}
+	{{- if strings.HasPrefix .Destination "http" }} target="_blank" rel="noopener noreferrer"{{ end }}>
+	<span>{{ .Text }}</span>
 </a>
