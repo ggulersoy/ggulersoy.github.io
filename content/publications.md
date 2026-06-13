@@ -22,22 +22,22 @@ sections:
 
   - block: collection
     content:
-      title: Research Contributions
+      title: Working Papers
       text: ""
       filters:
         folders:
-          - contribution
+          - working-paper
         exclude_featured: false
     design:
       view: citation
 
   - block: collection
     content:
-      title: Working Papers
+      title: Research Contributions
       text: ""
       filters:
         folders:
-          - working-paper
+          - contribution
         exclude_featured: false
     design:
       view: citation
