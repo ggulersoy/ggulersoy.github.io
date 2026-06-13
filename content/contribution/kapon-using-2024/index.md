@@ -26,5 +26,5 @@ tags:
 - Contributed
 links:
 - name: URL
-  url: https://academic.oup.com/qje/advance-article/doi/10.1093/qje/qjae018/7699856
+  url: https://academic.oup.com/qje/article-abstract/139/4/2475/7699856
 ---

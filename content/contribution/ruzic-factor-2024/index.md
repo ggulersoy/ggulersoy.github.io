@@ -7,6 +7,7 @@ date: '2024-01-01'
 publishDate: '2024-09-13T09:20:49.780951Z'
 publication_types:
 - article-journal
+publication: '*Review of Economics and Statistics* (forthcoming)'
 abstract: 'This paper reevaluates the longstanding debate on capital-labor substitution
   by examining the role of external inputs: commodities, intermediate goods and services,
   imports, offshoring. With more than two factors of production, there is more than
@@ -22,4 +23,7 @@ abstract: 'This paper reevaluates the longstanding debate on capital-labor subst
   external inputs.'
 tags:
 - Contributed
+links:
+- name: URL
+  url: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5402437
 ---

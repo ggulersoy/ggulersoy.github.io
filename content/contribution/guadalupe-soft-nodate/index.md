@@ -1,9 +1,9 @@
 ---
-title: Soft Skills for the Unemployed
+title: Soft Skills, Unemployment and Job Search
 authors:
 - Maria Guadalupe
-- Alexandra Roulet
 - Johanna Roth
+- Alexandra Roulet
 date: 2023-04-05
 publishDate: '2023-04-13T09:20:49.766574Z'
 publication_types:
