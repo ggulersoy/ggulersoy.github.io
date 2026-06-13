@@ -194,3 +194,23 @@ The CV page leads with a `markdown` block (not `cta-button-list`): centered "Cur
 **Download CV link**: points to `static/uploads/resume.pdf` — replace that file to update it.
 
 **Dark mode**: fully supported by the theme. Custom template already handles `dark:` variants.
+
+---
+
+## Conventions
+
+**Commit messages — keep them neutral (the repo is PUBLIC).** State *what* changed and *where*, never the personal reasoning behind a change, and don't quote the content being edited. The repo must stay public (GitHub Free → Pages only deploys from public repos), so every commit message is world-readable. E.g. write "Update sailing description in bio and CV", not an explanation of *why* the wording changed. Keep the `Co-Authored-By` trailer. Applies to this repo and `Gulersoy-CV-2024`.
+
+**Never `git push` (or force-push) without explicit user instruction.** The user reviews changes locally first. Stop at commit and say it's ready.
+
+**Build output is gitignored** (`public/`, `resources/`, `.hugo_build.lock`). Never re-add it. GitHub Actions rebuilds on deploy. (History was rewritten once to purge previously-committed build output.)
+
+---
+
+## The CV (LaTeX) — separate repo, kept in sync
+
+The downloadable CV (`static/uploads/resume.pdf`) is compiled from **`/Users/ggulersoy/Documents/GitHub/Gulersoy-CV-2024`** (`cv.tex`; `publications.tex` is an abandoned partial — ignore it).
+
+- **No CI in that repo** (the README mentions an autoCV action, but there's no `.github/` in the fork). Compile locally: `pdflatex -interaction=nonstopmode -output-directory=build cv.tex` (no `biber` needed — no `\cite`/`\printbibliography`).
+- Then copy `build/cv.pdf` → this site's `static/uploads/resume.pdf`, commit & push both repos.
+- **Research-contribution and publication entries must stay in sync** between the website (`content/contribution/`, `content/publication/`, `content/working-paper/`) and `cv.tex`'s Publications section. When one changes, update the other.
