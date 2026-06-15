@@ -90,8 +90,12 @@
       {{ else if in (slice "http" "https") $scheme }}
         {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
       {{ end }}
+      {{/* Human-readable accessible label: prefer an explicit `label`, fall back
+           to a friendly name for known icons, then to the raw icon name. */}}
+      {{ $icon_labels := dict "at-symbol" "Email" "brands/x" "X" "brands/twitter" "Twitter" "brands/linkedin" "LinkedIn" "brands/github" "GitHub" "brands/instagram" "Instagram" "academicons/google-scholar" "Google Scholar" "academicons/orcid" "ORCID" }}
+      {{ $aria := .label | default (index $icon_labels .icon) | default .icon }}
       <li>
-        <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ .icon }}"
+        <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} aria-label="{{ $aria }}"
            {{ with .label }} data-toggle="tooltip" data-placement="top" title="{{.}}"{{ end }}>
           {{ partial "functions/get_icon" (dict "name" .icon "attributes" "style=\"height: 1.5rem;\"")  }}
         </a>
