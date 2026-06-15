@@ -1,19 +1,19 @@
 /* This is for the bio text on the landing page. */
 .bio-text {
     max-width: 680px;
-    text-align: justify;
+    text-align: left;
     /*text-indent: 10%;*/
 }
 
 /* This is for the "my research" section. */
 .blox-markdown .prose {
-    text-align: justify;
+    text-align: left;
     font-size: 1rem;
 }
 
 /* This is for the abstracts of events. */
 .max-w-prose.grid.grid-cols-1.md\:grid-cols-\[200px_auto\].gap-4.my-6 {
-    text-align: justify;
+    text-align: left;
 }
 
 /* This is to make the skills capitalized and not uppercased. */
@@ -24,7 +24,7 @@
     letter-spacing: 1px;
     text-transform: none;
   }
-  
+
   #profile > div.avatar-wrapper > img {
     position: relative;
     display: flex;
@@ -63,4 +63,16 @@
 .blox-markdown .max-w-prose.mx-auto {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+}
+
+/* Inline links inside prose (CV summaries, "My Research", the CV download
+   button, etc.) default to blue, which clashes with the site's warm red
+   accent. Recolour them to the theme primary (red-600 light / red-400 dark)
+   so they match the citation PDF/CITE/DOI buttons and the rest of the site.
+   Tailwind Typography exposes link colour via the --tw-prose-links variable. */
+.prose {
+    --tw-prose-links: #DC2626;
+}
+.dark .prose {
+    --tw-prose-links: #F87171;
 }
