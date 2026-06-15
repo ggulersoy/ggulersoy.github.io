@@ -1,19 +1,19 @@
 /* This is for the bio text on the landing page. */
 .bio-text {
     max-width: 680px;
-    text-align: left;
+    text-align: justify;
     /*text-indent: 10%;*/
 }
 
 /* This is for the "my research" section. */
 .blox-markdown .prose {
-    text-align: left;
+    text-align: justify;
     font-size: 1rem;
 }
 
 /* This is for the abstracts of events. */
 .max-w-prose.grid.grid-cols-1.md\:grid-cols-\[200px_auto\].gap-4.my-6 {
-    text-align: left;
+    text-align: justify;
 }
 
 /* This is to make the skills capitalized and not uppercased. */
@@ -61,6 +61,14 @@
    padding as the bio block (px-3), so text doesn't touch the screen edge
    on mobile. The vendor markdown block ships with no horizontal padding. */
 .blox-markdown .max-w-prose.mx-auto {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+
+/* The resume-skills block (CV page) also ships with no horizontal padding,
+   so on viewports narrower than the prose width its icons and labels touch
+   the screen edge. Give it the same 0.75rem gutter as the blocks above. */
+.blox-resume-skills .max-w-prose {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
 }
