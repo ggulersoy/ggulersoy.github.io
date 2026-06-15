@@ -73,6 +73,16 @@
     padding-right: 0.75rem;
 }
 
+/* The citation collection view (Publications page) uses a max-w-3xl container
+   with no horizontal padding, so its entries touch the screen edge on narrow
+   viewports. Match the px-8 gutter the article-grid views already have. The
+   max-w-3xl selector scopes this to the citation list only (the card grids
+   use max-w-screen-lg). */
+.blox-collection .container.max-w-3xl {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 /* Inline links inside prose (CV summaries, "My Research", the CV download
    button, etc.) default to blue, which clashes with the site's warm red
    accent. Recolour them to the theme primary (red-600 light / red-400 dark)
