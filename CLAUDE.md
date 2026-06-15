@@ -5,10 +5,10 @@
 
 ## Stack & Deployment
 
-- **Static site generator**: Hugo (v0.126.3 per hugoblox.yaml, but locally v0.143.1 is installed)
+- **Static site generator**: Hugo (v0.143.1 — pinned in `hugoblox.yaml` and the publish workflow `WC_HUGO_VERSION`, matching the local install)
 - **Theme**: [Hugo Blox](https://hugoblox.com) (`blox-tailwind` module), vendored into `_vendor/`
 - **CSS**: Tailwind CSS, but processed through Hugo's asset pipeline using the vendor's `tailwind.config.js`
-- **Deployment**: **GitHub Pages** via GitHub Actions (`.github/workflows/publish.yaml`) — builds with Hugo + Pagefind and deploys on every push to `main`. (Netlify is NOT used; confirmed via the repo's deployment environments, commit statuses, and webhooks. The old `netlify.toml` was removed; the inert `blox-plugin-netlify` Hugo module remains in `module.yaml`/`go.mod` and could be dropped later with `hugo mod` tooling.)
+- **Deployment**: **GitHub Pages** via GitHub Actions (`.github/workflows/publish.yaml`) — builds with Hugo + Pagefind and deploys on every push to `main`. (Netlify is NOT used; confirmed via the repo's deployment environments, commit statuses, and webhooks. The old `netlify.toml` was removed, and the inert `blox-plugin-netlify` Hugo module has now been dropped entirely — from `module.yaml`, `go.mod`/`go.sum`, and `_vendor/`.)
 - **Repo**: `ggulersoy/ggulersoy.github.io` on GitHub, branch `main`
 - **Live URL**: https://www.gurcangulersoy.com (apex + www both served by GitHub Pages)
 
@@ -174,10 +174,13 @@ Natively loaded by the vendor `site_head.html` if it exists (no config needed). 
 
 - **Bio body text** is recolored to warm near-white `#FFE8DF` via `.blox-resume-biography-3 .prose p, li, strong, td`. **Scoped to the bio block only** — a global `.dark .prose` rule wrongly recolored "My Research" and other dark sections.
 - **Tailwind gotcha**: `dark:prose-invert` compiles to `.dark .dark\:prose-invert`, NOT `.prose-invert`. The `.dark` class lives on the *section container*, not `<html>` (except in dark theme mode, where JS also adds it to `<html>`). Target `.<block-class> .prose <tag>` directly.
+- **Inline prose links use the warm accent.** Links *inside `.prose`* (CV summaries, "My Research", the CV download button) default to blue `#2563EB`, which clashed with the red theme. They are recoloured via Tailwind's link variable: `.prose { --tw-prose-links: #DC2626 }` (light) and `.dark .prose { --tw-prose-links: #F87171 }` (dark). Citation `PDF/CITE/DOI` buttons already use the accent on their own (they're not `.prose`).
+- **Justified body text is intentional.** `.bio-text`, `.blox-markdown .prose` ("My Research"), and event abstracts are `text-align: justify` **by user preference** — do NOT "fix" this to left-align.
+- **Block gutters.** Several vendor blocks ship with no horizontal padding, so on narrow viewports their content touches the screen edge. Custom rules add a gutter: `.blox-markdown .max-w-prose.mx-auto` and `.blox-resume-skills .max-w-prose` get `0.75rem` (matching the bio's `px-3`); `.blox-collection .container.max-w-3xl` (the **citation** view on the Publications page) gets `2rem` to match the `px-8` the article-grid views already have. The `max-w-3xl` selector scopes the citation fix away from the card grids (`max-w-screen-lg`).
 
 ## CV Page Header (`content/experience.md`)
 
-The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title, a subtitle `<p>`, and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks.
+The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title, a subtitle `<p>` ("PhD candidate in Economics · King's College London" — note lowercase "candidate", kept consistent with the homepage role), and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks. The button no longer hardcodes a colour: it uses `border:1.5px solid currentColor` and inherits the warm prose-link accent (see Custom CSS), so it adapts to light/dark.
 
 ---
 
@@ -202,3 +205,36 @@ The CV page leads with a `markdown` block (not `cta-button-list`): centered "Cur
 **Markdown links don't render inside `markdown` blocks.** In a `block: markdown` section (e.g. "My Research" on the homepage), `[text](url)` silently renders to *nothing*: the text and href both vanish. This is a Hugo Blox quirk (the vendor's own render-link hook drops it too; affects every markdown link in these blocks, not the project's `render-link.html` override). **Workaround:** use a raw HTML `<a href="…" target="_blank" rel="noopener">text</a>` (goldmark `unsafe: true` is enabled). Links in other contexts (bio, page content) render normally.
 
 **Downloadable CV** (`static/uploads/resume.pdf`) is built from a separate LaTeX project and copied in. Its publication list must stay in sync with `content/contribution/`, `content/publication/`, and `content/working-paper/`.
+
+**⚠️ `hugo mod vendor` will silently upgrade the theme.** `go.mod` pins `blox-tailwind` at a *Sept 2024* pseudo-version, but the committed `_vendor/` copy is the *June 2024* one — they have been mismatched since a `hugo mod get` on 2024-09-08 that was never followed by a re-vendor. The build always uses `_vendor/`, so the site runs on June 2024. Running `hugo mod vendor` re-fetches per `go.mod` and overwrites the whole vendored theme (a real upgrade). Do NOT run it casually. To remove a single module cleanly *without* bumping the theme, edit `module.yaml`/`go.mod`/`go.sum`/`_vendor/modules.txt` by hand and delete that module's vendored dir (that's how `blox-plugin-netlify` was removed). A deliberate theme upgrade is a separate, test-heavy task because of the custom overrides.
+
+**Reading-time ("N min read") is disabled site-wide** via `cascade:` → `reading_time: false` in `config/_default/hugo.yaml`. The theme's `_default/single.html` only shows it when `.Params.reading_time != false`; the config-level cascade sets that on every page (no layout override needed). Re-enable by removing the cascade.
+
+**Social profile icon labels**: `layouts/partials/blox/resume-biography-3.html` maps icon names to human-readable `aria-label`s via an `$icon_labels` dict (e.g. `brands/x` → "X"), falling back to a profile's explicit `label`. Add new socials to that dict so screen readers don't announce the raw icon name.
+
+**No bibtex auto-import.** `publications.bib` is reference-only (and has had its local Zotero `file =` paths stripped). The old `import-publications.yml` workflow that auto-imported it into `content/publication/` was removed because it mis-filed entries across the hand-sorted `publication/`, `working-paper/`, and `contribution/` folders. Maintain publication pages by hand.
+
+---
+
+## Recent changes (2026-06-15 session)
+
+A UX + structure pass. Highlights (details documented in the sections above):
+
+**UX / design**
+- Inline `.prose` links and the CV Download PDF button recoloured blue → warm accent (light/dark).
+- Body text kept **justified** (user preference; do not left-align).
+- Added horizontal gutters so content stops touching the screen edge: CV **skills** block (`0.75rem`) and the **citation** view on the Publications page (`2rem`).
+- Social profile icons given human-readable `aria-label`s.
+- Reading-time ("N min read") turned off site-wide via a `reading_time: false` cascade.
+
+**Content** (only explicitly-approved edits)
+- Fixed a stray "and" typo in the Research Assistant entry.
+- Unified role capitalisation to "PhD candidate" (homepage + CV subtitle).
+- Still open for a future discussion (not yet done): de-duplication of research/sailing text repeated across bio/skills/"My Research"; broadening the Turkey-only research framing to include the Uganda work; and regrouping pre-doctoral student writing out of "Authored Publications".
+
+**Structure / CI / cleanup**
+- Bumped pinned Hugo `0.126.3` → `0.143.1` (pin + workflow).
+- Removed two workflows: `import-publications.yml` (mis-filing footgun) and `updater-wip.yml` (dead, owner-gated to HugoBlox).
+- Dropped the inert `blox-plugin-netlify` module (GitHub Pages, not Netlify) — surgically, theme untouched.
+- Stripped local Zotero paths from `publications.bib`; pointed the `uganda_vat` redirect at the `www` host; added a `README.md`.
+- Discovered (not changed): the `go.mod` vs `_vendor/` theme version mismatch — see the `hugo mod vendor` gotcha above.
