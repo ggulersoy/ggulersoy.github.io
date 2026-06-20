@@ -176,6 +176,9 @@ Natively loaded by the vendor `site_head.html` if it exists (no config needed). 
 - **Tailwind gotcha**: `dark:prose-invert` compiles to `.dark .dark\:prose-invert`, NOT `.prose-invert`. The `.dark` class lives on the *section container*, not `<html>` (except in dark theme mode, where JS also adds it to `<html>`). Target `.<block-class> .prose <tag>` directly.
 - **Inline prose links use the warm accent.** Links *inside `.prose`* (CV summaries, "My Research", the CV download button) default to blue `#2563EB`, which clashed with the red theme. They are recoloured via Tailwind's link variable: `.prose { --tw-prose-links: #DC2626 }` (light) and `.dark .prose { --tw-prose-links: #F87171 }` (dark). Citation `PDF/CITE/DOI` buttons already use the accent on their own (they're not `.prose`).
 - **Justified body text is intentional.** `.bio-text`, `.blox-markdown .prose` ("My Research"), and event abstracts are `text-align: justify` **by user preference** — do NOT "fix" this to left-align.
+- **Serif display font (Source Serif 4).** The "DESIGN POLISH" block at the bottom of `custom.css` self-hosts Source Serif 4 (variable woff2, two subsets — `latin` + `latin-ext` for Turkish — in `static/fonts/`, served at `/fonts/`) via `@font-face`, exposed as `--font-serif`. It is applied to the **display/identity type**: the hero name (`.hero-name` / `.portrait-title .text-3xl`), all section titles, the CV page title, the **navbar wordmark + nav links** (`header .order-0`, `header .nav-link` — a journal-masthead look), and bio content headings (`.bio-text h1/h2/h3`, e.g. "About Me"). Body/UI text stays Inter (the theme's own self-hosted font, loaded separately in `site_head.html`). There are **no external font requests** — keep it that way. To swap the serif, replace the two woff2 files and the `@font-face` `unicode-range`s.
+- **Section-title accent rule + heading hooks.** Section headings carry a short accent bar (`::after`, theme red `--accent` / dark-coral `--accent-dark`). Two hook classes drive this, added in the overridden partials: `.section-title--centered` (homepage/collection + the vendor `.blox-markdown` title, centered) and `.section-title--left` (CV timeline `Experience`/`Education`, left-aligned). `collection.html`'s title was also promoted from `<div>` to a semantic `<h2>` (a11y).
+- **Card hover, button, social-icon, focus styling.** Also in the DESIGN POLISH block: a soft shadow/lift on `.blox-collection .group` cards on hover; the archive "See all" button restyled to a warm accent outline with hover fill; hero `.network-icon` social icons get a hover lift/colour; and a global `:focus-visible` accent outline for keyboard a11y. Hover transforms are disabled under `prefers-reduced-motion`.
 - **Block gutters.** Several vendor blocks ship with no horizontal padding, so on narrow viewports their content touches the screen edge. Custom rules add a gutter: `.blox-markdown .max-w-prose.mx-auto` and `.blox-resume-skills .max-w-prose` get `0.75rem` (matching the bio's `px-3`); `.blox-collection .container.max-w-3xl` (the **citation** view on the Publications page) gets `2rem` to match the `px-8` the article-grid views already have. The `max-w-3xl` selector scopes the citation fix away from the card grids (`max-w-screen-lg`).
 
 ## CV Page Header (`content/experience.md`)
@@ -238,3 +241,15 @@ A UX + structure pass. Highlights (details documented in the sections above):
 - Dropped the inert `blox-plugin-netlify` module (GitHub Pages, not Netlify) — surgically, theme untouched.
 - Stripped local Zotero paths from `publications.bib`; pointed the `uganda_vat` redirect at the `www` host; added a `README.md`.
 - Discovered (not changed): the `go.mod` vs `_vendor/` theme version mismatch — see the `hugo mod vendor` gotcha above.
+
+---
+
+## Recent changes (2026-06-20 session)
+
+A design-polish pass to shed the "default HugoBlox template" feel — restrained, editorial, academic. No content/copy changes; palette and theme untouched.
+
+- **Typography:** introduced a self-hosted **serif display font (Source Serif 4)** for the hero name, all section titles, and the CV page title; body stays Inter. Fonts live in `static/fonts/` (two woff2 subsets); no external requests. See the Custom CSS notes above.
+- **Section rhythm:** every section heading now has a short accent rule (centered on the homepage, left-aligned on the CV), via `.section-title--centered` / `.section-title--left` hooks.
+- **Components:** subtle card hover lift/shadow (image cards), warm accent-outline archive button, social-icon hover feedback, and a keyboard `:focus-visible` outline; all motion respects `prefers-reduced-motion`.
+- **Accessibility:** collection section title promoted from `<div>` to semantic `<h2>`; added focus-visible styles.
+- **Files:** all visual work is in `assets/css/custom.css` (a "DESIGN POLISH" block at the end). Layout hooks only in the three overridden `layouts/partials/blox/*.html` partials (biography name, collection `<h2>`, experience headings). New assets: `static/fonts/source-serif-4-{latin,latin-ext}.woff2`.

@@ -94,3 +94,221 @@
 .dark .prose {
     --tw-prose-links: #F87171;
 }
+
+/* =====================================================================
+   DESIGN POLISH (2026-06-20)
+   Self-hosted serif display font + editorial section rhythm, card/button
+   hover states, and keyboard-focus styles. Plain CSS only: this file is
+   loaded by the vendor site_head.html and minified, but NOT processed by
+   Tailwind, so anything here renders reliably (unlike new utility classes
+   added to project layouts). See CLAUDE.md "Critical Tailwind CSS Caveat".
+   ===================================================================== */
+
+/* --- Self-hosted serif (Source Serif 4, variable). Two subsets so Turkish
+   characters (ş, ğ, …) are covered as well as the Latin name/headings.
+   Files live in static/fonts/ and are served at /fonts/. ----------------- */
+@font-face {
+    font-family: 'Source Serif 4';
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+    src: url('/fonts/source-serif-4-latin.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+        U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+        U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'Source Serif 4';
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+    src: url('/fonts/source-serif-4-latin-ext.woff2') format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+        U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+        U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+        U+A720-A7FF;
+}
+
+:root {
+    --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --accent: #993623;       /* Chinese Red — matches the hero palette */
+    --accent-dark: #D6634C;  /* Dark Coral — accent for dark mode      */
+}
+
+/* --- Display name in the hero (resume-biography-3) ----------------------- */
+.hero-name,
+.portrait-title .text-3xl {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+/* Hero role sits just under the name; keep it sans but a touch lighter. */
+.portrait-title h3 {
+    letter-spacing: 0.005em;
+    opacity: 0.95;
+}
+
+/* --- Navbar as a serif "masthead": brand wordmark + nav links ------------
+   Matches the serif hero name so the top of the page reads as one identity.
+   `.order-0` is the vendor navbar's logo container; `.nav-link` the menu
+   items. font-family inherits to their children. ------------------------- */
+header .order-0,
+header .nav-link {
+    font-family: var(--font-serif);
+}
+header .order-0 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+header .nav-link {
+    letter-spacing: -0.005em;
+}
+
+/* --- Biography content headings (e.g. "About Me") ------------------------ */
+.bio-text h1,
+.bio-text h2,
+.bio-text h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+/* --- Section titles: serif + a short centred accent rule for rhythm ------
+   Covers the collection block ("Featured Publications/Talks"), the markdown
+   block ("My Research" + page intros) and the CV timeline ("Experience" /
+   "Education"). The .section-title hook is added in the project's overridden
+   collection.html / resume-experience.html; .blox-markdown title is the
+   vendor markup, targeted by its utility classes. ------------------------- */
+.section-title,
+.blox-markdown > .flex > .text-3xl.font-bold {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+/* Centred accent rule under the homepage/collection section headings (these
+   blocks centre their heading). The CV timeline headings are left-aligned,
+   so their rule is left-aligned too (handled by the .cv- modifier below). */
+.section-title.section-title--centered,
+.blox-markdown > .flex > .text-3xl.font-bold {
+    position: relative;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+.section-title.section-title--centered::after,
+.blox-markdown > .flex > .text-3xl.font-bold::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 2.75rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--accent);
+}
+.dark .section-title.section-title--centered::after,
+.dark .blox-markdown > .flex > .text-3xl.font-bold::after {
+    background-color: var(--accent-dark);
+}
+
+/* CV timeline headings ("Experience"/"Education") are left-aligned. */
+.section-title.section-title--left {
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+.section-title.section-title--left::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2.75rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--accent);
+}
+.dark .section-title.section-title--left::after {
+    background-color: var(--accent-dark);
+}
+
+/* --- Body typography: a little more air ---------------------------------- */
+.bio-text,
+.blox-markdown .prose {
+    line-height: 1.7;
+}
+
+/* --- Publication / talk cards: gentle hover lift + soft shadow -----------
+   The vendor article-grid card wraps each entry in .group and already scales
+   the image on hover; add a soft shadow + lift so cards feel tactile. ----- */
+.blox-collection .group .overflow-hidden.rounded-md {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+.blox-collection .group:hover .overflow-hidden.rounded-md {
+    box-shadow: 0 14px 30px -12px rgba(70, 25, 16, 0.45);
+}
+/* Tighten the meta row / give the title room to breathe. */
+.blox-collection .group h2 {
+    letter-spacing: -0.01em;
+}
+
+/* --- Buttons: unify the archive "See all" + any outline buttons on the
+   accent, with a quiet hover fill. The CV-page Download button is inline
+   HTML that already inherits the warm prose link colour. ------------------ */
+.blox-collection a[class*="border-gray-300"] {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    border-radius: 0.5rem !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.blox-collection a[class*="border-gray-300"]:hover {
+    background-color: var(--accent) !important;
+    color: #fff !important;
+}
+.dark .blox-collection a[class*="border-gray-300"] {
+    border-color: var(--accent-dark) !important;
+    color: var(--accent-dark) !important;
+    background-color: transparent !important;
+}
+.dark .blox-collection a[class*="border-gray-300"]:hover {
+    background-color: var(--accent-dark) !important;
+    color: #2C0E07 !important;
+}
+
+/* --- Social icons in the hero: hover feedback ---------------------------- */
+.network-icon li a {
+    display: inline-flex;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+.network-icon li a:hover {
+    transform: translateY(-2px);
+    color: #FFE8DF;
+    opacity: 1;
+}
+
+/* --- Keyboard focus: visible accent ring everywhere (a11y) --------------- */
+a:focus-visible,
+button:focus-visible,
+.network-icon li a:focus-visible,
+.blox-collection .group a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+.dark a:focus-visible,
+.dark button:focus-visible {
+    outline-color: var(--accent-dark);
+}
+
+/* --- Respect users who prefer reduced motion ----------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    .blox-collection .group .overflow-hidden.rounded-md,
+    .blox-collection .group:hover .overflow-hidden.rounded-md,
+    .network-icon li a,
+    .network-icon li a:hover {
+        transition: none;
+        transform: none;
+    }
+}
+

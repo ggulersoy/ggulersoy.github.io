@@ -84,9 +84,9 @@
 {{ if $block.content.title }}
 <div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center">
 
-  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+  <h2 class="section-title section-title--centered mb-6 text-3xl font-bold text-gray-900 dark:text-white">
     {{ $block.content.title | emojify | $page.RenderString }}
-  </div>
+  </h2>
 
   {{ with $block.content.text }}<p>{{ . | emojify | $page.RenderString }}</p>{{ end }}
 </div>
