@@ -20,6 +20,10 @@ sections:
       #  url: uploads/resume.pdf
     design:
       css_class: dark
+      # Tighter than the site-wide 4rem default so the intro fits the initial
+      # viewport (top / right / bottom / left).
+      spacing:
+        padding: ['1.25rem', '0', '1.75rem', '0']
       background:
         color: "#993623"
         image:

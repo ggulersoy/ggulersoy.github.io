@@ -161,8 +161,27 @@ header .order-0 {
     font-weight: 600;
     letter-spacing: -0.015em;
 }
+/* The theme pins `.navbar-brand`'s own font-size, so the brand must be sized
+   here (sizing `.order-0` is overridden). Keep it on one line so the wordmark
+   can't crowd the icon cluster. */
+header .navbar-brand {
+    white-space: nowrap;
+    font-size: 1.375rem; /* brand wordmark: 20px -> 22px */
+}
 header .nav-link {
     letter-spacing: -0.005em;
+    font-size: 1.125rem; /* nav links: 16px -> 18px */
+    /* Trim the link's vertical padding by ~the amount its line-box grew, so the
+       larger text does NOT make the navbar any taller than before. */
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+}
+/* Below the lg breakpoint the nav links collapse into the hamburger; ease the
+   wordmark back a little so it can't crowd the icon cluster on tablet. */
+@media (max-width: 1023px) {
+    header .navbar-brand {
+        font-size: 1.2rem;
+    }
 }
 
 /* --- Biography content headings (e.g. "About Me") ------------------------ */
@@ -309,6 +328,28 @@ button:focus-visible,
     .network-icon li a:hover {
         transition: none;
         transform: none;
+    }
+}
+
+/* --- Hero density: trim the generous vertical whitespace so the intro fits
+   the initial viewport on common laptop screens. The clay hero section shipped
+   with stacked top offsets on the avatar, the #profile column and the bio,
+   which pushed the last "About Me" paragraph below the fold. We pull those in
+   (no text is compressed). The section's own top/bottom padding is reduced
+   from the 4rem site default in content/_index.md (design.spacing.padding),
+   which moves the clay / "My Research" boundary closer to the screen bottom. */
+#profile {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.blox-resume-biography-3 .avatar-wrapper {
+    margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+    /* the bio column carries md:mt-12 (3rem) to offset it from the avatar;
+       a smaller offset is plenty and reclaims vertical space. */
+    .blox-resume-biography-3 .flex-auto {
+        margin-top: 0.5rem;
     }
 }
 
