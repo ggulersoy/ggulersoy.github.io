@@ -95,10 +95,18 @@ Logos live in **`static/media/icons/companies/`** and are served at `/media/icon
 | `scpo.png` | Sciences Po Paris |
 | `kcl.png` | King's College London |
 | `bbva.png` | BBVA Research / Garanti Bank |
+| `ie.png` | IE University (the "ie" mark) |
+| `sj.png` | Lycée français Saint-Joseph d'Istanbul |
 
 To **add a new logo**: drop the file into `static/media/icons/companies/`, then set `company_logo: filename.png` (or `institution_logo:`) in `_index.md`.
 
 To reference a logo in the template: `{{ printf "/media/icons/companies/%s" .company_logo | relURL }}`
+
+**Logos must fit a circle.** The timeline frame clips each logo to a circle (`overflow-hidden rounded-full`), so a full-bleed square logo loses its corners. Prep accordingly:
+- **Solid-colour square marks** (KCL, BBVA) round cleanly — no prep needed.
+- **Circular marks** (INSEAD, Sciences Po) already fit.
+- **Marks whose content reaches the corners** must be **padded with transparent margin** so content sits inside the circle's safe area (~68–70% of the canvas). `oecd.png` was re-exported this way (its globe + arrows + "OECD" wordmark were being clipped). These are served straight from `static/` (no Hugo image processing), so there is **no `resources/_gen` cache to clear** — just replace the file. **View the result with the Read tool before committing.**
+- **`sj.png` is a built composite** (Pillow/`rsvg-convert`): the school's hi-res *white* institutional logo provides the crisp shapes (oval, ring text, wreath, "1870" banner), recoloured to the brand **blue `#183C90` + yellow `#FFD21E`** by transferring the colour regions from the school's colour original (the two artworks register near-perfectly when each is cropped to its content bbox and scaled to the same size). A single-colour silhouette is more legible at ~68px than the muddy two-colour raster, and the crest's own blue oval gives the yellow monogram contrast in *both* light and dark mode (so it works as one static logo, no per-mode trickery). Keep the source PNGs outside the repo for re-builds.
 
 ---
 
@@ -106,11 +114,12 @@ To reference a logo in the template: `{{ printf "/media/icons/companies/%s" .com
 
 **`layouts/partials/blox/resume-experience.html`** overrides the vendor default. Key design decisions:
 
-- Icons are 3rem × 3rem (48px) circles, positioned at `inset-inline-start: -1.5rem` (centered on the timeline border)
+- Icons are **4.25rem × 4.25rem** circles (carry the class `cv-logo-frame`), positioned at `inset-inline-start: -2.125rem` (= half the diameter, so they stay centred on the timeline border). The size was chosen so the frame **spans the three-line entry header**: its top edge aligns with the position/area line and its bottom edge with the date line (the span's `top:auto` anchors it to the line-1 top, so the height extends it down to line 3).
 - List items use `margin-inline-start: 3.5rem` (inline style, not Tailwind class — see Tailwind caveat below)
 - Outer container uses `padding-left: 3rem` to prevent icons bleeding off-screen on mobile
-- Falls back to briefcase SVG (experience) or graduation cap SVG (education) if no logo is set
+- Falls back to briefcase SVG (experience) or graduation cap SVG (education) if no logo is set (sized `1.75rem` inline to match the larger frame)
 - `company_logo` → work entries; `institution_logo` → education entries
+- **Dark-mode ring/fill neutralised:** the vendor frame uses cool `dark:ring-gray-900` / `dark:bg-gray-800` (navy against the warm theme). A `custom.css` rule (`.dark .cv-logo-frame`) recolours both the ring **and** the circle fill to the page background `rgb(23,24,28)`, so the icon floats cleanly over the timeline with no coloured disc (matching the fill matters: a transparent-padded logo like OECD shows the fill in its corners). Light mode keeps `ring-white`/`bg-white`.
 
 ---
 
@@ -190,15 +199,17 @@ Natively loaded by the vendor `site_head.html` if it exists (no config needed). 
 - **Inline prose links use the warm accent.** Links *inside `.prose`* (CV summaries, "My Research", the CV download button) default to blue `#2563EB`, which clashed with the red theme. They are recoloured via Tailwind's link variable: `.prose { --tw-prose-links: #DC2626 }` (light) and `.dark .prose { --tw-prose-links: #F87171 }` (dark). Citation `PDF/CITE/DOI` buttons already use the accent on their own (they're not `.prose`).
 - **Justified body text is intentional.** `.bio-text`, `.blox-markdown .prose` ("My Research"), and event abstracts are `text-align: justify` **by user preference** — do NOT "fix" this to left-align.
 - **Serif display font (Source Serif 4).** The "DESIGN POLISH" block at the bottom of `custom.css` self-hosts Source Serif 4 (variable woff2, two subsets — `latin` + `latin-ext` for Turkish — in `static/fonts/`, served at `/fonts/`) via `@font-face`, exposed as `--font-serif`. It is applied to the **display/identity type**: the hero name (`.hero-name` / `.portrait-title .text-3xl`), all section titles, the CV page title, the **navbar wordmark + nav links** (`header .order-0`, `header .nav-link` — a journal-masthead look), and bio content headings (`.bio-text h1/h2/h3`, e.g. "About Me"). Body/UI text stays Inter (the theme's own self-hosted font, loaded separately in `site_head.html`). There are **no external font requests** — keep it that way. To swap the serif, replace the two woff2 files and the `@font-face` `unicode-range`s.
-- **Section-title accent rule + heading hooks.** Section headings carry a short accent bar (`::after`, theme red `--accent` / dark-coral `--accent-dark`). Two hook classes drive this, added in the overridden partials: `.section-title--centered` (homepage/collection + the vendor `.blox-markdown` title, centered) and `.section-title--left` (CV timeline `Experience`/`Education`, left-aligned). `collection.html`'s title was also promoted from `<div>` to a semantic `<h2>` (a11y).
+- **Section-title accent rule + heading hooks.** Section headings carry a short accent bar (`::after`, theme red `--accent` / dark-coral `--accent-dark`). Two hook classes drive this, added in the overridden partials: `.section-title--centered` (homepage/collection + the vendor `.blox-markdown` title, centered) and `.section-title--left` (CV timeline `Experience`/`Education`, **and the CV `Skills & Interests` title** via the `resume-skills.html` override, left-aligned). `collection.html`'s title was also promoted from `<div>` to a semantic `<h2>` (a11y); the skills title likewise became an `<h2>`.
 - **Card hover, button, social-icon, focus styling.** Also in the DESIGN POLISH block: a soft shadow/lift on `.blox-collection .group` cards on hover; the archive "See all" button restyled to a warm accent outline with hover fill; hero `.network-icon` social icons get a hover lift/colour; and a global `:focus-visible` accent outline for keyboard a11y. Hover transforms are disabled under `prefers-reduced-motion`.
 - **Navbar font sizes + the `.navbar-brand` pin (gotcha).** The wordmark and nav links are enlarged in the DESIGN POLISH block: nav links (`header .nav-link`) to `1.125rem` (18px) and the brand to `1.375rem` (22px). **Gotcha:** the vendored theme pins `.navbar-brand`'s own `font-size`, so sizing the logo container `header .order-0` is silently overridden — size the brand on `header .navbar-brand` directly. The navbar has **no fixed height** (it sizes to its content), so the larger links' vertical padding is trimmed to `0.625rem` top/bottom to keep the bar at its original ~72px height instead of letting it grow. Below the `lg` (1024px) breakpoint the nav links collapse into the hamburger, so the brand eases back to `1.2rem` to avoid crowding the search/theme icons. (Serif font-family is still applied via `header .order-0, header .nav-link`; only the *size* must live on `.navbar-brand`.)
 - **Hero density.** The clay hero (`resume-biography-3`) shipped tall enough to push the last "About Me" paragraph below the fold on shorter laptops. Its section padding is cut from the site-wide `4rem` default via a **per-block `design.spacing.padding: ['1.25rem','0','1.75rem','0']` in `content/_index.md`** — the theme renders `design.spacing.padding` as an **inline** `padding:` style (see `parse_block_v2.html`), so a CSS class cannot override it; set it there, not in custom.css. The DESIGN POLISH block additionally trims the stacked top offsets (`#profile` padding, `.avatar-wrapper` margin-top, and the bio column's `md:mt-12`). No body text is compressed.
 - **Block gutters.** Several vendor blocks ship with no horizontal padding, so on narrow viewports their content touches the screen edge. Custom rules add a gutter: `.blox-markdown .max-w-prose.mx-auto` and `.blox-resume-skills .max-w-prose` get `0.75rem` (matching the bio's `px-3`); `.blox-collection .container.max-w-3xl` (the **citation** view on the Publications page) gets `2rem` to match the `px-8` the article-grid views already have. The `max-w-3xl` selector scopes the citation fix away from the card grids (`max-w-screen-lg`).
+- **Skills multi-column layout.** The `resume-skills.html` override adds hook classes (`cv-skills-grid`, `cv-skills-col`, `cv-skills-coltitle`); `custom.css` then: **widens** the block past `max-w-prose` to `56rem` (both header and grid share `max-w-prose`, so this keeps the title's left edge aligned with the first column) so the four columns aren't crammed (~150px each); switches the grid from the vendor's `items-center` to **`align-items: flex-start`** so the unequal columns' **tops** line up; and, at **`lg`+ only**, centres the column titles with a reserved `min-height: 3.5rem` so a one-line title ("Languages") occupies the same space as the wrapping ones and every column's first item starts at the same height. Below `lg` the columns stack and titles left-align (centring a title over a left-aligned list looked disconnected).
+- **Search dropdown (Pagefind).** The vendor `#search` panel shipped with only `p-3` and no background, so opened results showed the page through them. `#search:not(.hidden)` gets an opaque background (white / dark `#152028`), a soft shadow, and a `max-height` + `overflow-y:auto` scroll cap. (Search indexing scope is documented in the **Search (Pagefind)** section above.)
 
 ## CV Page Header (`content/experience.md`)
 
-The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title, a subtitle `<p>` ("PhD candidate in Economics · King's College London" — note lowercase "candidate", kept consistent with the homepage role), and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks. The button no longer hardcodes a colour: it uses `border:1.5px solid currentColor` and inherits the warm prose-link accent (see Custom CSS), so it adapts to light/dark.
+The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title, a **two-line** subtitle `<p>` ("PhD candidate in Economics, King's College London" then `<br>` "Economic Consultant, OECD" — same font/size on both lines; the academic role leads and the OECD role reads as secondary by position alone; note lowercase "candidate", kept consistent with the homepage role), and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks. The button no longer hardcodes a colour: it uses `border:1.5px solid currentColor` and inherits the warm prose-link accent (see Custom CSS), so it adapts to light/dark.
 
 ---
 
@@ -273,3 +284,30 @@ A design-polish pass to shed the "default HugoBlox template" feel — restrained
 
 - **Navbar sizing:** enlarged the nav links (16→18px) and the brand wordmark (20→22px), holding the bar at its original height by trimming the nav-link padding. Surfaced the `.navbar-brand` font-size pin gotcha (see Custom CSS notes).
 - **Hero density:** tightened the clay hero so the full "About Me" fits the initial viewport on common laptops, via `design.spacing.padding` in `content/_index.md` plus offset trims in custom.css (see Custom CSS notes). No copy changes.
+
+---
+
+## Recent changes (2026-06-21 session)
+
+A CV-page pass: timeline polish, two new education entries with built logos, a search fix, and a skills-section cleanup. Details live in the sections above; this is the index.
+
+**CV timeline & header**
+- **Subtitle → two lines** (CV page): adds the OECD role under the academic one (see CV Page Header).
+- **Logo frames enlarged 3rem → 4.25rem** and aligned to the three-line entry header; `inset-inline-start` → `-2.125rem`; fallback SVGs sized to match; frames carry `cv-logo-frame` (see Custom Resume Template).
+- **Dark-mode logo rings/fill neutralised** to the page background `rgb(23,24,28)` (were cool navy `gray-900`/`gray-800`); light mode unchanged.
+
+**Education content** (explicitly approved edits)
+- Added **IE University** (Erasmus exchange, 2016–17, between Master's and Bachelor's) and **Lycée français Saint-Joseph d'Istanbul** (high school, 2009–14) entries.
+- New logos `ie.png` (Wikimedia "ie" mark) and `sj.png` (built full-colour Saint-Joseph crest — see Company/Institution Logos for the build recipe). `oecd.png` re-exported with transparent padding so the circular frame stops clipping it.
+
+**Search (Pagefind)** — see the dedicated Search section
+- Fixed the **transparent results panel** (opaque background + shadow on `#search`).
+- **Scoped the index** with `data-pagefind-body` on `single.html`'s `<main>` (new override): only single content pages are indexed, killing ~19 noisy hits and the near-duplicate "Working-Paper"/"Working-Papers" results. **Homepage & CV are intentionally excluded** — a known, revisitable decision.
+
+**Skills & Interests section**
+- Widened past `max-w-prose`, aligned column tops, and centred column titles with a reserved height so items line up (desktop). Hooks via the `resume-skills.html` override (see Custom CSS → Skills multi-column layout).
+
+**Lessons learned / gotchas surfaced**
+- **Pagefind only indexes at deploy** (CI runs `npx pagefind`); the local `hugo server` has no index, so search can't be tested locally — verify the indexed-page set in the built HTML (`grep data-pagefind-body public`) instead.
+- **Node isn't on this machine's non-interactive PATH** (CI has it) — `npx pagefind` can't be run from the Bash tool here.
+- A detailed crest is illegible at ~68px as a two-colour raster; a **single-colour silhouette** (or a clean flat-colour rebuild with the mark's own background for contrast) reads far better. Recolouring a one-colour logo into two colours needs the colour regions transferred from a colour reference (see `sj.png` recipe).
