@@ -122,10 +122,15 @@
    with no horizontal padding, so its entries touch the screen edge on narrow
    viewports. Match the px-8 gutter the article-grid views already have. The
    max-w-3xl selector scopes this to the citation list only (the card grids
-   use max-w-screen-lg). */
+   use max-w-screen-lg).
+   Also trim the vendor `mt-16 sm:mt-20` (4–5rem) top margin: stacked on top of
+   the section title's own bottom margin it left a ~5.5rem gap between each
+   "Authored Publications / Working Papers / Research Contributions" heading and
+   its list. 1.5rem keeps the heading visually attached to its list. */
 .blox-collection .container.max-w-3xl {
     padding-left: 2rem;
     padding-right: 2rem;
+    margin-top: 1.5rem;
 }
 
 /* Inline links inside prose (CV summaries, "My Research", the CV download
