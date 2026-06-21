@@ -73,6 +73,13 @@ education:
     date_end: 2019-06-01
     summary: |
       Specialised in applied microeconomics, public finance, and quantitative policy evaluation within Sciences Po's School of Public Affairs. The programme combined rigorous economic theory with empirical methods, bridging academic research and public institutions. Worked as a research assistant in the Economics department during the programme.
+  - area: Erasmus Exchange
+    institution: IE University, Madrid
+    institution_logo: ie.png
+    date_start: 2016-09-01
+    date_end: 2017-06-01
+    summary: |
+      Spent the third year of the Sciences Po bachelor's abroad on an Erasmus exchange at IE University in Madrid, with coursework in international relations and business administration.
   - area: Bachelor of Political Sciences
     institution: Sciences Po Paris, Menton campus
     institution_logo: scpo.png
@@ -80,6 +87,12 @@ education:
     date_end: 2017-06-01
     summary: |
       Completed Sciences Po's bachelor's programme at the Menton campus, which specialises in the geopolitics and political economy of the Middle East and Mediterranean. The interdisciplinary curriculum spanned political science, history, economics, and international relations, with coursework in Arabic alongside French and English.
+  - area: High School
+    institution: Lycée Saint-Joseph d'Istanbul
+    institution_logo: sj.png
+    date_start: 2009-09-01
+    date_end: 2014-06-01
+    summary: ''
 work:
   - position: Economic Consultant
     company_name: OECD

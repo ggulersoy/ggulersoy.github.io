@@ -320,6 +320,21 @@ button:focus-visible,
     outline-color: var(--accent-dark);
 }
 
+/* --- CV timeline logo frames: neutralise the cool dark-mode ring + fill ---
+   The vendor frame uses cool `dark:ring-gray-900` (#111827) and
+   `dark:bg-gray-800` (#1F2937), which read as navy against the warm
+   brown/red theme. Match the ring + fill to the page background
+   (hb-dark, rgb(23,24,28)) instead, so the icon "floats" over the timeline
+   with no coloured disc and the vertical line is cleanly masked — the
+   theme's original ring intent. Matching the fill also matters: the padded
+   OECD logo shows the circle fill in its corners, so blending it into the
+   page keeps those corners invisible. Light mode (ring-white/bg-white) and
+   the page background itself are untouched. */
+.dark .cv-logo-frame {
+    --tw-ring-color: rgb(23, 24, 28);
+    background-color: rgb(23, 24, 28) !important;
+}
+
 /* --- Respect users who prefer reduced motion ----------------------------- */
 @media (prefers-reduced-motion: reduce) {
     .blox-collection .group .overflow-hidden.rounded-md,
