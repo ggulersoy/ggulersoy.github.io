@@ -38,17 +38,22 @@ git add <files> && git commit && git push origin main  # deploy
 │   ├── contribution/             # Contributions to others' work
 │   └── event/                    # Talks/events
 ├── layouts/
+│   ├── _default/
+│   │   └── single.html               # ← CUSTOM OVERRIDE: adds `data-pagefind-body` to scope search (see Search)
 │   └── partials/blox/
 │       ├── resume-experience.html    # ← CUSTOM OVERRIDE: experience+education timeline
+│       ├── resume-skills.html        # ← CUSTOM OVERRIDE: skills block (left-aligned title + tidy multi-column layout)
 │       ├── resume-biography-3.html   # Custom biography block
 │       └── collection.html           # Custom collection block
 ├── static/
 │   ├── uploads/resume.pdf            # CV PDF download
 │   └── media/icons/companies/        # ← Company/institution logos (PNG/SVG)
-│       ├── oecd.png
+│       ├── oecd.png          # padded with transparent margin so the circular frame doesn't clip it
 │       ├── insead.png
 │       ├── scpo.png          # Sciences Po
 │       ├── kcl.png           # King's College London
+│       ├── ie.png            # IE University ("ie" mark, from Wikimedia SVG)
+│       ├── sj.png            # Lycée Saint-Joseph crest (full-colour, see Logos)
 │       └── bbva.png          # BBVA Research (extracted from favicon)
 ├── assets/
 │   └── media/
@@ -126,6 +131,14 @@ The vendor's `tailwind.config.js` scans only `_vendor/.../layouts/**/*.html`, no
 Defined in `config/_default/menus.yaml`. Current nav: Publications, Talks, CV.
 
 Pages are defined by `content/*.md` files with `type: landing` and `sections:` blocks referencing Hugo Blox block names.
+
+---
+
+## Search (Pagefind)
+
+Site search uses **Pagefind** (`show_search: true` in `params.yaml`; index built in CI via `npx pagefind --site public`, which the local `hugo server` does **not** run — search only works on the deployed site). The vendor `#search` dropdown is the `<div id="search">` in `navbar.html`; `custom.css` gives it an opaque panel background + shadow (it shipped transparent, so results showed the page through them).
+
+**Index scope (deliberate):** `layouts/_default/single.html` (custom override) adds `data-pagefind-body` to its `<main>`. Because at least one page carries that attribute, Pagefind indexes **only** pages that have it — i.e. single content pages (publications, working papers, contributions, talks). The homepage, CV, and all section/taxonomy **list pages are intentionally excluded**: indexing everything returned ~19 noisy hits for one query and near-duplicate "Working-Paper" (taxonomy) vs "Working-Papers" (section list) results, plus the same title pulled from the site-wide sidebar furniture on every page. The pager/last-edited furniture inside `<main>` is marked `data-pagefind-ignore`. **The homepage/CV exclusion is a known, revisitable choice** — to re-include them, add `data-pagefind-body` to the landing template's main wrapper.
 
 ---
 
