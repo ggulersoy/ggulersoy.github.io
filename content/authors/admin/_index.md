@@ -20,12 +20,17 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: PhD candidate in Economics
+# Left empty: the hero shows two symmetric "Position, Institution" affiliation
+# lines via `organizations` below (matches the CV subtitle), and dropping the
+# role also removes the orphan <h3> under the <h1> name.
+role: ''
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: King's College London
+  - name: PhD candidate in Economics, King's College London
     url: https://www.kcl.ac.uk/people/gurcan-zeren-gulersoy
+  - name: Economic Consultant, OECD
+    url: https://www.oecd.org/en.html
 
 # Short bio (displayed in user profile at end of posts)
 bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King's College London, specializing in trade with a focus on production networks.
@@ -50,10 +55,11 @@ profiles:
   #  url: https://orcid.org/
 
 interests:
-  - Public economics
+  - Production networks
+  - Firm-level microdata
+  - Shock transmission and propagation
   - Trade
-  - Input - output economics
-  - Urban economics
+  - Applied microeconomics for policy
 
 education:
   - area: PhD in Economics
@@ -184,22 +190,26 @@ skills:
 
   - name: Research Interests
     items:
-      - name: Public economics
+      - name: Production networks
         description: ''
         percent: 100
-        icon: custom/scale-balanced-solid
+        icon: custom/diagram-project-solid
+      - name: Firm-level microdata
+        description: ''
+        percent: 100
+        icon: custom/clipboard-list-solid
+      - name: Shock transmission and propagation
+        description: ''
+        percent: 100
+        icon: hero/bolt
       - name: Trade
         description: ''
         percent: 100
         icon: custom/handshake-solid
-      - name: Input - output economics
+      - name: Applied microeconomics for policy
         description: ''
         percent: 100
-        icon: custom/diagram-project-solid
-      - name: Urban economics
-        description: ''
-        percent: 100
-        icon: custom/city-solid
+        icon: custom/scale-balanced-solid
       
   - name: Languages
     items:
@@ -267,12 +277,10 @@ skills:
 
 ## About Me
 
-I am a PhD candidate in Economics at King’s College London. 
+Using firm-to-firm transaction data, I study how economic shocks travel through value chains.
 
-My research focuses on the role of large firms in the transmission of shocks and spillovers within production networks. Using novel firm-level input-output data, I study how disruptions spread through the economy, with the aim of providing valuable insights for economic policy.
+I am a PhD candidate in Economics at King’s College London and an Economic Consultant at the OECD. My doctoral work follows specific shocks through firm-to-firm production networks: how Uganda’s 2015 VAT reform reshaped sourcing between firms, and how mass layoffs propagate through Turkish supply chains.
 
-Before joining King’s, I worked as a policy analyst at the OECD and as a research associate at INSEAD. I hold a bachelor’s degree in Political Sciences with a regional focus on the Middle East and the Mediterranean, and a master’s degree in Economics and Public Policy, both from Sciences Po Paris.
+Previously I was a research associate at INSEAD. I hold degrees from Sciences Po Paris (BA, Political Science; MA, Economics and Public Policy), and my work sits at the intersection of academic trade research and applied economic policy.
 
-My primary research interests include public, urban, and input-output economics, with a particular focus on trade, where I use microdata to support evidence-based policymaking.
-
-Outside research, sailing is one of my longest-standing passions. I'm a sailor registered to the French (FFV), Turkish (TYF) and international (ISAF/WS) sailing federations. I've raced in and worked as an instructor for both dinghies and yachts.
+Outside research, I am a sailor and sailing instructor.

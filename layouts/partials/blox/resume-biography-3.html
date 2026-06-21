@@ -52,7 +52,10 @@
 
     <div class="portrait-title dark:text-white">
 
-      <div class="hero-name text-3xl font-bold mb-2 mt-6">
+      {{/* PROJECT OVERRIDE: the hero name is the page's <h1> (was a <div>; the
+           homepage had no h1 at all — an SEO + a11y gap). Classes unchanged so
+           the serif styling holds. */}}
+      <h1 class="hero-name text-3xl font-bold mb-2 mt-6">
         {{- if $person.name_pronunciation -}}
           <ruby>
             <rb>{{ $person_page.Title }}</rb>
@@ -61,7 +64,7 @@
         {{- else -}}
           {{- $person_page.Title -}}
         {{- end -}}
-      </div>
+      </h1>
 
       {{ with $person.role }}<h3 class="font-semibold mb-1">{{ . | markdownify | emojify }}</h3>{{ end }}
 

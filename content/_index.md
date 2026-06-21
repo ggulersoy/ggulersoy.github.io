@@ -1,6 +1,8 @@
 ---
-# Leave the homepage title empty to use the site title
-title: ""
+# Sets the <title> tag + og:title (browser tab and Google result link) only;
+# the navbar wordmark is separate (header.navbar.logo.text). Name first for
+# name searches, affiliation for topic context.
+title: "Economics PhD, King's College London"
 date: 2022-10-24
 type: landing
 

@@ -1,0 +1,25 @@
+{{/* PROJECT HOOK: emit Person structured data on the homepage so search engines
+     bind the name to the role, affiliations, and profiles (the theme otherwise
+     only emits WebSite schema). Home-only to avoid duplicating it site-wide.
+     get_hook loads every file inside layouts/partials/hooks/head-end/. */}}
+{{ if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gürcan Zeren Gülersoy",
+  "jobTitle": "PhD Candidate in Economics",
+  "affiliation": [
+    { "@type": "Organization", "name": "King's College London" },
+    { "@type": "Organization", "name": "OECD" }
+  ],
+  "url": "https://www.gurcangulersoy.com/",
+  "sameAs": [
+    "https://scholar.google.com/citations?user=5Qr7Ld0AAAAJ",
+    "https://www.linkedin.com/in/ggulersoy/",
+    "https://x.com/GurcanGulersoy"
+  ],
+  "description": "Economics PhD candidate at King's College London and Economic Consultant at the OECD, studying how shocks transmit through firm-level production networks."
+}
+</script>
+{{ end }}
