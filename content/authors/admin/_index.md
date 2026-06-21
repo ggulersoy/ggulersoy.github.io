@@ -88,7 +88,7 @@ education:
     summary: |
       Completed Sciences Po's bachelor's programme at the Menton campus, which specialises in the geopolitics and political economy of the Middle East and Mediterranean. The interdisciplinary curriculum spanned political science, history, economics, and international relations, with coursework in Arabic alongside French and English.
   - area: High School
-    institution: Lycée Saint-Joseph d'Istanbul
+    institution: Lycée français Saint-Joseph d'Istanbul
     institution_logo: sj.png
     date_start: 2009-09-01
     date_end: 2014-06-01
