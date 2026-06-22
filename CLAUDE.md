@@ -338,3 +338,28 @@ A homepage copy pass: rewrote the two prose sections and fixed the page title. A
 - **Expand About Me further** is *done* this session, but the user may want another polish pass later (add texture, not research detail — don't recreate the My Research overlap).
 - **Regroup pre-doctoral / student writing** out of "Authored Publications" — postponed.
 - **Research-interests terminology** — revisit only when asked.
+
+---
+
+## UX / design backlog (from 2026-06-23 full-site review)
+
+A thorough walkthrough of the live site (desktop + mobile, light + dark, all nav pages) surfaced the items below. **None are applied yet** — they're a prioritised to-do list for the user to approve/triage. Verified findings (computed styles / built HTML), not screenshot guesses; two screenshot "issues" (faint light-mode text, half-width hero) were confirmed to be preview-tool scaling artifacts, NOT real bugs.
+
+**Also done this session (not backlog):** tightened the CV-page header gap between the "Curriculum Vitae" title and its subtitle — `custom.css` rule scoped via `.blox-markdown:has(+ .blox-resume-experience)` so only the CV header is affected, not the homepage "My Research" markdown block (which is followed by a collection). Title `margin-bottom` 1.5→0.6rem, flex `gap` 0.75→0.5rem; accent-bar padding kept.
+
+**High value / clear wins**
+1. **Homepage `<title>` duplicates the name.** Built tag is `Gürcan Zeren Gülersoy · Economics PhD, King's College London | Gürcan Zeren Gülersoy` — the theme auto-appends `| {site title}` (the site title is the name), and the homepage title we set this session now *leads* with the name, so it appears twice. Only the homepage is affected (other pages read "Publications | Name" correctly). Fix options: (a) override the home title template to drop the site-title suffix on the homepage, or (b) reconsider the name-first homepage title (tension with the deliberate name-first decision — discuss before changing).
+2. **Dates show the weekday** ("Sunday, 15 Feb 2026") on publication & talk cards — unusual for academic content. Source: `date_format: 'Monday, 02 Jan 2006'` in `config/_default/params.yaml:52` (global). Change to e.g. `'02 Jan 2006'` or `'January 2006'`. Note the CV timeline already uses its own `'January 2006'` (set per-block in `experience.md`), so it's unaffected.
+3. **Publications page vs Talks page are visually inconsistent.** `/talks/` uses the polished card grid (article-grid); `/publication/` uses a plain, sparse citation list (3 entries, lots of whitespace, no grouping). Align them — cards for both, or at least give the Publications list visual structure (group by year or type, section headers).
+4. **First Featured Publication thumbnail is an unreadable screenshot** of the paper's first page (the abstract text). Reads as a grey scan at card size. Replace with a clean featured image / generated cover so the card matches the others.
+
+**Medium**
+5. **Justified body text creates word-gap "rivers" on mobile** (About Me, My Research) — narrow column + `text-align: justify` = uneven spacing. User *prefers* justified (a documented preference) — so the fix is to keep justify on wider screens and left-align only below a breakpoint, not to remove it.
+6. **Listing-page H1 naming is inconsistent**: Talks page is titled "All Talks" but Publications page is "Publications". Pick one convention.
+7. **No "See all →" link** on the homepage Featured Publications / Featured Talks sections to reach the full listings (the nav covers it, but an inline link is the expected pattern).
+8. **Featured Talks shows 3 cards in a 2-column grid**, leaving an orphan card with empty space beside it. Feature an even number, or use a layout that absorbs the orphan.
+
+**Low / polish**
+9. **Mobile hero has a large empty clay gap** between the social icons and "About Me" — could tighten hero vertical spacing at mobile widths.
+10. **Footer is minimal** (copyright + license only) — optional: add a "back to top" and/or repeat key social links.
+11. **Pre-doctoral / student writing is mixed into the "Publications" list** — already tracked separately (the regrouping task); restated here because it surfaced again in the review.
