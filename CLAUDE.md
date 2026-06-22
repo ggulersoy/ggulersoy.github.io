@@ -311,3 +311,30 @@ A CV-page pass: timeline polish, two new education entries with built logos, a s
 - **Pagefind only indexes at deploy** (CI runs `npx pagefind`); the local `hugo server` has no index, so search can't be tested locally — verify the indexed-page set in the built HTML (`grep data-pagefind-body public`) instead.
 - **Node isn't on this machine's non-interactive PATH** (CI has it) — `npx pagefind` can't be run from the Bash tool here.
 - A detailed crest is illegible at ~68px as a two-colour raster; a **single-colour silhouette** (or a clean flat-colour rebuild with the mark's own background for contrast) reads far better. Recolouring a one-colour logo into two colours needs the colour regions transferred from a colour reference (see `sj.png` recipe).
+
+---
+
+## Recent changes (2026-06-22 session)
+
+A homepage copy pass: rewrote the two prose sections and fixed the page title. All edits were drafted line-by-line with the user and explicitly approved (no unilateral copy changes).
+
+**Where the homepage prose actually lives (non-obvious):**
+- **"About Me"** is the markdown body at the **bottom of `content/authors/admin/_index.md`** (after the front matter), surfaced by the `resume-biography-3` block. It is NOT in `content/_index.md`.
+- **"My Research"** is the `block: markdown` `text:` field in **`content/_index.md`**.
+
+**Copy rewrites**
+- **Division of labour** agreed and applied: *About Me* = who he is + a plain-language through-line (non-specialist readable); *My Research* = the technical detail. This removed the prior duplication between the two (both had previously repeated "firm-to-firm", production networks, etc.).
+- **About Me** rewritten and then **expanded** (user felt the first pass read too short): four paragraphs — what he studies (firm-level data, shock propagation), a motivation/credentials paragraph (academic+policy experience, OECD across several departments, INSEAD, Sciences Po degrees), and a human closing line (sailing). Sailing detail kept to one line so it doesn't repeat the Skills "Beyond Research" block.
+- **My Research** rewritten: production-networks framing **de-Turkey'd** (was Turkey-only); now three thesis essays by shock *type* (tax policy / labour market / industrial policy) and a separate "ongoing work" line naming the concrete country projects — **Uganda (VAT), Turkey (mass layoffs), Georgia (environmental)**. Dropped the old "monthly firm-level input-output matrix" claim (he no longer builds it) in favour of "administrative data recording firm-to-firm transactions". Tone de-buzzworded ("unprecedented", "comprehensive", "key innovation" removed).
+  - **Deliberate framing choice:** Para 2 lists shock *types*, Para 4 lists *countries*; they don't map 1:1 (the industrial-policy essay has no country, Georgia has no essay). Kept as "two different cuts" (thesis vs current work). A careful reader may notice; revisiting is optional.
+
+**Homepage `<title>`**
+- Was `"Economics PhD, King's College London"` (an earlier SEO change that dropped the name). Restored the name to the front: **`"Gürcan Zeren Gülersoy · Economics PhD, King's College London"`** (middot separator, not an em dash). Set in `content/_index.md` front matter; drives the browser tab, the Google result headline, and `og:title`.
+
+**Cleanup**
+- Removed the **dead `interests:` block** from `content/authors/admin/_index.md`. It rendered nowhere: the only template that reads `$person.interests` is the *vendor* `resume-biography-3.html`, which is **shadowed by the custom override** (the override renders `organizations` but not `interests`). The visible "Research Interests" comes solely from the `skills:` block (CV page). So it was orphaned config that merely mirrored the skills list, not a visible duplication.
+
+**Still open (tabled by the user)**
+- **Expand About Me further** is *done* this session, but the user may want another polish pass later (add texture, not research detail — don't recreate the My Research overlap).
+- **Regroup pre-doctoral / student writing** out of "Authored Publications" — postponed.
+- **Research-interests terminology** — revisit only when asked.
