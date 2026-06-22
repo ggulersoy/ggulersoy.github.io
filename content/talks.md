@@ -1,6 +1,6 @@
 ---
-# Leave the homepage title empty to use the site title
-title: "Publications"
+# Drives the browser tab + SEO title (was mistakenly "Publications").
+title: "Talks"
 date: 2022-10-24
 type: landing
 
@@ -12,7 +12,7 @@ sections:
   - block: collection
     id: talks
     content:
-      title: All Talks
+      title: Talks
       filters:
         folders:
           - event

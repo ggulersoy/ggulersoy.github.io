@@ -1,8 +1,13 @@
 ---
-# Sets the <title> tag + og:title (browser tab and Google result link) only;
-# the navbar wordmark is separate (header.navbar.logo.text). Name first for
-# name searches, affiliation for topic context.
-title: "Gürcan Zeren Gülersoy · Economics PhD, King's College London"
+# The <title> tag + og:title (browser tab and Google result link) come from
+# `seo.title` below. `{brand}` expands to the site title (the name); using
+# `seo.title` also suppresses the theme's automatic " | {site title}" suffix,
+# which was otherwise doubling the name in the tab. Name first for name
+# searches, affiliation for topic context. (Navbar wordmark is separate:
+# header.navbar.logo.text.)
+title: "Gürcan Zeren Gülersoy"
+seo:
+  title: "{brand} · Economics PhD, King's College London"
 date: 2022-10-24
 type: landing
 
