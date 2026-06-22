@@ -16,10 +16,15 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
       text: ""
-      # Show a call-to-action button under your biography? (optional)
-      #button:
-      #  text: Download CV
-      #  url: uploads/resume.pdf
+      # Hero call-to-action buttons (styled in custom.css for the clay hero).
+      buttons:
+        - text: Download CV
+          url: /uploads/resume.pdf
+          style: primary
+          new_tab: true
+        - text: Email me
+          url: mailto:gurcangulersoy@gmail.com
+          style: secondary
     design:
       css_class: dark
       # Tighter than the site-wide 4rem default so the intro fits the initial

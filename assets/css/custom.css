@@ -95,6 +95,47 @@
     border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
+/* Hero call-to-action buttons. The hero (resume-biography-3) is always on the
+   warm clay background in both light and dark mode, so these are styled for
+   clay: a cream primary (high contrast) and a cream-outline secondary. */
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+.hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.3rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.hero-cta-primary {
+    background-color: #FFE8DF;
+    color: #461910;
+}
+.hero-cta-primary:hover {
+    background-color: #ffffff;
+    transform: translateY(-1px);
+}
+.hero-cta-secondary {
+    border: 1.5px solid rgba(255, 232, 223, 0.7);
+    color: #FFE8DF;
+}
+.hero-cta-secondary:hover {
+    background-color: rgba(255, 232, 223, 0.12);
+    transform: translateY(-1px);
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-cta-btn { transition: none; }
+    .hero-cta-btn:hover { transform: none; }
+}
+
 /* Skills grid: align the column TOPS (the vendor uses `items-center`, which
    vertically centres the unequal-length columns so their tops don't line up)
    and give the columns more horizontal air. */
