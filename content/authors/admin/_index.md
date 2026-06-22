@@ -277,10 +277,10 @@ skills:
 
 ## About Me
 
-Using firm-to-firm transaction data, I study how economic shocks travel through value chains.
+Using detailed firm-level data, I study how economic shocks ripple through the networks of firms that trade with one another.
 
-I am a PhD candidate in Economics at King’s College London and an Economic Consultant at the OECD. My doctoral work follows specific shocks through firm-to-firm production networks: how Uganda’s 2015 VAT reform reshaped sourcing between firms, and how mass layoffs propagate through Turkish supply chains.
+I am a PhD candidate in Economics at King’s College London and an Economic Consultant at the OECD, keeping my work at the intersection of academia and policy.
 
-Previously I was a research associate at INSEAD. I hold degrees from Sciences Po Paris (BA, Political Science; MA, Economics and Public Policy), and my work sits at the intersection of academic trade research and applied economic policy.
+Previously I was a research associate at INSEAD. I hold a bachelor's in political science and a master's in economics and public policy, both from Sciences Po Paris.
 
-Outside research, I am a sailor and sailing instructor.
+Outside research, I love sailing. If I'm not in the office, I'm probably on a boat.

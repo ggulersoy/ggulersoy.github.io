@@ -2,7 +2,7 @@
 # Sets the <title> tag + og:title (browser tab and Google result link) only;
 # the navbar wordmark is separate (header.navbar.logo.text). Name first for
 # name searches, affiliation for topic context.
-title: "Economics PhD, King's College London"
+title: "Gürcan Zeren Gülersoy · Economics PhD, King's College London"
 date: 2022-10-24
 type: landing
 
@@ -46,13 +46,13 @@ sections:
       title: 'My Research'
       subtitle: ''
       text: |-
-        My current research interests lie in the dynamics of shock transmission and spillovers within the Turkish production network, with a particular focus on the pivotal role of large firms.
+        My current research interests lie in the dynamics of shock transmission and spillovers within production networks, with a particular focus on the pivotal role of large firms.
 
-        My doctoral thesis, structured into three comprehensive essays, delves into supply chain, financial and regulatory, and technological and informational shocks.
+        My doctoral thesis is built around three essays, each tracing a different kind of shock through these networks: shocks from tax policy, from the labour market, and from industrial policy.
 
-        A key innovation of my research is the development of a monthly firm-level input-output matrix for Turkey, offering unprecedented granularity in tracing goods and services flows among industries.
+        This work draws on administrative data recording firm-to-firm transactions, letting me map how disruptions travel between connected firms across the economy.
 
-        This bottom-up approach not only enriches existing literature but also provides valuable insights for policymakers, emphasizing the necessity of tailored strategies to enhance economic resilience and stability.
+        My ongoing work focuses on the transmission of value-added tax shocks in Uganda, mass-layoff shocks in Turkey, and environmental shocks in Georgia.
     design:
       columns: '1'
   - block: collection
