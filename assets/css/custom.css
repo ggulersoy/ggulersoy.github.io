@@ -450,6 +450,100 @@ button:focus-visible,
     }
 }
 
+/* =====================================================================
+   AUDIT FIXES (2026-07-20)
+   CV subtitle contrast, serif detail-page titles, skip-to-content link,
+   and footer nav/contact rows. Plain CSS only (see Tailwind caveat).
+   ===================================================================== */
+
+/* --- CV page subtitle: replaces the old inline #6b7280, which failed WCAG AA
+   (~3.9:1) on the dark background. Light: gray-600 (~7.6:1 on white); dark:
+   gray-400 (~7:1 on the page background rgb(23,24,28)). ------------------- */
+.cv-subtitle {
+    color: #4B5563;
+}
+.dark .cv-subtitle {
+    color: #9CA3AF;
+}
+
+/* --- Detail-page titles (publications / talks): serif display font so the
+   content pages share the heading identity of the rest of the site. -------- */
+.article-title {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+}
+
+/* --- Skip-to-content link (first focusable element, added in the baseof
+   override). Visually hidden until keyboard focus, then a small accent pill
+   above the sticky navbar (z-30). ----------------------------------------- */
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: -9999px;
+    z-index: 50;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.skip-link:focus {
+    left: 0.75rem;
+}
+/* The skip target only needs to receive programmatic focus; never show a
+   focus ring on the whole page body. */
+#main-content:focus {
+    outline: none;
+}
+
+/* --- Footer: nav + contact rows (markup in the site_footer.html override).
+   Quiet by default, accent on hover; nav row in the serif to echo the
+   masthead. ---------------------------------------------------------------- */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.5rem 0 1.25rem;
+}
+.footer-nav,
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1.5rem;
+    row-gap: 0.4rem;
+}
+.footer-nav a {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: inherit;
+    text-decoration: none;
+}
+.footer-contact a {
+    font-size: 0.9rem;
+    color: #4B5563;
+    text-decoration: none;
+}
+.dark .footer-contact a {
+    color: #9CA3AF;
+}
+.footer-nav a:hover,
+.footer-contact a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.dark .footer-nav a:hover,
+.dark .footer-contact a:hover {
+    color: var(--accent-dark);
+}
+
 /* --- Hero density: trim the generous vertical whitespace so the intro fits
    the initial viewport on common laptop screens. The clay hero section shipped
    with stacked top offsets on the avatar, the #profile column and the bio,

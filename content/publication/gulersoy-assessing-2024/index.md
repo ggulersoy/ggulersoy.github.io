@@ -2,7 +2,7 @@
 title: "Assessing nature-related risks in the Hungarian financial system: Charting
   the impact of nature's financial echo"
 authors:
-- Gürcan Gülersoy
+- Gürcan Zeren Gülersoy
 - Riccardo Boffo
 - Hugh Miller
 - Gabriel Santos Carneiro

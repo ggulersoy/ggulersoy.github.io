@@ -39,7 +39,7 @@ bio: Gürcan Zeren Gülersoy is a PhD candidate in Economics at King's College L
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:gurcangulersoy@gmail.com'
+    url: 'mailto:gurcan.gulersoy@kcl.ac.uk'
     label: E-mail Me
   - icon: brands/x
     url: https://x.com/GurcanGulersoy

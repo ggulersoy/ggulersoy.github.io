@@ -1,23 +1,32 @@
 {{/* Hugo Blox: Markdown */}}
 {{/* Documentation: https://hugoblox.com/blocks/ */}}
 {{/* License: https://github.com/HugoBlox/hugo-blox-builder/blob/main/LICENSE.md */}}
-{{/* PROJECT OVERRIDE: the block title is a semantic <h2> (was a <div>), so
+{{/* PROJECT OVERRIDE: the block title is a semantic heading (was a <div>), so
      "My Research" / the CV page title are real headings for SEO + a11y. Classes
      are unchanged, so the existing `.blox-markdown > .flex > .text-3xl.font-bold`
-     serif + centred-accent styling still applies. */}}
+     serif + centred-accent styling still applies. Set `content.title_level: 1`
+     on a block to render its title as the page's <h1> (landing pages otherwise
+     have no h1); the default stays <h2>. */}}
 
 {{/* Initialise */}}
 {{ $page := .wcPage }}
 {{ $block := .wcBlock }}
 {{ $title := $block.content.title | emojify | $page.RenderString }}
 {{ $text := $block.content.text | emojify | $page.RenderString | safeHTML }}
+{{ $title_is_h1 := eq ($block.content.title_level | default 2) 1 }}
 
 <div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center">
 
   {{ with $title }}
+  {{ if $title_is_h1 }}
+  <h1 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+    {{ . }}
+  </h1>
+  {{ else }}
   <h2 class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
     {{ . }}
   </h2>
+  {{ end }}
   {{ end }}
 
   {{/* We use DIV rather than P to support `prose` class and multiple paragraphs */}}

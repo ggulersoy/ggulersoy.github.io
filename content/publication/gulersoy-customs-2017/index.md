@@ -2,7 +2,7 @@
 title: 'Customs Union Negotiations: Start of Something New for Turkey and the European
   Union?'
 authors:
-- Gürcan Gülersoy
+- Gürcan Zeren Gülersoy
 date: '2017-04-01'
 publishDate: '2024-08-06T11:48:47.130863Z'
 publication_types:

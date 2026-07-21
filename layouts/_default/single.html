@@ -30,7 +30,9 @@
       </div>
       {{ end }}
 
-      <h1 class="mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+      {{/* PROJECT OVERRIDE: `.article-title` applies the serif display font
+           (custom.css) so detail pages match the site's heading system. */}}
+      <h1 class="article-title mt-2 text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
         {{- .Title -}}
       </h1>
 

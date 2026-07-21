@@ -30,6 +30,32 @@
   </p>
   {{ end }}
 
+  {{/* PROJECT OVERRIDE: compact footer nav + contact links so key paths and
+       contact methods are reachable from the bottom of every page (the hero
+       icons scroll away). Data-driven: nav from site menus, contact links from
+       the admin author's `profiles` (same source as the hero icons), so new
+       profiles appear here automatically. Styled in custom.css. */}}
+  <div class="footer-links">
+    <nav class="footer-nav" aria-label="Footer">
+      {{ range site.Menus.main }}
+        <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+    {{ with site.GetPage "/authors/admin" }}
+    {{ $labels := dict "at-symbol" "Email" "brands/x" "X" "brands/twitter" "Twitter" "brands/linkedin" "LinkedIn" "brands/github" "GitHub" "brands/instagram" "Instagram" "academicons/google-scholar" "Google Scholar" "academicons/orcid" "ORCID" }}
+    <nav class="footer-contact" aria-label="Contact and profiles">
+      {{ range .Params.profiles }}
+        {{ $link := .url | default .link }}
+        {{/* Dict first: profile labels like "E-mail Me" are hero tooltips, the
+             footer wants the short canonical name. */}}
+        {{ $name := (index $labels .icon) | default .label | default .icon }}
+        {{ $external := in (slice "http" "https") (urls.Parse $link).Scheme }}
+        <a href="{{ $link | safeURL }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ $name }}</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </div>
+
   {{/* Display copyright license. */}}
   {{ partial "site_footer_license" . }}
   

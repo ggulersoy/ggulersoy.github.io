@@ -30,7 +30,8 @@ authors:
 tags: []
 
 # Is this a featured talk? (true/false)
-featured: true
+# Kept to two featured talks so the homepage 2-column grid has no orphan card.
+featured: false
 
 #image:
 #  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'

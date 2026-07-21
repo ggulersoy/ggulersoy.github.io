@@ -28,7 +28,7 @@ sections:
           style: primary
           new_tab: true
         - text: Email me
-          url: mailto:gurcangulersoy@gmail.com
+          url: mailto:gurcan.gulersoy@kcl.ac.uk
           style: secondary
     design:
       css_class: dark
@@ -69,6 +69,12 @@ sections:
           - publication
           - working-paper
         featured_only: true
+      # "See all" link to the full listing (styled in custom.css via the
+      # archive-button rule).
+      archive:
+        enable: true
+        text: See all publications
+        link: publications/
     design:
       view: article-grid
       columns: 2
@@ -89,7 +95,11 @@ sections:
       filters:
         folders:
           - event
-        featured_only: true 
+        featured_only: true
+      archive:
+        enable: true
+        text: See all talks
+        link: talks/
     design:
       view: article-grid
       columns: 2
