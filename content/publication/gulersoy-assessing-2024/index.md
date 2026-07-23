@@ -29,6 +29,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: false
+  alt_text: "Cover of OECD Environment Working Paper No. 243, showing a drought-cracked lakebed and an autumn forest."
 links:
 - name: URL
   url: 

@@ -32,9 +32,9 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: false
 
-#image:
-#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-#  focal_point: Right
+image:
+  alt_text: "The Royal Exchange and the Bank of England in the City of London, with office towers and pedestrians."
+  focal_point: Center
 
 #links:
 #  - icon: 

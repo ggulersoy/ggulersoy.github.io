@@ -39,12 +39,14 @@ git add <files> && git commit && git push origin main  # deploy
 │   └── event/                    # Talks/events
 ├── layouts/
 │   ├── _default/
-│   │   └── single.html               # ← CUSTOM OVERRIDE: adds `data-pagefind-body` to scope search (see Search)
+│   │   ├── baseof.html               # ← CUSTOM OVERRIDE: adds skip-to-content link + #main-content target (a11y); else verbatim vendor copy
+│   │   └── single.html               # ← CUSTOM OVERRIDE: `data-pagefind-body` (search) + `.article-title` serif class on the h1
 │   └── partials/blox/
 │       ├── resume-experience.html    # ← CUSTOM OVERRIDE: experience+education timeline
 │       ├── resume-skills.html        # ← CUSTOM OVERRIDE: skills block (left-aligned title + tidy multi-column layout)
 │       ├── resume-biography-3.html   # Custom biography block
-│       └── collection.html           # Custom collection block
+│       ├── markdown.html             # ← CUSTOM OVERRIDE: semantic <h2> title + `title_level: 1` opt-in for h1
+│       └── collection.html           # ← CUSTOM OVERRIDE: section title (+ `title_level: 1` opt-in for h1), archive "See all" link
 ├── static/
 │   ├── uploads/resume.pdf            # CV PDF download
 │   └── media/icons/companies/        # ← Company/institution logos (PNG/SVG)
@@ -79,7 +81,7 @@ git add <files> && git commit && git push origin main  # deploy
 - `education:` — education timeline entries. Fields: `area`, `institution`, `institution_logo`, `date_start`, `date_end`, `summary`
 - `skills:` — skills section with icons
 - `languages:` — language proficiency
-- `profiles:` — social links (email, X, LinkedIn, Google Scholar)
+- `profiles:` — social links (email, X, LinkedIn, Google Scholar). The email is the **institutional address** `gurcan.gulersoy@kcl.ac.uk` (swapped from the old gmail for a stronger trust signal); it drives the hero mail icon, the hero "Email me" CTA (`content/_index.md`), and the footer contact row. Change it in **both** `_index.md` files if updated.
 - `interests:`, `organizations:` — bio section data
 
 ---
@@ -206,10 +208,15 @@ Natively loaded by the vendor `site_head.html` if it exists (no config needed). 
 - **Block gutters.** Several vendor blocks ship with no horizontal padding, so on narrow viewports their content touches the screen edge. Custom rules add a gutter: `.blox-markdown .max-w-prose.mx-auto` and `.blox-resume-skills .max-w-prose` get `0.75rem` (matching the bio's `px-3`); `.blox-collection .container.max-w-3xl` (the **citation** view on the Publications page) gets `2rem` to match the `px-8` the article-grid views already have. The `max-w-3xl` selector scopes the citation fix away from the card grids (`max-w-screen-lg`).
 - **Skills multi-column layout.** The `resume-skills.html` override adds hook classes (`cv-skills-grid`, `cv-skills-col`, `cv-skills-coltitle`); `custom.css` then: **widens** the block past `max-w-prose` to `56rem` (both header and grid share `max-w-prose`, so this keeps the title's left edge aligned with the first column) so the four columns aren't crammed (~150px each); switches the grid from the vendor's `items-center` to **`align-items: flex-start`** so the unequal columns' **tops** line up; and, at **`lg`+ only**, centres the column titles with a reserved `min-height: 3.5rem` so a one-line title ("Languages") occupies the same space as the wrapping ones and every column's first item starts at the same height. Below `lg` the columns stack and titles left-align (centring a title over a left-aligned list looked disconnected).
 - **Search dropdown (Pagefind).** The vendor `#search` panel shipped with only `p-3` and no background, so opened results showed the page through them. `#search:not(.hidden)` gets an opaque background (white / dark `#152028`), a soft shadow, and a `max-height` + `overflow-y:auto` scroll cap. (Search indexing scope is documented in the **Search (Pagefind)** section above.)
+- **AUDIT FIXES block (2026-07-20), at the very end of `custom.css`.** Four rule groups from the accessibility/SEO pass: (1) `.cv-subtitle` — CV-header subtitle colour with a WCAG-AA dark variant (replaces the old inline `#6b7280`); (2) `.article-title` — the serif display font on publication/talk detail-page `<h1>`s (hook class added in `single.html`), so content pages match the site heading system; (3) `.skip-link` / `#main-content:focus` — the skip-to-content link (added in the `baseof.html` override) is offscreen until keyboard focus, then a small accent pill above the sticky navbar (z-50 > navbar z-30), and the `#main-content` target never shows a focus ring; (4) `.footer-links` / `.footer-nav` / `.footer-contact` — the footer nav + contact rows (markup in `site_footer.html`), serif nav row echoing the masthead, accent on hover.
+
+### Landing-page h1s (`title_level`)
+
+Landing pages (`type: landing`) render only Hugo Blox blocks and historically had **no `<h1>`** (an a11y + SEO gap; block titles were `<h2>`s). The **`markdown.html` and `collection.html` overrides** now accept **`content.title_level: 1`** on a block, which renders that block's title as an `<h1>` (default stays `<h2>`; classes identical in both branches so the serif + accent-bar styling is unchanged). Applied so each landing page has exactly one h1: `content/publications.md` (a title-only markdown block "Publications"), `content/talks.md` (the collection title), and `content/experience.md` (the "Curriculum Vitae" markdown title). The homepage already had its `<h1>` (the hero name).
 
 ## CV Page Header (`content/experience.md`)
 
-The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title, a **two-line** subtitle `<p>` ("PhD candidate in Economics, King's College London" then `<br>` "Economic Consultant, OECD" — same font/size on both lines; the academic role leads and the OECD role reads as secondary by position alone; note lowercase "candidate", kept consistent with the homepage role), and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks. The button no longer hardcodes a colour: it uses `border:1.5px solid currentColor` and inherits the warm prose-link accent (see Custom CSS), so it adapts to light/dark.
+The CV page leads with a `markdown` block (not `cta-button-list`): centered "Curriculum Vitae" title (rendered as the page **`<h1>`** via `title_level: 1` — see the h1 note in Custom CSS), a **two-line** subtitle `<p>` ("PhD candidate in Economics, King's College London" then `<br>` "Economic Consultant, OECD" — same font/size on both lines; the academic role leads and the OECD role reads as secondary by position alone; note lowercase "candidate", kept consistent with the homepage role), and an **outlined** (not solid) Download PDF button — all wrapped in `<div style="text-align:center;">`. The subtitle colour lives in `custom.css` as `.cv-subtitle` (light `#4B5563` / dark `#9CA3AF`); the previous inline `#6b7280` failed WCAG AA (~3.9:1) in dark mode. Requires goldmark unsafe renderer (`markup.goldmark.renderer.unsafe: true` in `hugo.yaml`) for raw HTML in markdown blocks. The button no longer hardcodes a colour: it uses `border:1.5px solid currentColor` and inherits the warm prose-link accent (see Custom CSS), so it adapts to light/dark.
 
 ---
 
@@ -234,6 +241,8 @@ The CV page leads with a `markdown` block (not `cta-button-list`): centered "Cur
 **Markdown links don't render inside `markdown` blocks.** In a `block: markdown` section (e.g. "My Research" on the homepage), `[text](url)` silently renders to *nothing*: the text and href both vanish. This is a Hugo Blox quirk (the vendor's own render-link hook drops it too; affects every markdown link in these blocks, not the project's `render-link.html` override). **Workaround:** use a raw HTML `<a href="…" target="_blank" rel="noopener">text</a>` (goldmark `unsafe: true` is enabled). Links in other contexts (bio, page content) render normally.
 
 **Downloadable CV** (`static/uploads/resume.pdf`) is built from a separate LaTeX project and copied in. Its publication list must stay in sync with `content/contribution/`, `content/publication/`, and `content/working-paper/`.
+
+**⚠️ `layouts/_default/baseof.html` is a near-verbatim copy of the vendor `baseof.html`** (with only the skip-to-content link + `#main-content` target added). Because it's a full copy, it does **not** track vendor changes: on any deliberate theme upgrade, re-copy the new vendor `baseof.html` and re-apply the two skip-link edits, or the rest of the base template silently goes stale. (Same caution applies in spirit to `markdown.html`/`collection.html`/`single.html`, but those are smaller, more clearly diverged overrides.)
 
 **⚠️ `hugo mod vendor` will silently upgrade the theme.** `go.mod` pins `blox-tailwind` at a *Sept 2024* pseudo-version, but the committed `_vendor/` copy is the *June 2024* one — they have been mismatched since a `hugo mod get` on 2024-09-08 that was never followed by a re-vendor. The build always uses `_vendor/`, so the site runs on June 2024. Running `hugo mod vendor` re-fetches per `go.mod` and overwrites the whole vendored theme (a real upgrade). Do NOT run it casually. To remove a single module cleanly *without* bumping the theme, edit `module.yaml`/`go.mod`/`go.sum`/`_vendor/modules.txt` by hand and delete that module's vendored dir (that's how `blox-plugin-netlify` was removed). A deliberate theme upgrade is a separate, test-heavy task because of the custom overrides.
 
@@ -356,10 +365,34 @@ A thorough walkthrough of the live site (desktop + mobile, light + dark, all nav
 **Medium**
 5. **Decided — KEEP justified text everywhere** (incl. mobile), per user preference, even though it causes word-gap "rivers" in the narrow mobile column. No change. (Documented so it isn't "fixed" later.)
 6. ✅ **DONE (2026-06-23) — Talks heading "All Talks" → "Talks"** (collection block title in `content/talks.md`). Also fixed a latent bug there: the page's front-matter `title` was a copy-paste leftover `"Publications"`, so the Talks browser tab/SEO title read "Publications" — now `"Talks"`.
-7. **No "See all →" link** on the homepage Featured Publications / Featured Talks sections to reach the full listings (the nav covers it, but an inline link is the expected pattern). **Open — on the to-do list.**
-8. **Featured Talks shows 3 cards in a 2-column grid**, leaving an orphan card with empty space beside it. Feature an even number, or use a layout that absorbs the orphan.
+7. ✅ **DONE (2026-07-20) — "See all" links** under both homepage featured sections, via the collection block's built-in `content.archive` (`enable`/`text`/`link`) in `content/_index.md`, styled by the existing accent archive-button rule.
+8. ✅ **DONE (2026-07-20) — Featured Talks orphan fixed.** Işık talk set `featured: false`, so the homepage grid now shows two cards (MNB, NGFS-WWF).
 
 **Low / polish**
 9. **Mobile hero has a large empty clay gap** between the social icons and "About Me" — could tighten hero vertical spacing at mobile widths.
-10. **Footer is minimal** (copyright + license only) — optional: add a "back to top" and/or repeat key social links.
+10. ✅ **DONE (2026-07-20) — Footer nav + contact rows.** `site_footer.html` override adds a `.footer-links` block: a nav row (Publications/Talks/CV, from `site.Menus.main`) and a contact row (Email/X/LinkedIn/Google Scholar, from the admin author's `profiles`). Data-driven, so new menu items / profiles appear automatically. Styled in the Custom CSS AUDIT FIXES block. (A "back to top" was not added.)
 11. **Pre-doctoral / student writing is mixed into the "Publications" list** — already tracked separately (the regrouping task); restated here because it surfaced again in the review.
+
+---
+
+## Recent changes (2026-07-20 session)
+
+An accessibility / SEO / navigation pass driven by a full-site audit (the audit's "top 20" list). The user picked a subset to implement; details live in the sections above, this is the index. Deployed in commit `98a9710`.
+
+**Accessibility**
+- **Landing-page h1s.** `markdown.html` / `collection.html` gained a `title_level: 1` opt-in; applied so Publications, Talks, and CV each have exactly one `<h1>` (were h2-only). See Custom CSS → Landing-page h1s.
+- **Skip-to-content link.** New `layouts/_default/baseof.html` override (near-verbatim vendor copy + the link and a `#main-content` target). Styled `.skip-link` in the AUDIT FIXES CSS block. See the baseof gotcha.
+- **CV subtitle contrast.** Moved off the inline `#6b7280` (failed WCAG AA in dark mode, ~3.9:1) to `.cv-subtitle` with light/dark variants.
+
+**SEO**
+- **Meta descriptions** added via `summary:` front matter on the three landing pages (`publications.md`, `talks.md`, `experience.md`) — the theme's `site_head.html` reads `summary` first.
+- **Author name standardized** to "Gürcan Zeren Gülersoy" across all publication front matter and `cite.bib` (was inconsistently "Gürcan Gülersoy").
+
+**Navigation / UX**
+- **Footer** nav + contact rows (backlog #10). **"See all" links** on the homepage featured sections (backlog #7). **Featured Talks** trimmed to two cards (backlog #8). See those backlog entries.
+- **Detail-page titles** (publications/talks) now use the serif display font (`.article-title` in `single.html`), matching the site heading system.
+
+**Content / branding**
+- **Contact email** swapped from gmail to the institutional `gurcan.gulersoy@kcl.ac.uk` (hero icon, hero CTA, footer). Note: the downloadable `resume.pdf` is built from the separate LaTeX repo and may still carry the old address — update it there too.
+
+**From the audit's top-20 but NOT done (user deferred):** homepage prose → paper links; Google Scholar / Highwire citation meta tags; ORCID; publications regrouping (pre-doctoral split); working-paper thumbnail replacement; talk-page enrichment; news section; per-page descriptions beyond the three landing pages. These remain open if revisited.

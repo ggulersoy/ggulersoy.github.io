@@ -32,9 +32,9 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: true
 
-#image:
-#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-#  focal_point: Right
+image:
+  alt_text: "NGFS–WWF webinar series 'Save the Dates' poster listing four sessions on nature-related financial risks for central banks."
+  focal_point: Center
 
 #links:
 #  - icon: twitter

@@ -140,8 +140,11 @@
 
   {{ $archive_text := $block.content.archive.text | default (i18n $i18n) | default "See all" }}
 
+  {{/* PROJECT OVERRIDE: `collection-archive` hook lets custom.css tighten the
+       gap between the card grid and the "See all" button (the vendor `mt-10`
+       left too much space); new Tailwind classes here would not compile. */}}
   <div class="container mx-auto max-w-screen-lg px-8 xl:px-5 pb-5 lg:pb-8">
-    <div class="mt-10 flex justify-center">
+    <div class="collection-archive mt-10 flex justify-center">
       <a
         class="relative inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-3 py-2 pl-4 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 dark:border-gray-500 dark:bg-gray-800 dark:text-gray-300"
         href="{{ $archive_link }}">

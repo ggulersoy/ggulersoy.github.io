@@ -33,9 +33,9 @@ tags: []
 # Kept to two featured talks so the homepage 2-column grid has no orphan card.
 featured: false
 
-#image:
-#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-#  focal_point: Right
+image:
+  alt_text: "Poster for the Işık University seminar 'A Central Banking Perspective to Assessing Nature-Related Financial Risks', with the speaker and moderator."
+  focal_point: Center
 
 links:
   - icon: zoom-svgrepo-com

@@ -11,8 +11,18 @@
     font-size: 1rem;
 }
 
-/* This is for the abstracts of events. */
+/* Publication / event metadata grid (Type / Publication / Date / Location —
+   the short label/value rows). Justify multi-line values. The abstract is no
+   longer in this grid: it was a cramped ~44ch cell next to a 200px label; it is
+   now rendered full-width above the grid (see .pub-abstract in single.html). */
 .max-w-prose.grid.grid-cols-1.md\:grid-cols-\[200px_auto\].gap-4.my-6 {
+    text-align: justify;
+}
+
+/* Abstract block: full content-column width (~65ch, the ideal reading measure)
+   instead of the ~44ch cell it had inside the label/value grid — shorter and
+   easier to read. */
+.pub-abstract {
     text-align: justify;
 }
 
@@ -466,6 +476,14 @@ button:focus-visible,
     color: #9CA3AF;
 }
 
+/* --- "See all" archive link: tighten the gap to the card grid above. The
+   vendor wrapper carries `mt-10` (2.5rem), which reads as a disconnected
+   floating button; 1rem keeps it visually attached to its section. Hook class
+   added in the collection.html override. */
+.collection-archive {
+    margin-top: 1rem;
+}
+
 /* --- Detail-page titles (publications / talks): serif display font so the
    content pages share the heading identity of the rest of the site. -------- */
 .article-title {
@@ -563,6 +581,20 @@ button:focus-visible,
        a smaller offset is plenty and reclaims vertical space. */
     .blox-resume-biography-3 .flex-auto {
         margin-top: 0.5rem;
+    }
+}
+
+/* Mobile hero: in the stacked (flex-col) layout, a large empty clay gap sat
+   between the social icons and "About Me" — the container `gap-12` (3rem) and
+   the bio's first-heading top margin (the prose first-child reset doesn't reach
+   it, since the heading is nested in .bio-text) stacked up to ~134px. Tighten
+   both; mobile only, so the side-by-side desktop layout is untouched. */
+@media (max-width: 767px) {
+    .blox-resume-biography-3 .resume-biography {
+        gap: 1.5rem;
+    }
+    .blox-resume-biography-3 .bio-text > :first-child {
+        margin-top: 0.25rem;
     }
 }
 

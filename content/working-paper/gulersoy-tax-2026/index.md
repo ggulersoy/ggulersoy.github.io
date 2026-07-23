@@ -17,6 +17,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: false
+  alt_text: "Event-study plot: inputs from registered suppliers rise sharply after Uganda's 2015 VAT threshold reform, with a 90% confidence band."
 links:
   - name: "PDF"
     url: "Uganda_VAT_Threshold_Project.pdf"

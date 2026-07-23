@@ -96,9 +96,18 @@
       {{ $image := $featured.Fit "2560x2560" }}
       {{else}}
       {{ $image_container = "article-container" }}
-      {{ $image = $featured.Fit "720x2500" }}
+      {{/* PROJECT OVERRIDE: fit to 1600px (was 720) so the featured image is
+           sharp on high-DPI/retina screens. The display width is still capped
+           by the content column (.featured-image is width:100%), so this only
+           raises resolution, not layout size. .Fit never upscales, so smaller
+           sources are unaffected. */}}
+      {{ $image = $featured.Fit "1600x2500" }}
       {{end}}
-      {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp" }}{{ end }}
+      {{/* PROJECT OVERRIDE: encode at webp q85 instead of the site-wide
+           imaging.quality (100), which produced ~1.5MB files for full-size
+           photo covers. q85 is visually lossless for photos and fine for
+           line-art figures, at a fraction of the size. */}}
+      {{ if ne $image.MediaType.SubType "gif" }}{{ $image = $image.Process "webp q85" }}{{ end }}
       {{/* Featured image */}}
       <div class="article-header {{$image_container}} featured-image-wrapper mt-4 mb-16" style="max-width: {{$image.Width}}px; max-height: {{$image.Height}}px;">
         <div style="position: relative">
@@ -108,14 +117,20 @@
       </div>
       {{end}}
 
+      {{/* PROJECT OVERRIDE: render the abstract as a full-width block above the
+           metadata grid. Inside the [200px label | value] grid it was squeezed
+           into a ~44ch cell that ran very tall; full content width gives it the
+           ideal ~65ch measure. "Abstract" is now a semantic <h2> (a11y). */}}
+      {{ if .Params.abstract }}
+      <div class="pub-abstract max-w-prose my-6">
+        <h2 class="font-bold text-2xl mb-2">{{ i18n "abstract" }}</h2>
+        <div>{{ .Params.abstract | markdownify }}</div>
+      </div>
+      {{ end }}
+
       {{/* EVENT / PUBLICATION METADATA */}}
       {{ if .Params.abstract | or (eq .Type "publication") | or (eq .Type "event") }}
         <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
-
-        {{ if .Params.abstract }}
-          <div class="font-bold text-2xl">{{ i18n "abstract" }}</div>
-          <div>{{ .Params.abstract | markdownify }}</div>
-        {{ end }}
 
         {{/* If the type is Uncategorized, hide the type. */}}
         {{ if $pub_type_display }}

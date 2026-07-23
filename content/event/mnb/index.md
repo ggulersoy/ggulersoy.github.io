@@ -32,9 +32,9 @@ tags: []
 # Is this a featured talk? (true/false)
 featured: true
 
-#image:
-#  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
-#  focal_point: Right
+image:
+  alt_text: "Gürcan Zeren Gülersoy speaking into a Magyar Nemzeti Bank microphone at the OECD–MNB launch event in Budapest."
+  focal_point: Center
 
 links:
   - icon: "custom/clipboard-list-solid.svg"
