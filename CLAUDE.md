@@ -40,7 +40,7 @@ git add <files> && git commit && git push origin main  # deploy
 ├── layouts/
 │   ├── _default/
 │   │   ├── baseof.html               # ← CUSTOM OVERRIDE: adds skip-to-content link + #main-content target (a11y); else verbatim vendor copy
-│   │   └── single.html               # ← CUSTOM OVERRIDE: `data-pagefind-body` (search) + `.article-title` serif class on the h1
+│   │   └── single.html               # ← CUSTOM OVERRIDE: `data-pagefind-body` (search), `.article-title` serif h1, full-width abstract block, featured-image 1600px/webp-q85
 │   └── partials/blox/
 │       ├── resume-experience.html    # ← CUSTOM OVERRIDE: experience+education timeline
 │       ├── resume-skills.html        # ← CUSTOM OVERRIDE: skills block (left-aligned title + tidy multi-column layout)
@@ -167,6 +167,15 @@ Custom SVG icons are in `assets/media/icons/custom/`. Referenced in `_index.md` 
 
 Each entry is a subfolder with an `index.md`. Featured images go in the same folder.
 
+### Detail-page featured images (`single.html` override)
+
+- **Resolution:** fit to **1600px** wide (vendor default was 720px, which was soft on high-DPI/retina screens — a 720px image displayed at ~700px gets upscaled). The display width is still capped by the content column (`.featured-image` is `width:100%`), so 1600 only raises resolution, not layout size. `.Fit` never upscales, so smaller sources stay as-is.
+- **Encoding:** `.Process "webp q85"` (not the site-wide `imaging.quality: 100`, which produced ~1.5MB files for full-size photo covers). q85 is visually lossless for photos and fine for line-art figures. **The homepage/Talks *cards* still use the global q100** via the vendor `article-grid.html` (not overridden) — an open optimisation.
+- **Abstract layout:** the abstract is rendered as a **full-width `.pub-abstract` block above** the metadata grid (was a cramped ~44ch cell beside the 200px label column, which ran very tall). "Abstract" is a semantic `<h2>`. The metadata grid keeps only the short rows (Type / Publication / Date / Location). Full column width (~65ch) is the ideal reading measure; the article column can't go wider anyway (theme reserves an empty 256px sidebar + 256px TOC, capping `<main>` content at ~672px).
+- **Alt text:** set `image.alt_text` in front matter — `single.html` reads it for the detail-page `<img alt>` (the card `alt` uses the page title). Featured-image sources are described for a11y.
+
+**Featured-image aspect / cover-render gotcha:** to rasterise a PDF cover (e.g. the OECD report), render with **`pdftoppm -r <DPI>`** (scales both dimensions together, preserving aspect). **Do NOT use `-scale-to-x` alone** — it scales only the width and leaves the height at the default resolution, **stretching the image horizontally** (this squished the Hungarian cover on a first pass). A4 at `-r 194` gives ~1604×2269 (aspect 0.707). The `gulersoy-tax-2026` thumbnail is a Stata figure PNG cropped to 16:9 (drop the multi-line notes block, pad to exactly 16:9 with white) so the homepage card's centre-crop clips nothing.
+
 ---
 
 ## Color Palette & Hero (warm brown/red theme)
@@ -209,6 +218,7 @@ Natively loaded by the vendor `site_head.html` if it exists (no config needed). 
 - **Skills multi-column layout.** The `resume-skills.html` override adds hook classes (`cv-skills-grid`, `cv-skills-col`, `cv-skills-coltitle`); `custom.css` then: **widens** the block past `max-w-prose` to `56rem` (both header and grid share `max-w-prose`, so this keeps the title's left edge aligned with the first column) so the four columns aren't crammed (~150px each); switches the grid from the vendor's `items-center` to **`align-items: flex-start`** so the unequal columns' **tops** line up; and, at **`lg`+ only**, centres the column titles with a reserved `min-height: 3.5rem` so a one-line title ("Languages") occupies the same space as the wrapping ones and every column's first item starts at the same height. Below `lg` the columns stack and titles left-align (centring a title over a left-aligned list looked disconnected).
 - **Search dropdown (Pagefind).** The vendor `#search` panel shipped with only `p-3` and no background, so opened results showed the page through them. `#search:not(.hidden)` gets an opaque background (white / dark `#152028`), a soft shadow, and a `max-height` + `overflow-y:auto` scroll cap. (Search indexing scope is documented in the **Search (Pagefind)** section above.)
 - **AUDIT FIXES block (2026-07-20), at the very end of `custom.css`.** Four rule groups from the accessibility/SEO pass: (1) `.cv-subtitle` — CV-header subtitle colour with a WCAG-AA dark variant (replaces the old inline `#6b7280`); (2) `.article-title` — the serif display font on publication/talk detail-page `<h1>`s (hook class added in `single.html`), so content pages match the site heading system; (3) `.skip-link` / `#main-content:focus` — the skip-to-content link (added in the `baseof.html` override) is offscreen until keyboard focus, then a small accent pill above the sticky navbar (z-50 > navbar z-30), and the `#main-content` target never shows a focus ring; (4) `.footer-links` / `.footer-nav` / `.footer-contact` — the footer nav + contact rows (markup in `site_footer.html`), serif nav row echoing the masthead, accent on hover.
+- **Layout-polish rules (2026-07-23).** (1) `.collection-archive` — trims the vendor `mt-10` (2.5rem) above the homepage "See all" archive links to `1rem` so the button isn't detached from its card grid (hook class added in the `collection.html` override). (2) `.pub-abstract` — justifies the full-width abstract block (see Featured images above); the short-metadata grid selector keeps its own `text-align: justify`. (3) **Mobile hero gap** — a `@media (max-width: 767px)` rule cuts the `.resume-biography` container `gap` (3rem→1.5rem) and the bio's first-heading top margin, halving the empty clay gap between the social icons and "About Me" (the prose first-child reset doesn't reach that heading, since it's nested in `.bio-text`). Desktop untouched.
 
 ### Landing-page h1s (`title_level`)
 
@@ -360,7 +370,7 @@ A thorough walkthrough of the live site (desktop + mobile, light + dark, all nav
 1. ✅ **DONE (2026-06-23) — Homepage `<title>` no longer doubles the name.** The theme auto-appends `| {site title}` (the name) to a page's `.Title`, which doubled it on the homepage. Fixed by moving the homepage title to the theme's **`seo.title`** front-matter path (with the `{brand}` token expanding to the site title): `seo.title: "{brand} · Economics PhD, King's College London"` in `content/_index.md`. The `seo.title` branch in `site_head.html` (line 177) uses the value verbatim with **no** suffix, and og:title reads the same computed `$title`. `title:` was set to just the bare name so `.Title` stays sensible.
 2. ✅ **DONE (2026-06-23) — Dates no longer show the weekday.** `date_format` in `config/_default/params.yaml` changed `'Monday, 02 Jan 2006'` → `'2 January 2006'` (e.g. "15 February 2026"). The CV timeline uses its own per-block `'January 2006'` (in `experience.md`), so it's unaffected.
 3. **Publications page vs Talks page are visually inconsistent.** The nav "Publications" → `/publications/` (`content/publications.md`) shows **three citation-view groups** (Authored Publications / Working Papers / Research Contributions); `/talks/` uses the polished **card grid** (article-grid). Inconsistency is *citation list vs cards*. Align them — cards for both, or give the citation groups more visual structure. (Tabled by the user — revisit later.)
-4. **First Featured Publication thumbnail is an unreadable screenshot** of the paper's first page (the abstract text). Reads as a grey scan at card size. **User will supply a replacement image for that working paper** ("Tax Policy at the Threshold"); swap it into `content/working-paper/<slug>/` then.
+4. ✅ **DONE (2026-07-23) — Working-paper thumbnail replaced** with the paper's headline event-study figure (cropped to 16:9), replacing the unreadable page screenshot. See the 2026-07-23 session notes + "Detail-page featured images".
 
 **Medium**
 5. **Decided — KEEP justified text everywhere** (incl. mobile), per user preference, even though it causes word-gap "rivers" in the narrow mobile column. No change. (Documented so it isn't "fixed" later.)
@@ -396,3 +406,23 @@ An accessibility / SEO / navigation pass driven by a full-site audit (the audit'
 - **Contact email** swapped from gmail to the institutional `gurcan.gulersoy@kcl.ac.uk` (hero icon, hero CTA, footer). Note: the downloadable `resume.pdf` is built from the separate LaTeX repo and may still carry the old address — update it there too.
 
 **From the audit's top-20 but NOT done (user deferred):** homepage prose → paper links; Google Scholar / Highwire citation meta tags; ORCID; publications regrouping (pre-doctoral split); working-paper thumbnail replacement; talk-page enrichment; news section; per-page descriptions beyond the three landing pages. These remain open if revisited.
+
+---
+
+## Recent changes (2026-07-23 session)
+
+A polish pass on featured images, the abstract layout, and a few small UX/a11y/perf items. All committed in `a7cdb42` and pushed. Details live in the sections above (this is the index).
+
+**Featured images** (see "Detail-page featured images" under Publication Types)
+- **Working-paper thumbnail** replaced: the unreadable page-screenshot → the paper's headline event-study figure, cropped to 16:9 (backlog #4). `featured.png` (was `featured.jpg`).
+- **OECD Hungarian cover** replaced with a high-resolution render from a user-supplied PDF. First render was horizontally stretched by `pdftoppm -scale-to-x` (see the cover-render gotcha); re-rendered with `-r 194` for the correct A4 portrait aspect.
+- **Resolution** raised: detail-page featured images fit to 1600px (was 720px) for retina sharpness. **Encoding** set to webp q85 (was the global q100) so full-size photo covers aren't ~1.5MB. Both in the `single.html` override.
+
+**Abstract layout** — pulled out of the `[200px label | value]` metadata grid into a full-width `.pub-abstract` block above it (was cramped to ~44ch and ran very tall); "Abstract" is now an `<h2>`. `single.html` + `.pub-abstract` in custom.css.
+
+**Small UX / a11y / perf**
+- **Alt text** on all featured images (event photos + publication covers); **meta description** added to the 2017 customs brief (`summary:`).
+- **"See all" spacing** tightened (`.collection-archive`, `collection.html` hook). **Mobile hero gap** between social icons and "About Me" halved (custom.css, mobile-only).
+- **Social sharing image** optimised: `assets/media/sharing.png` (368KB) → `sharing.jpg` (104KB). The theme resolves `media/sharing.*` by extension, so no reference change was needed.
+
+**Still open (user's standing calls):** card-image quality (homepage/Talks cards still at global q100 via the un-overridden `article-grid.html`); global `imaging.quality` (100 → ~85?); publications regrouping / pre-doctoral split; Publications-vs-Talks visual consistency; homepage-prose → paper link; talk-page enrichment; Teaching CV section. Dropped for good: Scholar meta tags, ORCID, News.
