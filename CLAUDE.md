@@ -426,3 +426,31 @@ A polish pass on featured images, the abstract layout, and a few small UX/a11y/p
 - **Social sharing image** optimised: `assets/media/sharing.png` (368KB) → `sharing.jpg` (104KB). The theme resolves `media/sharing.*` by extension, so no reference change was needed.
 
 **Still open (user's standing calls):** card-image quality (homepage/Talks cards still at global q100 via the un-overridden `article-grid.html`); global `imaging.quality` (100 → ~85?); publications regrouping / pre-doctoral split; Publications-vs-Talks visual consistency; homepage-prose → paper link; talk-page enrichment; Teaching CV section. Dropped for good: Scholar meta tags, ORCID, News.
+
+---
+
+## Recent changes (2026-07-27 session)
+
+Two small fixes the user spotted on the live site, a page-order change, and the first (cleanup) pass of talk-page enrichment. Commits `e637e5f` and `0be39a5`, both pushed.
+
+**Byline comma spacing (`single.html`)** — detail-page bylines rendered "Name , Name". Each author sits in a `<div>` that carried `mx-1`, so the *previous* name's right margin fell between the name and the comma `<span>` that precedes the next author. Fixed by giving the author wrapper a **leading margin only** (inline `margin-inline-start: 0.25rem`, per the Tailwind caveat) and dropping the comma span's `mr-1`. The Publications page's citation view uses the *vendor* `page_metadata_authors.html`, which already emits `", "` correctly — not affected.
+
+**Landing-page title alignment** — the Talks page title sat 32px lower than Publications and CV. Cause was page-level **`design.spacing`** in `content/talks.md` (`4rem`, vs `2rem` on the other two); the theme renders that as an **inline `padding:`** on each section. Set to `2rem`; all three landing-page `<h1>`s now start at the same offset (verified: 84.8px).
+
+**Publications page order** — `content/publications.md` now lists **Working Papers above Authored Publications** (then Research Contributions), so current work leads.
+
+**Homepage → paper link** (backlog item, partially done) — "My Research" now links *"value-added tax shocks in Uganda"* to `/working-paper/gulersoy-tax-2026/`. Uses a **raw `<a>`** because markdown links silently vanish in `markdown` blocks (see Gotchas). **Turkey (mass layoffs) and Georgia (environmental) have no content pages**, so they stay plain text; linking them needs stub pages first (user's copy).
+
+### Talk-page enrichment — Tier A done, B and C waiting on the user
+
+Audit finding: the theme's `page_links.html` **already** renders PDF / Slides / Video / Code / Poster / Dataset / DOI / custom `links` as buttons, plus the Date / Event / Location grid and the abstract. So enrichment is a **front-matter job, not a layout job**. Done this session (Tier A, no new copy needed):
+
+- **Removed a stale Zoom "Join" button** from `event/isik` — a live CTA into a dead meeting room for a November 2024 seminar.
+- **Deleted wrong-talk leftovers**: `isik`'s commented `url_slides`/`url_video` pointed at the *NGFS webinar's* assets (copy-paste trap).
+- **Stripped theme-starter boilerplate** from all four `content/event/*/index.md` (placeholder Stanford address, `slides:`/`projects:` examples, stub `links:`, NGFS's empty `url_pdf: ''`); each file keeps a one-line comment saying where slides/video go.
+- **Removed the empty `event/mnb/gallery/`** (unused; this vendored theme has no gallery shortcode).
+- Current attachment state: **MNB** PDF+Code+Slides+Agenda (richest), **NGFS–WWF** Slides + inline YouTube embed, **Işık** none, **BoE** none.
+
+**Still open on talks (needs the user):** *Tier B* — `url_slides`/`url_video` for BoE and Işık (local PDFs work too, the theme picks up page-folder resources). *Tier C* — **an abstract for the BoE talk** (the only one without one, which is why that page reads thin; a `# TODO:` marks the spot in its front matter) and a short `.Content` body for MNB and Işık, which render empty below the metadata.
+
+**Note:** `assets/media/icons/custom/zoom-svgrepo-com.svg` is now unreferenced (kept deliberately, in case a future live event needs it).
