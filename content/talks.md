@@ -9,8 +9,9 @@ type: landing
 summary: "Talks and seminars by Gürcan Zeren Gülersoy, including presentations at the Bank of England, the Magyar Nemzeti Bank, and the NGFS-WWF webinar series."
 
 design:
-  # Default section spacing
-  spacing: "4rem"
+  # Default section spacing — matches publications.md / experience.md so the
+  # page title sits at the same height across all three landing pages.
+  spacing: "2rem"
 
 sections:
   - block: collection

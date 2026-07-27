@@ -24,22 +24,22 @@ sections:
       columns: '1'
   - block: collection
     content:
-      title: Authored Publications
+      title: Working Papers
       text: ""
       filters:
         folders:
-          - publication
+          - working-paper
         exclude_featured: false
     design:
       view: citation
 
   - block: collection
     content:
-      title: Working Papers
+      title: Authored Publications
       text: ""
       filters:
         folders:
-          - working-paper
+          - publication
         exclude_featured: false
     design:
       view: citation
