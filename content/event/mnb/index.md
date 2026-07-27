@@ -8,7 +8,6 @@ location: MNB Headquarters
 address:
   street: Krisztina krt. 55
   city: Budapest
-  #region: 
   postcode: '1013'
   country: Hungary
 
@@ -16,7 +15,6 @@ summary: Launch of the joint biodiversity project between the OECD and the MNB w
 abstract: "Biodiversity loss poses significant risks to the economy and financial sector, which are largely mispriced and poorly understood. To address this, the European Commission, OECD, and Magyar Nemzeti Bank (MNB) launched a project to develop a Supervisory Framework for assessing biodiversity-related financial risks. This framework, implemented in Hungary, helps central banks and retail banks better understand and manage these risks. A June 2024 event shared key findings and lessons from applying this framework to the Hungarian financial system and other Central and Eastern European institutions."
 
 # Talk start and end times.
-#   End time can optionally be hidden by prefixing the line with `#`.
 date: '2024-06-07T09:00:00Z'
 date_end: '2024-06-07T14:00:00Z'
 all_day: false
@@ -44,20 +42,5 @@ links:
 url_code: https://github.com/NatureFinanceOECD/Biodiversity_HUN
 url_pdf: 'https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/06/assessing-nature-related-risks-in-the-hungarian-financial-system_d47a0450/24fd70e3-en.pdf'
 url_slides: https://www.slideshare.net/slideshow/ppts-taiex-tsi-mnb-oecd-ec-launch-event-technical-implementation-of-the-supervisory-framework-for-assessing-nature-related-financial-risks-to-the-hungarian-financial-sector-june-2024/269687109
-#url_video: 'https://youtu.be/8a4YjUJ7KxU?si=X46F8tsz9qgeb_8m&t=3806'
-
-# Markdown Slides (optional).
-#   Associate this talk with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
-#slides: ""
-
-# Projects (optional).
-#   Associate this post with one or more of your projects.
-#   Simply enter your project's folder or file name without extension.
-#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
-#   Otherwise, set `projects = []`.
-#projects:
-#  - example
+# A recording, if one exists, can be added here as `url_video:`.
 ---

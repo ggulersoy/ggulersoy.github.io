@@ -57,7 +57,7 @@ sections:
 
         This work draws on administrative data recording firm-to-firm transactions, letting me map how disruptions travel between connected firms across the economy.
 
-        My ongoing work focuses on the transmission of value-added tax shocks in Uganda, mass-layoff shocks in Turkey, and environmental shocks in Georgia.
+        My ongoing work focuses on the transmission of <a href="/working-paper/gulersoy-tax-2026/">value-added tax shocks in Uganda</a>, mass-layoff shocks in Turkey, and environmental shocks in Georgia.
     design:
       columns: '1'
   - block: collection
