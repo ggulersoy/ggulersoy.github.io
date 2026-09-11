@@ -1,5 +1,5 @@
 ---
-title: "Tax Policy at the Threshold: A Network Perspective on Uganda’s 2015 VAT Reform"
+title: "Tax at the Threshold: A Network Perspective on Uganda’s 2015 VAT Reform"
 authors:
   - "Gürcan Zeren Gülersoy"
   - "Corti Eliab Paul Lakuma"
